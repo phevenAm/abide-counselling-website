@@ -8,7 +8,7 @@
 
 ::selection {
 	background: $secondary;
-	color: inherit;
+	color: $white !important;
 	text-shadow: none;
 }
 
@@ -21,7 +21,7 @@ body {
 	font-size: 16px;
 
 	td, div, font, p, a, li, input, label, h1, h2, h3, h4, h5, h6, span{
-		font-family: $font-primary !important;
+		font-family: $font-primary;
 		color: $black;
 	}
 
@@ -79,7 +79,7 @@ main,
 a,
 a:link,
 a:visited {
-	color: $links !important;
+	color: $links;
 
 	&:focus,
 	&:hover{
@@ -90,16 +90,16 @@ a:visited {
 /* $BUTTONS */
 
 %btn {
-	font-family: $font-primary !important;
-	color: $white !important;
-	background: $primary !important;
-	border: 2px solid $primary !important;
+	font-family: $font-primary;
+	color: $white;
+	background: $primary;
+	border: 2px solid $primary;
 	transition: all .2s ease-out;
-	border-radius: 0 !important;
-	padding: 10px 30px !important;
+	border-radius: 0;
+	padding: 10px 30px;
 	min-width: 180px;
-	text-transform: uppercase !important;
-	font-size: 16px !important;
+	text-transform: uppercase;
+	font-size: 16px;
 
 	@include bp(lt-s) {
 		width: 100%;
@@ -108,12 +108,12 @@ a:visited {
 	&:hover,
 	&:active,
 	&:focus {
-	    color: $white !important;
-		background: $secondary !important;
-		border: 2px solid $grey !important;
-	    // border-color: darken($secondary, 10%) !important;
-	    // background: darken($secondary, 10%) !important;
-	    text-decoration: none !important;
+	    color: $white;
+		background: $secondary;
+		border: 2px solid $grey;
+	    // border-color: darken($secondary, 10%);
+	    // background: darken($secondary, 10%);
+	    text-decoration: none;
 	}
 }
 
@@ -121,7 +121,7 @@ a:visited {
 	z-index: 2;
 
 	&:hover {
-		color: $white !important;
+		color: $white;
 	}
 }
 
@@ -140,9 +140,9 @@ a:visited {
 
 	&.btn-secondary {
 		@extend %btn-primary;
-		background: $secondary !important;
-		border-color: $secondary !important;
-		color: $white !important;
+		background: $secondary;
+		border-color: $secondary;
+		color: $white;
 		position: relative;
 		// transition: background 450ms ease-in-out, border 250ms ease-in-out;
 		transition: all 250ms ease-in-out;
@@ -150,7 +150,7 @@ a:visited {
 		// &::before { 
 		// 	content: '';
 		// 	position: absolute;
-		// 	left: 0 !important;
+		// 	left: 0;
 		// 	height: 100%;
 		// 	width: 0;
 		// 	background: $secondary;
@@ -167,8 +167,8 @@ a:visited {
 		&:hover,
 		&:active,
 		&:focus {
-		    background: #d5b25b !important;
-			border: 2px $grey solid !important;
+		    background: #d5b25b;
+			border: 2px $grey solid;
 		}
 	}
 }
@@ -187,15 +187,15 @@ a:visited {
 ============= */ 
 
 .no-pad {
-	padding: 0 !important;
+	padding: 0;
 }
 
 .no-pad-top {
-	padding-top: 0 !important;
+	padding-top: 0;
 }
 
 .no-pad-bottom {
-	padding-bottom: 0 !important;
+	padding-bottom: 0;
 }
 
 .center {
@@ -244,13 +244,13 @@ header,
     }
 
 	img {
-		width: auto !important; 
-		// height: 35px !important;
-		height: 50px !important;
+		width: auto; 
+		// height: 35px;
+		height: 50px;
 
 		@include bp(m) {
-			// height: 45px !important;
-			height: 70px !important;
+			// height: 45px;
+			height: 70px;
 		}
     }
 }
@@ -266,7 +266,7 @@ header,
     z-index: 9;
     right: 15px;
     top: $header-height-mobile;
-    width: auto !important;
+    width: auto;
 
     @include bp(m) {
     	top: $header-height;
@@ -275,18 +275,18 @@ header,
 	select {   
 	    box-sizing: border-box;
 	    text-transform: uppercase;
-	    color: $white !important;
+	    color: $white;
 	    background-color: $black;
-	    border-radius: 0 !important;
-	    -webkit-appearance: none !important;
-	    -moz-appearance: none !important;	    
-	    -webkit-border-radius: 0px !important;
-	    border: 0 !important;
-	    padding: 10px 30px 10px 20px !important;
-	    margin: 0 !important;
-	    font-size: 12px !important;
+	    border-radius: 0;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;	    
+	    -webkit-border-radius: 0px;
+	    border: 0;
+	    padding: 10px 30px 10px 20px;
+	    margin: 0;
+	    font-size: 12px;
 	    font-weight: bold;
-	    width: auto !important;
+	    width: auto;
 	   
 	    background:
 	    	linear-gradient(45deg, $black 50%, $white 50%),
@@ -315,7 +315,7 @@ header,
 	.footer {
 		padding-top: 80px;
 		padding-bottom: 80px;
-		background-color: $dark-grey !important;
+		background-color: $dark-grey;
 
 		@include bp(lt-s) {
 			text-align: center;
@@ -339,7 +339,7 @@ header,
 				justify-content: flex-start;
 				flex-wrap: wrap;
 				flex-direction: column;
-				list-style: none !important;
+				list-style: none;
 				margin-left: 0;
 				padding-left: 0;
 			
@@ -350,7 +350,7 @@ header,
 				}
 
 				li {
-					font-size: 13px !important;
+					font-size: 13px;
 
 					@include bp(m) {
 						padding-right: 6px;
@@ -362,7 +362,7 @@ header,
 					}
 
 					a {
-						font-size: 13px !important;
+						font-size: 13px;
 					}
 				}
 			}

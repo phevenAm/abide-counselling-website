@@ -39,3 +39,12 @@ $arrow-down: '\f078';
 $header-height: 100px;
 // $header-height-mobile: 50px; 
 $header-height-mobile: 80px; 
+
+
+%container-padding {
+	padding: 30px;
+
+	@include bp(m) {
+		padding: 50px;
+	}
+}

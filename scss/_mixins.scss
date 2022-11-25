@@ -249,3 +249,10 @@
     }
 } 
 
+
+
+@mixin frostBG($color) {
+    background-color: transparentize($color, .3);
+    backdrop-filter: blur(10px);
+    
+}

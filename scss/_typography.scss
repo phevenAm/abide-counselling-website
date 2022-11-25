@@ -1,0 +1,17 @@
+td, div, font, p, a, li, input, label, h1, h2, h3, h4, h5, h6, span{
+	font-family: $font-primary;
+	color: $black;
+}
+
+td, div, font, p, a, li, input, label {
+	font-size: 16px;
+}
+
+h1 {
+
+	font-size: 3.5rem;
+
+	@include bp(m) {
+		font-size: 5rem;
+	}
+}

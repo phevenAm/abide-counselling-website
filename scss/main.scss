@@ -2,6 +2,7 @@
 @import 'variables';
 //@import 'core';
 @import 'fonts';
+@import 'typography';
 
 
 *,
@@ -12,12 +13,15 @@
 
 ::selection {
 	background: $secondary;
-	color: inherit;
+	color: $white;
 	text-shadow: none;
 }
 
 html,body { 
+	padding: 0;
+	margin: 0;
     background-color: $white;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -25,15 +29,191 @@ body {
 	font-size: 16px;
 
 	td, div, font, p, a, li, input, label, h1, h2, h3, h4, h5, h6, span{
-		font-family: $font-primary !important;
+		font-family: $font-primary;
 		color: $black;
 	}
 
 	td, div, font, p, a, li, input, label {
 		font-size: 16px;
 	}
+
+	
 }
+
+header {
+	@include frostBG($white);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: $header-height-mobile;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	@extend %container-padding;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	@include bp(m) {
+		height: $header-height;
+	}
+
+	.logo a {
+		font-size: 2rem;
+		font-family: serif;
+		font-weight: bold;
+	}
+
+	.nav {
+		//!NAV NOT MOBILE FIRST
+	
+		ul {
+			display: flex;
+			list-style: none;
+
+			li {
+				
+				@include bp(m) {
+					margin-left: 20px;
+				}
+
+				a {
+					text-decoration: none;
+					font-size: 1rem;
+				}
+			}
+
+			.burgermenu {
+				display: none;
+			}
+		}
+
+		@include bp(lt-m) {
+			//background-color: $secondary;
+			@include frostBG($secondary); //nested backdrops dont down
+			min-height: 50vh;
+			min-width: 200px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			padding-top: $header-height-mobile;	
+
+			ul {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+
+				li {
+					list-style: none;
+					margin-top: 50px;
+					margin-bottom: 50px;
+
+					a {
+						text-decoration: none;
+						padding: 10px;
+						font-size: 1.2rem;
+					}
+
+				}
+			}
+
+			.burgermenu {
+				display: grid !important;
+				position: absolute;
+				place-content: center;
+				z-index:100;
+				width: 40px;
+				height: 25px;
+				top: 0;
+				right: 0;
+				transform: translate(-50%, 50%) !important;
+
+				div {
+					width: 40px;
+					background-color: red;
+					height: 5px;
+					position: relative;
+					transform-origin: center center;
+					//display: none;
+				}
+
+				&::before {
+					content: '';
+					height: 5px;
+					background-color: white;
+					top: 20px;
+					width: 100%;
+					position: absolute;
+					transform: translateY(-10px) rotate(315deg);
+					transform-origin: center center;
+
+				}
+
+				&::after {
+					content: '';
+					height: 5px;
+					background-color: green;
+					bottom: 0;
+					width: 100%;
+					position: absolute;
+					transform: translateY(-10px) rotate(45deg);
+					transform-origin: center center;
+
+				}
+			}
+		}
+	}
+}
+
 
 section[id] {
 	min-height: 100vh;
+	@extend %container-padding;
+
+	&.coloured-section {
+		* {
+			color: $white;
+		}
+	}
+
+
+	&#landing {
+		background-image: url('https://images.pexels.com/photos/268261/pexels-photo-268261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		//margin-top: $header-height-mobile;
+
+		//@include bp(m){
+		//	margin-top: $header-height
+		//}
+	}
+
+	&#faqs {
+		details {
+			&[open] {
+				background-color: $amber !important;
+			}
+			#summary {
+				cursor: pointer;
+				background-color: red;
+		
+				&::marker {
+					content: none !important;
+				}
+	
+				
+			}
+		}
+	}
 }
