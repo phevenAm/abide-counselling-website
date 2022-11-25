@@ -1,0 +1,41 @@
+// breakpoints 
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1500px; // Extra Large custom breakpoint 
+
+// colors
+$red: #B30000;
+$amber: #e8a215;
+$green: #008580;
+
+$primary: #500778; 
+$secondary: #b89d18;
+$lighter-secondary: #d5b25b;
+$tertiary: #0e1836;
+$black: #000;
+$white: whitesmoke;
+$grey: #a9a9a9;
+$dark-grey: #4C4C4C;
+$light-grey: #efefef;
+$links: $secondary;
+
+$form-border: $light-grey;
+
+$success: $green;
+$error: $red;
+
+// fonts
+$font-stack: Verdana, Helvetica, sans-serif;
+$font-primary: Arial, "Open Sans", $font-stack;
+$icon-font: fontAwesome;
+
+// fontAwesome Icons
+$arrow-right: '\f054';
+$arrow-down: '\f078';
+
+// $header-height: 80px;
+$header-height: 100px;
+// $header-height-mobile: 50px; 
+$header-height-mobile: 80px; 

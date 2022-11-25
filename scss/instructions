@@ -1,0 +1,6 @@
+creating main.scss and import these files in the following order
+
+@import 'mixins';
+@import 'variables';
+@import 'core';
+@import 'fonts';
