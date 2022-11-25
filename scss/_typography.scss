@@ -1,10 +1,21 @@
-td, div, font, p, a, li, input, label, h1, h2, h3, h4, h5, h6, span{
-	font-family: $font-primary;
+ input, label, h1, h2, h3, h4, h5, h6, span{
+	font-family: $font-headings;
 	color: $black;
 }
 
+td, div, font, p, a, li {
+	font-family: $font-copy !important;
+
 td, div, font, p, a, li, input, label {
-	font-size: 16px;
+	font-size: 21px;
+}
+
+a:link, a {
+	color: $primary;
+}
+
+a:visited {
+	color: $black;
 }
 
 h1 {
@@ -14,4 +25,14 @@ h1 {
 	@include bp(m) {
 		font-size: 5rem;
 	}
+}
+h2{
+
+	font-size: 1.5rem;
+
+	@include bp(m) {
+		font-size: 2rem;
+	}
+}
+
 }

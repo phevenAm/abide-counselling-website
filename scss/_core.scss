@@ -17,11 +17,11 @@ html {
 }
 
 body {
-	font-family: $font-primary;
+	font-family: $font-copy;
 	font-size: 16px;
 
 	td, div, font, p, a, li, input, label, h1, h2, h3, h4, h5, h6, span{
-		font-family: $font-primary;
+		font-family: $font-headings;
 		color: $black;
 	}
 

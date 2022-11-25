@@ -13,11 +13,14 @@
 
 	<body>
 		<header>
-			<div class="logo"><a href="#landing">Bold</a></div>
-			<div class="nav">
-				<div class="burgermenu">
-					<div></div>
-				</div>
+	<div class="header_inner">
+		<div class="logo"><a href="#landing">Bold</a></div>
+		<div id="menuContainer">
+			<div class="burgermenu closed" id="burgerMenu">
+				<div></div>
+			</div>
+			<div class="nav closed" id="nav">
+				
 				<ul>
 					<li><a href="#about">About</a></li>
 					<li><a href="#services">Services</a></li>
@@ -26,6 +29,8 @@
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</div>
+		</div>
+	</div>
 		</header>
 		<main>
 			<section id="landing">
@@ -37,6 +42,7 @@
 				</div>
 			</section>
 			<section id="about">
+			<div class="inner">
 				<h2 class="section_title">What is therapy</h2>
 				<p class="section_subtitle"></p>
 
@@ -46,8 +52,12 @@
 					it can be difﬁcult to stay positive and cope with everyday life. Counselling provides a safe and
 					non-judgemental space to explore these feeling, identifying why you feel the way you do, and
 					encouraging you to find your own solutions and move towards self-awareness and personal growth.</p>
+
+					<button>CTA BUTTON</button>
+			</div>
 			</section>
 			<section id="about-counsellor">
+			<div class="inner">
 				<div class="section_top">
 					<h2 class="section_title">Who am I?</h2>
 					<p class="section_subtitle">Personal and professional experience</p>
@@ -71,21 +81,47 @@
 				<div class="section_right">
 					<!--<img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rosie">-->
 				</div>
+			</div>
 			</section>
 			<!--Services Start-->
 			<section id="services">
+			<div class="inner">
 				<div class="section_top">
 					<h2 class="section_title">Services</h2>
 					<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
 				</div>
+			</div>
 			</section>
 			<!--FAQs End-->
 			<section id="faqs">
-				<div class="section_top">
-					<h2 class="section_title">FAQs</h2>
-					<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+			<div class="inner">	<div class="section_top">
+				<h2 class="section_title">FAQs</h2>
+				<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
 
-					<div class="faqs-container">
+				<div class="faqs-container">
+					<div class="inner">
+						<details>
+							<summary id="summary">Epcot Center</summary>
+							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+						</details>
+						<details>
+							<summary id="summary">Epcot Center</summary>
+							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+						</details>
+						<details>
+							<summary id="summary">Epcot Center</summary>
+							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+						</details>
+						<details>
+							<summary id="summary">Epcot Center</summary>
+							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+						</details>
+						<details>
+							<summary id="summary">Epcot Center</summary>
+							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+						</details>
+					</div>
+					<div class="inner">
 						<details>
 							<summary id="summary">Epcot Center</summary>
 							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
@@ -108,11 +144,13 @@
 						</details>
 					</div>
 				</div>
+			</div></div>
 			</section>
 			<!--FAQs Start-->
 			
 			<!--Prices End-->
 			<section id="prices">
+			<div class="inner">
 				<div class="section_top">
 					<h2 class="section_title">Prices</h2>
 					<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
@@ -129,6 +167,7 @@
 						
 					</ul>
 				</div>
+			</div>
 			</section>
 			<!--Prices Start-->
 			<!--Services End-->
@@ -137,10 +176,12 @@
 			
 		
 			<section id="contact">
+			<div class="inner">
 				<div class="section_top">
 					<h2 class="section_title">Get in touch</h2>
 					<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
 				</div>
+			</div>
 			</section>
 		</main>
 	</body>

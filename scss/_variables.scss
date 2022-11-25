@@ -27,8 +27,8 @@ $success: $green;
 $error: $red;
 
 // fonts
-$font-stack: Verdana, Helvetica, sans-serif;
-$font-primary: Arial, "Open Sans", $font-stack;
+$font-headings: 'Playfair Display', serif;;
+$font-copy: 'Poppins', sans-serif;
 $icon-font: fontAwesome;
 
 // fontAwesome Icons
@@ -42,9 +42,11 @@ $header-height-mobile: 80px;
 
 
 %container-padding {
-	padding: 30px;
+	padding: 80px 30px;
 
 	@include bp(m) {
-		padding: 50px;
+		padding: 120px 50px;
 	}
 }
+
+$max-contentWidth: 1170px;
