@@ -332,6 +332,7 @@ section[id] {
 					background-repeat: no-repeat;
 					width: 100%;
 					min-height: 500px;
+					border: 5px solid $black;
 				}
 
 				@include bp(m){
