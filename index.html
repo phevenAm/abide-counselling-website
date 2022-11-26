@@ -6,6 +6,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="./css/main.css">
+		<!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+
 		<script src="./script/main.js" defer></script>
 
 		<title>Re.define - young people's counselling</title>
@@ -13,27 +19,27 @@
 
 	<body>
 		<header id="header">
-	<div class="header_inner">
-		<div class="logo"><a href="#landing">re:define</a></div>
-		<div id="menuContainer">
-			<div class="burgermenu closed" id="burgerMenu">
-				<div></div>
+			<div class="header_inner">
+				<div class="logo"><a href="#landing">re:define</a></div>
+				<div id="menuContainer">
+					<div class="burgermenu closed" id="burgerMenu">
+						<div></div>
+					</div>
+					<div class="nav closed" id="nav">
+
+						<ul>
+							<li><a href="#about">About</a></li>
+							<li><a href="#services">Services</a></li>
+							<li><a href="#faqs">FAQs</a></li>
+							<li><a href="#prices">Prices</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
-			<div class="nav closed" id="nav">
-				
-				<ul>
-					<li><a href="#about">About</a></li>
-					<li><a href="#services">Services</a></li>
-					<li><a href="#faqs">FAQs</a></li>
-					<li><a href="#prices">Prices</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
 		</header>
 		<main>
-			<section id="landing">
+			<section data-aos="fade-up" id="landing">
 				<div class="landing_content">
 					<h1>Main Heading</h1>
 					<p>subheading</p>
@@ -41,146 +47,276 @@
 					<button class="btn-btn-primary"><a href="#about">Find out more</a></button>
 				</div>
 			</section>
-			<section id="about">
-			<div class="inner">
-				<h2 class="section_title">What is therapy</h2>
-				<p class="section_subtitle"></p>
+			<section data-aos="fade-up" id="about">
+				<div class="inner">
+					<h2 class="section_title">What is therapy</h2>
+					<p class="section_subtitle"></p>
 
-				<p>Counselling provides an opportunity to explore personal
-					difﬁculties in a conﬁdential and supportive environment. This may include expressing feelings
-					that are painful, which many of us experience at certain times in our live. When this happens,
-					it can be difﬁcult to stay positive and cope with everyday life. Counselling provides a safe and
-					non-judgemental space to explore these feeling, identifying why you feel the way you do, and
-					encouraging you to find your own solutions and move towards self-awareness and personal growth.</p>
+					<p>Counselling provides an opportunity to explore personal
+						difﬁculties in a conﬁdential and supportive environment. This may include expressing feelings
+						that are painful, which many of us experience at certain times in our live. When this happens,
+						it can be difﬁcult to stay positive and cope with everyday life. Counselling provides a safe and
+						non-judgemental space to explore these feeling, identifying why you feel the way you do, and
+						encouraging you to find your own solutions and move towards self-awareness and personal growth.
+					</p>
 
 					<button>CTA BUTTON</button>
-			</div>
+				</div>
 			</section>
-			<section id="about-counsellor" class="coloured-section">
-			<div class="inner">
-				<div class="section_top">
-					<h2 class="section_title">Who am I?</h2>
-					<p class="section_subtitle">Personal and professional experience</p>
-				</div>
-				<div class="section_left">
-					<p class="about-para" data-aos="fade-in">
-						<span class="span-cap">H</span> ello, my name is Rosie.<br />
-						I am a qualified counsellor with a degree in Counselling and a CPCAB Level 5 Accredited
-						Certificate in Counselling Children and Young People. Through the use of age-appropriate
-						counselling, I aim to <strong>empower</strong> my clients to express their feelings and help
-						them bring <strong>clarity</strong> to their experiences.
-					</p>
-					<p> I am an integrative counsellor who leans on a person-centred approach, working
-						<strong>collaboratively</strong>
-						with my clients to use interventions based on what works best for them and the issues they bring
-						to therapy. I specialise in working with adolescents and young people, and I enjoy using
-						<strong>creativity</strong> in my work where clients find this helpful.
-					</p>
-				</div>
+			<section data-aos="fade-up" id="about-counsellor" class="coloured-section">
+				<div class="inner">
+					<div class="section_top">
+						<h2 class="section_title">Who am I?</h2>
+						<p class="section_subtitle">Personal and professional experience</p>
+					</div>
+					<div class="section_left">
+						<p class="about-para" data-aos="fade-in">
+							Hello, my name is Rosie.<br />
+							I am a qualified counsellor with a degree in Counselling and a CPCAB Level 5 Accredited
+							Certificate in Counselling Children and Young People. Through the use of age-appropriate
+							counselling, I aim to <strong>empower</strong> my clients to express their feelings and help
+							them bring <strong>clarity</strong> to their experiences.
+						</p>
+						<p> I am an integrative counsellor who leans on a person-centred approach, working
+							<strong>collaboratively</strong>
+							with my clients to use interventions based on what works best for them and the issues they
+							bring
+							to therapy. I specialise in working with adolescents and young people, and I enjoy using
+							<strong>creativity</strong> in my work where clients find this helpful.
+						</p>
+					</div>
 
-				<div class="section_right">
-					<!--<img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rosie">-->
+					<div class="section_right">
+						<!--<img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rosie">-->
+					</div>
 				</div>
-			</div>
 			</section>
 			<!--Services Start-->
-			<section id="services">
-			<div class="inner">
-				<div class="section_top">
-					<h2 class="section_title">Services</h2>
-					<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+			<section data-aos="fade-up" id="services">
+				<div class="inner">
+					<div class="section_top">
+						<h2 class="section_title">Services</h2>
+						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+					</div>
+
+					<div class="services_options">
+						<div class="left" data-aos="fade-right">
+							<div class="image"></div>
+							<h3>Face to face</h3>
+
+							<p>Unfortunately, I am currently not offering face to face therapy.</p>
+						</div>
+
+						<div class="right" data-aos="fade-left">
+							<div class="image"></div>
+							<h3>Can't meet face to face?</h3>
+
+							<p>I can provide therapy support online via Zoom or over the phone - which ever you prefer.
+							</p>
+						</div>
+					</div>
+
+
 				</div>
-			</div>
+				</div>
+				</div>
 			</section>
 			<!--Services End-->
 			<!--FAQs Start-->
-			<section id="faqs" class="coloured-section">
-			<div class="inner">	<div class="section_top">
-				<h2 class="section_title">FAQs</h2>
-				<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+			<section data-aos="fade-up" id="faqs" class="coloured-section">
+				<div class="inner">
+					<div class="section_top">
+						<h2 class="section_title">Frequently asked questions</h2>
+						<p class="section_subtitle">and the common answers</p>
 
-				<div class="faqs-container" >
-					<div class="inner">
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-					</div>
-					<div class="inner">
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
-						<details>
-							<summary id="summary">Epcot Center</summary>
-							<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-						</details>
+						<div class="faqs-container">
+							<div class="inner">
+								<details>
+									<summary id="summary"> What is online/telephone counselling?</summary>
+									<p>           Online/telephone counselling gives you the opportunity to access
+										counselling at a time
+										and in a
+										place that is convenient to you. It can help you with a wide range of
+										issues such as
+										anxiety,
+										stress, depression, loss, relationship issues, loneliness, identity,
+										self-esteem and
+										confidence.
+										<br /><br />
+		
+										It may not be suitable for everyone but it is an alternative to
+										face-to-face interaction
+										and can be
+										just as helpful. I will advise you if face-to-face counselling, or some
+										other form of
+										support,
+										might be more suitable for you.
+									</p>
+								</details>
+								<details>
+									<summary id="summary"> How long is a session?</summary>
+									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+										international pavilions, award-winning fireworks and seasonal special events.
+									</p>
+								</details>
+								<details>
+									<summary id="summary">Can I attend a session with my child?</summary>
+									<p>       Yes, I aim to meet with parents/guardians and their child in an initial meeting before
+										counselling
+										begins. In some cases, it is appropriate (or necessary) for parents/guardians to attend
+										on occasions
+										when sessions are reviewed. This gives parents/guardians to opportunity to ask questions
+										and discuss
+										any concerns they have.
+									</p>
+								</details>
+								<details>
+									<summary id="summary">What issues do you work with?</summary>
+									<p>      <div class="list">
+										<ul>
+											<li>Addition</li>
+											<li>Anger</li>
+											<li>Anxiety</li>
+											<li>Bereavement</li>
+											<li>Bullying</li>
+											<li>Depression</li>
+										</ul>
+										<ul>
+											<li>Abuse</li>
+											<li>Identity</li>
+											<li>Self-esteem</li>
+											<li>Spirituality</li>
+											<li>Relationships</li>
+											<li>Trauma</li>
+										</ul>
+									</div>
+									</p>
+								</details>
+								<details>
+									<summary id="summary">What should I expect in the first session?</summary>
+									<p>  During our first session we will discuss your reasons for coming to counselling and
+										possible
+										goals you would like to work towards. This session will be more about getting to know
+										each other
+										so that we may decide if we would like to work with each other.
+									</p>
+								</details>
+								<details>
+									<summary id="summary">What are your hours?</summary>
+									<p> Please contact me via email below to see my current availability.<br/><br/>
+
+										Contact me to book your free 10-minute phone consultation or feel free to ask any
+										questions you
+										have. This will help us to establish if I am the best suited therapist for you based on
+										my
+										training and experience. If I am not, I will try my best to recommend an alternative
+										therapist.
+									</p>
+								</details>
+							</div>
+							<!--<div class="inner">
+								<details>
+									<summary id="summary">What are your hours?</summary>
+									<p> Please contact me via email below to see my current availability.<br/><br/>
+
+										Contact me to book your free 10-minute phone consultation or feel free to ask any
+										questions you
+										have. This will help us to establish if I am the best suited therapist for you based on
+										my
+										training and experience. If I am not, I will try my best to recommend an alternative
+										therapist.
+									</p>
+								</details>
+								<details>
+									<summary id="summary">Epcot Center</summary>
+									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+										international pavilions, award-winning fireworks and seasonal special events.
+									</p>
+								</details>
+								<details>
+									<summary id="summary">Epcot Center</summary>
+									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+										international pavilions, award-winning fireworks and seasonal special events.
+									</p>
+								</details>
+								<details>
+									<summary id="summary">Epcot Center</summary>
+									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+										international pavilions, award-winning fireworks and seasonal special events.
+									</p>
+								</details>
+								<details>
+									<summary id="summary">Epcot Center</summary>
+									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
+										international pavilions, award-winning fireworks and seasonal special events.
+									</p>
+								</details>
+							</div>-->
+						</div>
 					</div>
 				</div>
-			</div></div>
 			</section>
 			<!--FAQs End-->
-			
-			<!--Prices Start-->
-			<section id="prices" >
-			<div class="inner">
-				<div class="section_top">
-					<h2 class="section_title">Prices</h2>
-					<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
-				</div>
 
-				<div class="prices-box">
-					<h3>Prices</h3>
-					<ul>
-						<li class="price"><p><strong>Free introductory 10 minute phone consultation.</strong></p></li>
-						<li class="price"><p class="price_item">Discounted introductory first session</p><p class="price_value">£30</p></li>
-						<li class="price"><p class="price_item">Face to face/Online Counselling</p><p class="price_value">£40</p></li>
-						<li class="price"><p class="price_item">12 Sessions (Discounted)</p><p class="price_value">£440</p></li>
-					</ul>
+			<!--Prices Start-->
+			<section data-aos="fade-up" id="prices">
+				<div class="inner">
+					<div class="section_top">
+						<h2 class="section_title">Prices</h2>
+						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+					</div>
+
+					<div class="prices-box">
+						<h3>Prices</h3>
+						<ul>
+							<li class="price">
+								<p><strong>Free introductory 10 minute phone consultation.</strong></p>
+							</li>
+							<li class="price">
+								<p class="price_item">Discounted introductory first session</p>
+								<p class="price_value">£30</p>
+							</li>
+							<li class="price">
+								<p class="price_item">Face to face/Online Counselling</p>
+								<p class="price_value">£40</p>
+							</li>
+							<li class="price">
+								<p class="price_item">12 Sessions (Discounted)</p>
+								<p class="price_value">£440</p>
+							</li>
+							<li class="price">
+								<p class="price_item">Last service</p>
+								<p class="price_value">£640</p>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
 			</section>
 			<!--Prices End-->
 
 			<!--Contact End-->
-			<section id="contact" class="coloured-section">
+			<section data-aos="fade-up" id="contact" class="coloured-section">
 				<div class="inner">
 					<div class="section_top">
 						<h2 class="section_title">Get in touch</h2>
 						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
 					</div>
 				</div>
-				</section>
+			</section>
 			<!--Contact Start-->
 		</main>
+		<footer id="footer" class="footer">
+			<div class="inner">
+				<p class="copy">&copy; 2023 re:define</p>
+				<ul class="socials">
+					<li><a href="#">insta</a></li>
+					<li><a href="#">etsy</a></li>
+				</ul>
+			</div>
+		</footer>
 	</body>
-
+	
+	<!--<script>
+		AOS.init();
+	</script>-->
 </html>
