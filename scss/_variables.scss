@@ -10,14 +10,12 @@ $red: #B30000;
 $amber: #e8a215;
 $green: #008580;
 
-$primary: #500778; 
-$secondary: #b89d18;
-$lighter-secondary: #d5b25b;
-$tertiary: #0e1836;
-$black: #000;
+$primary: #7f867b; 
+$secondary: #c7c7bb; //#d4c8be;
+$black: #0e1836;
 $white: whitesmoke;
-$grey: #a9a9a9;
-$dark-grey: #4C4C4C;
+$grey: #e3e4e0;
+
 $light-grey: #efefef;
 $links: $secondary;
 
@@ -27,8 +25,7 @@ $success: $green;
 $error: $red;
 
 // fonts
-$font-headings: 'Playfair Display', serif;;
-$font-copy: 'Poppins', sans-serif;
+
 $icon-font: fontAwesome;
 
 // fontAwesome Icons
@@ -42,7 +39,7 @@ $header-height-mobile: 80px;
 
 
 %container-padding {
-	padding: 80px 30px;
+	padding: 120px 30px;
 
 	@include bp(m) {
 		padding: 120px 50px;

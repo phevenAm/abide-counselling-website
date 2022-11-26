@@ -31,6 +31,7 @@ body {
 }
 
 header {
+	display: flex;
 	@include frostBG($white);
 	position: fixed;
 	top: 0;
@@ -39,7 +40,23 @@ header {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 100%;
+	height: $header-height-mobile;
+	transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
+	@include bp(m) {
+		height: $header-height;
+	}
+
+
+	&.shrink {
+		background: $primary !important;
+		color: $white !important;
+		height: $header-height-mobile;
+
+		*{
+			color: white !important;
+		}
+	}
 
 	.header_inner{
 		max-width: $max-contentWidth;
@@ -48,16 +65,14 @@ header {
 		width: 100%;
 		justify-content: space-between;
 		align-items: center;
-		height: $header-height-mobile;
+		//height: $header-height-mobile;
 	}
-	@include bp(m) {
-		height: $header-height;
-	}
+	
 
 	.logo a {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		font-family: serif;
-		font-weight: bold;
+		text-decoration: none;
 	}
 
 	#menuContainer {
@@ -68,6 +83,7 @@ header {
 			ul {
 				display: flex;
 				list-style: none;
+				margin: 15px 0;
 
 				li {
 
@@ -83,7 +99,7 @@ header {
 			}
 
 			@include bp(lt-m) {
-				background-color: white;
+				background-color: $secondary;
 				background-size: contain;
 				background-repeat: no-repeat;
 				background-position: bottom;
@@ -138,12 +154,12 @@ header {
 			position: fixed;
 			place-content: center;
 			z-index: 1;
-			width: 40px;
+			width: 30px;
 			height: 25px;
-			top: 20px;
+			top: 24px;//20px;
 			right: 30px;
-			transform: translateY(50%) !important;
 			cursor: pointer;
+
 			
 			div {
 				width: 40px;
@@ -152,7 +168,7 @@ header {
 				position: relative;
 				transform-origin: center center;
 				opacity: 0;
-				transition: transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+				transition: transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1) ;
 			}
 
 			&::before {
@@ -175,7 +191,7 @@ header {
 				bottom: 0;
 				width: 100%;
 				position: absolute;
-				transform: translateY(-10px) rotate(45deg);
+				transform: translateY(-12px) rotate(45deg);
 				transform-origin: center center;
 				transition: transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
@@ -185,14 +201,14 @@ header {
 			&.closed {
 				div {
 					opacity: 1;
-					
+					background: $white;
 				}
 
 
 				&::after,
 				&::before {
 					content: '';
-					background-color: $black;
+					background-color: $white;
 					transform: rotate(0);
 					transform-origin: center center;
 				}
@@ -218,6 +234,15 @@ section[id] {
 	min-height: 100vh;
 	@extend %container-padding;
 
+	.section_title {
+		margin-bottom: 0;
+	}
+
+	.section_subtitle {
+		margin-top: 0;
+		margin-bottom: 100px;
+	}
+
 	.inner{
 		max-width: $max-contentWidth;
 		margin: auto;
@@ -228,6 +253,7 @@ section[id] {
 		* {
 			color: $white;
 		}
+		background: $secondary;
 	}
 
 	&:not(#landing) {
@@ -261,7 +287,6 @@ section[id] {
 		flex-direction: column;
 
 		p:not([class]) {
-			color: red;
 			max-width: 100ch;
 		}
 	}
@@ -272,9 +297,13 @@ section[id] {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
+			gap: 20px;
 			.inner {
-				//flex-grow: 1;
-				width: 90%;
+				flex-grow: 1;
+				
+				@include bp(m) {
+					width: 48%;
+				}
 
 			}
 		}
@@ -282,10 +311,8 @@ section[id] {
 			transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
 			padding: 20px;
 			margin-bottom: 20px;
-			background: wheat;
-			width: 90%;
+			background: white;
 
-			//max-width: 45%;
 			&[open] {
 				background: white;
 				@include shadow;
@@ -295,12 +322,55 @@ section[id] {
 				cursor: pointer;
 				background-color: transparent !important;
 				font-weight: bold;
+				color: $black;
 
 				&::marker {
 					content: none !important;
 				}
+			}
 
+			p {
+				color: $black !important;
+			}
+		}
+	}
 
+	&#prices {
+
+		.prices-box {
+			border: 5px solid $primary;
+			padding: 30px;
+			position: relative;
+			max-width: 1000px;
+			margin: auto;
+
+			h3 {
+				position:absolute;
+				left: 50%;
+				top: 0;
+				transform: translate(-50%, -60%);
+				padding: 10px 20px;
+				font-size: 1rem;
+				background-color: $secondary;
+				margin: 0;
+			}
+
+			ul {
+				padding: 0 !important;
+				li.price {
+					display: flex;
+					list-style: none;
+					justify-content: space-between;
+				}
+			}
+
+			@include bp(m){
+				padding: 50px;
+
+				h3 {
+					padding:10px 40px;
+					font-size: 1.5rem;
+				}
 			}
 		}
 	}

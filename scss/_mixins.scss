@@ -257,10 +257,11 @@
 }
 
 @mixin shadow {
-    box-shadow:
-  0px 0px 3.6px -32px rgba(0, 0, 0, 0.021),
-  0px 0px 10px -32px rgba(0, 0, 0, 0.03),
-  0px 0px 24.1px -32px rgba(0, 0, 0, 0.039),
-  0px 0px 80px -32px rgba(0, 0, 0, 0.06)
-;
+    box-shadow:  0.7px 0.6px 5px -58px rgba(0, 0, 0, 0.062),
+    1.7px 1.4px 11.7px -58px rgba(0, 0, 0, 0.09),
+    3.1px 2.5px 21px -58px rgba(0, 0, 0, 0.11),
+    5.1px 4.2px 34.8px -58px rgba(0, 0, 0, 0.13),
+    8.5px 6.9px 57.4px -58px rgba(0, 0, 0, 0.15),
+    14.8px 12px 100.3px -58px rgba(0, 0, 0, 0.178),
+    32px 26px 217px -58px rgba(0, 0, 0, 0.24);
 }
