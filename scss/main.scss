@@ -63,18 +63,6 @@ header {
 		height: $header-height;
 	}
 
-
-	&.shrink {
-		background: $primary !important;
-		color: $white !important;
-		height: $header-height-mobile;
-		@include shadow;
-
-		*{
-			color: white !important;
-		}
-	}
-
 	.header_inner{
 		max-width: $max-contentWidth;
 		margin: auto;
@@ -90,6 +78,18 @@ header {
 		font-size: 1.5rem;
 		font-family: serif;
 		text-decoration: none;
+		color: $dark-grey;
+	}
+
+	&.shrink {
+		background: $primary !important;
+		color: $white !important;
+		height: $header-height-mobile;
+		@include shadow;
+
+		*{
+			color: white !important;
+		}
 	}
 
 	#menuContainer {
@@ -607,6 +607,8 @@ footer {
 			li {
 				list-style: none;
 				text-decoration: none;
+				margin-left: 20px;
+
 
 				a {
 					color: $secondary;
@@ -616,7 +618,7 @@ footer {
 			@include bp(m) {
 				
 				li {
-					margin-left: 20px;
+					//margin-left: 20px;
 				}
 			}
 		}
