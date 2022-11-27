@@ -257,11 +257,10 @@
 }
 
 @mixin shadow {
-    box-shadow:  0.7px 0.6px 5px -58px rgba(0, 0, 0, 0.062),
-    1.7px 1.4px 11.7px -58px rgba(0, 0, 0, 0.09),
-    3.1px 2.5px 21px -58px rgba(0, 0, 0, 0.11),
-    5.1px 4.2px 34.8px -58px rgba(0, 0, 0, 0.13),
-    8.5px 6.9px 57.4px -58px rgba(0, 0, 0, 0.15),
-    14.8px 12px 100.3px -58px rgba(0, 0, 0, 0.178),
-    32px 26px 217px -58px rgba(0, 0, 0, 0.24);
+    box-shadow:
+    0px 0.1px -18.5px -3px rgba(0, 0, 0, 0),
+    0px 4.9px -22.1px -3px rgba(0, 0, 0, 0),
+    0px 31px 80px -3px rgba(0, 0, 0, 0)
+  ;
 }
+
