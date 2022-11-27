@@ -267,3 +267,10 @@
   ;
 }
 
+@mixin background-polka {
+    background-color: $white;
+//opacity: 0.3;
+background-image:  radial-gradient($primary 1.4000000000000001px, transparent 1.4000000000000001px), radial-gradient($primary 1.4000000000000001px, $white 1.4000000000000001px);
+background-size: 56px 56px;
+background-position: 0 0,28px 28px;
+}

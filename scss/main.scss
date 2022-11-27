@@ -334,6 +334,45 @@ section[id] {
 		p:not([class]) {
 			max-width: 100ch;
 		}
+
+		@include background-polka;
+	}
+
+	&#about-counsellor {
+
+
+		.section_content {
+			display: flex;
+			gap: $gap-small;
+			justify-content: space-between;
+			flex-direction: column-reverse;
+
+
+			@include bp(m) {
+				flex-direction: row;
+				gap: $gap-large;
+			}
+		}
+
+		.bust {
+			background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+			background-position: center;
+			background-size: cover;
+			max-width: 300px;
+			min-height: 300px;
+			transition: all $animation-speed $animation-duration;
+			border: 5px solid $white;
+
+
+			@include bp(s){
+				min-width: 400px;
+				min-height: 400px;
+			}
+			@include bp(l){
+				min-width: 600px;
+				min-height: 600px;
+			}
+		}
 	}
 
 	&#services {
@@ -341,11 +380,11 @@ section[id] {
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
-			gap: 30px;
+			gap: $gap-small;
 
 			@include bp(m){
 				flex-direction: row;
-				gap: 100px;
+				gap: $gap-large;
 			}
 
 			.left {
@@ -400,7 +439,7 @@ section[id] {
 			justify-content: space-between;
 
 			@include bp(m){
-				gap: 30px;
+				gap: $gap-small;
 			}
 
 			.inner {
@@ -435,8 +474,6 @@ section[id] {
 				cursor: pointer;
 				background-color: transparent !important;
 				font-weight: bold;
-
-			
 
 				&::marker {
 					content: none !important;
