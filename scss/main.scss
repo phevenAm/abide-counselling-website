@@ -3,6 +3,7 @@
 @import 'variables';
 //@import 'core';
 @import 'typography';
+@import 'buttons';
 
 
 *,
@@ -286,7 +287,7 @@ section[id] {
 
 	&.coloured-section {
 		* {
-			color: $white;
+			color: $dark-grey;
 		}
 		background: $secondary;
 	}
@@ -312,7 +313,16 @@ section[id] {
 		//	margin-top: $header-height
 		//}
 
-		
+		h1 {
+			margin-bottom: 10px;
+		}
+
+		.landing_content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			flex-grow: 1;
+		}
 	}
 
 	&#about {
@@ -483,13 +493,13 @@ section[id] {
 }
 
 footer {
-	background: $grey !important;
+	background: $dark-grey !important;
 	min-height: 100px;
 	width: 100%;
 
 	
 	* {
-		color: $black;
+		color: $white;
 	}
 	.inner {
 		max-width: $max-contentWidth;
@@ -513,6 +523,10 @@ footer {
 			li {
 				list-style: none;
 				text-decoration: none;
+
+				a {
+					color: $secondary;
+				}
 			}
 
 			@include bp(m) {

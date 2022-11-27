@@ -1,0 +1,28 @@
+%btn {
+	font-size: 1.4rem;
+	width: 100%;
+	background: $white;
+	border: none;
+	text-decoration: none;
+	max-width: 300px;
+	padding: 10px 20px;
+	transition: all $animation-speed $animation-duration;
+	text-align: center;
+
+	&:hover,
+	&:active,
+	&:focus {
+	    //color: $white;
+		background: $secondary;
+	}
+
+	@include bp(m) {
+		width: auto;
+	}
+}
+
+
+
+.btn {
+	@extend %btn;
+}
