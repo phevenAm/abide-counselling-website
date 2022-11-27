@@ -27,7 +27,7 @@
 					</div>
 					<div class="nav closed" id="nav">
 
-						<ul>
+						<ul class="navbar-nav">
 							<li class="about"><a href="#about">About</a></li>
 							<li class="services"><a href="#services">Services</a></li>
 							<li class="faqs"><a href="#faqs">FAQs</a></li>
@@ -42,7 +42,7 @@
 			<section data-aos="fade-up" id="landing">
 				<div class="landing_content">
 					<h1>Main Heading</h1>
-					<p>subheading</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ab.</p>
 
 					<a class="btn btn-primary" href="#about">Find out more</a>
 				</div>
@@ -62,15 +62,15 @@
 
 				</div>
 			</section>
-			<section data-aos="fade-up" id="about-counsellor" class="coloured-section">
+			<section data-aos="fade-up" id="about-counsellor" class="">
 				<div class="inner">
-					<div class="section_top">
-						<h2 class="section_title">Who am I?</h2>
-						<p class="section_subtitle">Personal and professional experience</p>
-					</div>
-				
+
 					<div class="section_content">
 						<div class="section_left">
+							<div class="section_top">
+								<h2 class="section_title">Who am I?</h2>
+								<p class="section_subtitle">Personal and professional experience</p>
+							</div>
 							<p class="about-para" data-aos="fade-in">
 								Hello, my name is Rosie.<br />
 								I am a qualified counsellor with a degree in Counselling and a CPCAB Level 5 Accredited
@@ -304,6 +304,28 @@
 						<h2 class="section_title">Get in touch</h2>
 						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
 					</div>
+				</div>
+
+				<div class="form">
+					<form action="/action_page.php">
+						<label for="fname">First Name <span aria-label="required">*</span></label>
+						<input type="text" id="fname" name="firstname" required placeholder="Your name..">
+					
+						<label for="lname">Last Name <span aria-label="required">*</span></label>
+						<input type="text" id="lname" name="lastname" required placeholder="Your last name..">
+					
+						<label for="country">Country</label>
+						<select id="country" name="country">
+						  <option value="australia">Australia</option>
+						  <option value="canada">Canada</option>
+						  <option value="usa">USA</option>
+						</select>
+					
+						<label for="subject">Subject</label>
+						<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+					
+						<input type="submit" class="btn btn-submit" value="Submit">
+					  </form>
 				</div>
 			</section>
 			<!--Contact Start-->

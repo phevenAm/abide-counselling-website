@@ -274,3 +274,17 @@ background-image:  radial-gradient($primary 1.4000000000000001px, transparent 1.
 background-size: 56px 56px;
 background-position: 0 0,28px 28px;
 }
+
+@mixin background-overlay {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: transparentize($dark-grey, .8);
+        top: 0;
+        left: 0;
+    }
+}

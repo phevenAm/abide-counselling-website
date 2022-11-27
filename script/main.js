@@ -88,7 +88,20 @@ $(document).ready(function () {
 	}
 
 
+	var hashFix = (function() {
+        $(function() {
 
+            $('.navbar-nav li a').each(function() {
+                var hash = $(this).prop('hash'),
+                    url = $(this).attr('href');
+				console.log('nav hash')
+                if (url.indexOf('#') > -1) {
+                    $(this).attr('href', hash);
+                }
+
+            });
+        });
+    }());
 
 });
 

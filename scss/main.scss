@@ -24,7 +24,7 @@ body {
 	margin: 0;
 	background-color: $white;
 	scroll-behavior: smooth;
-	overflow-x: hidden; //just to hide AOS animation's side scroll @mobile
+	//just to hide AOS animation's side scroll @mobile
 	//position: relative;
 
 	//&::after {
@@ -170,8 +170,8 @@ header {
 
 					li {
 						list-style: none;
-						margin-top: 50px;
-						margin-bottom: 50px;
+						margin-top: 25px;
+						margin-bottom: 25px;
 
 						a {
 							text-decoration: none;
@@ -274,6 +274,10 @@ section[id] {
 		margin-bottom: 0;
 	}
 
+	&[data-aos*="fade-"] {
+		overflow-x: hidden; 
+	}
+
 	.section_subtitle {
 		margin-top: 0;
 		margin-bottom: 100px;
@@ -302,7 +306,7 @@ section[id] {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -322,6 +326,12 @@ section[id] {
 			flex-direction: column;
 			justify-content: center;
 			flex-grow: 1;
+
+			p {
+				margin-top: -10px;
+				font-size: 1.3rem;
+				max-width: 30ch;
+			}
 		}
 	}
 
@@ -339,38 +349,47 @@ section[id] {
 	}
 
 	&#about-counsellor {
-
+			height: auto;
+		min-height: unset;
 
 		.section_content {
 			display: flex;
 			gap: $gap-small;
 			justify-content: space-between;
-			flex-direction: column-reverse;
+			flex-direction: column;
 
 
-			@include bp(m) {
+			@include bp(s) {
 				flex-direction: row;
-				gap: $gap-large;
+				//gap: $gap-large;
+			}
+
+			& > div {
+				width: 100%;
 			}
 		}
 
 		.bust {
 			background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-			background-position: center;
+			background-position: top;
 			background-size: cover;
-			max-width: 300px;
-			min-height: 300px;
+			//max-width: 300px;
+			min-height: 600px;
+			//min-height: 300px;
 			transition: all $animation-speed $animation-duration;
 			border: 5px solid $white;
-
+			width: 100%;
+			height: 100%;
 
 			@include bp(s){
-				min-width: 400px;
-				min-height: 400px;
+				//min-width: 400px;
+				//min-height: 400px;
 			}
 			@include bp(l){
 				min-width: 600px;
 				min-height: 600px;
+				width: 100%;
+				height: 100%;
 			}
 		}
 	}
@@ -525,6 +544,34 @@ section[id] {
 					font-size: 1.5rem;
 				}
 			}
+		}
+	}
+
+	&#contact {
+		.form {
+			input[type=text], select, textarea {
+				width: 100%;
+				padding: 12px;
+				border: 2px solid $black;
+				box-sizing: border-box;
+				margin-top: 6px;
+				margin-bottom: 16px;
+				resize: vertical;
+			  }
+			  
+			  input[type=submit] {
+				@extend %btn;
+				background-color: $black;
+				color: $white;
+				padding: 12px 20px;
+				border: none;
+
+				cursor: pointer;
+			  }
+			  
+			  input[type=submit]:hover {
+				background-color: $primary;
+			  }
 		}
 	}
 }
