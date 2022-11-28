@@ -293,7 +293,12 @@ section[id] {
 		* {
 			color: $dark-grey;
 		}
+
 		background: $secondary;
+	}
+
+	&.no-padding-section {
+		padding: 0 !important;
 	}
 
 	&:not(#landing) {
@@ -345,22 +350,22 @@ section[id] {
 			max-width: 100ch;
 		}
 
-		@include background-polka;
 	}
 
 	&#about-counsellor {
 			height: auto;
-		min-height: unset;
-
+			min-height: unset;
+			
 		.section_content {
 			display: flex;
-			gap: $gap-small;
+			//gap: $gap-small;
 			justify-content: space-between;
 			flex-direction: column;
 
 
 			@include bp(s) {
 				flex-direction: row;
+				justify-content: space-around;
 				//gap: $gap-large;
 			}
 
@@ -369,17 +374,33 @@ section[id] {
 			}
 		}
 
+		.section_left {
+			padding: 0 30px 50px 30px;
+
+
+			@include bp(m){
+				padding: 50px !important;
+
+			}
+
+			@include bp(xl){
+				padding: 80px !important;
+				padding-left: 0 !important;
+			}
+		}
+
 		.bust {
-			background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-			background-position: top;
+			//background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+			background-image: url('../images/me/pexels-photo-14588742.jpeg');
+			background-position: center top;
 			background-size: cover;
 			//max-width: 300px;
 			min-height: 600px;
 			//min-height: 300px;
 			transition: all $animation-speed $animation-duration;
-			border: 5px solid $white;
 			width: 100%;
 			height: 100%;
+			border: none !important;
 
 			@include bp(s){
 				//min-width: 400px;
@@ -391,10 +412,35 @@ section[id] {
 				width: 100%;
 				height: 100%;
 			}
+
+			position: relative;
+
+			&::after {
+				content: '';
+				border: 5px solid $white;
+				width: 95%;
+				height: 95%;
+				left: 2.5%;
+				bottom: 2.5%;
+				//transform: translate(-50%, -50%);
+				position: absolute;
+			}
 		}
 	}
 
 	&#services {
+		//position: relative;
+
+		//&::after {
+		//	content: '';
+		//	width: 50%;
+		//	left: 50%;
+		//	transform: translate(-50%, 110px);
+		//	background: $black;
+		//	top: 0%;
+		//	height: 5px;
+		//	position: absolute;
+		//}
 		.services_options {
 			display: flex;
 			justify-content: space-between;
@@ -451,6 +497,7 @@ section[id] {
 	}
 
 	&#faqs {
+		@include background-polka;
 
 		.faqs-container {
 			display: flex;

@@ -12,15 +12,14 @@ $green: #008580;
 
 $primary: #7f867b; 
 $secondary: #c7c7bb; //#d4c8be;
-$black: #0e1836;
+$black: rgb(29, 29, 29);//#0e1836;
 $white: whitesmoke;
 $grey: #e3e4e0;
 $dark-grey: #2B2E2F;
 
-$light-grey: #efefef;
 $links: $secondary;
 
-$form-border: $light-grey;
+$form-border: $grey;
 
 $success: $green;
 $error: $red;

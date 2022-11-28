@@ -6,11 +6,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="./css/main.css">
-		<!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		
-		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 		<script src="./script/main.js" defer></script>
 
@@ -62,11 +62,11 @@
 
 				</div>
 			</section>
-			<section data-aos="fade-up" id="about-counsellor" class="">
+			<section data-aos="fade-up" id="about-counsellor" class="no-padding-section coloured-section ">
 				<div class="inner">
 
 					<div class="section_content">
-						<div class="section_left">
+						<div class="section_left coloured-section">
 							<div class="section_top">
 								<h2 class="section_title">Who am I?</h2>
 								<p class="section_subtitle">Personal and professional experience</p>
@@ -304,29 +304,31 @@
 						<h2 class="section_title">Get in touch</h2>
 						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
 					</div>
+
+					<div class="form">
+						<form action="/action_page.php">
+							<label for="fname">First Name <span aria-label="required">*</span></label>
+							<input type="text" id="fname" name="firstname" required placeholder="Your name..">
+						
+							<label for="lname">Last Name <span aria-label="required">*</span></label>
+							<input type="text" id="lname" name="lastname" required placeholder="Your last name..">
+						
+							<label for="country">Country</label>
+							<select id="country" name="country">
+							  <option value="australia">Australia</option>
+							  <option value="canada">Canada</option>
+							  <option value="usa">USA</option>
+							</select>
+						
+							<label for="subject">Subject</label>
+							<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+						
+							<input type="submit" class="btn btn-submit" value="Submit">
+						  </form>
+					</div>
 				</div>
 
-				<div class="form">
-					<form action="/action_page.php">
-						<label for="fname">First Name <span aria-label="required">*</span></label>
-						<input type="text" id="fname" name="firstname" required placeholder="Your name..">
-					
-						<label for="lname">Last Name <span aria-label="required">*</span></label>
-						<input type="text" id="lname" name="lastname" required placeholder="Your last name..">
-					
-						<label for="country">Country</label>
-						<select id="country" name="country">
-						  <option value="australia">Australia</option>
-						  <option value="canada">Canada</option>
-						  <option value="usa">USA</option>
-						</select>
-					
-						<label for="subject">Subject</label>
-						<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-					
-						<input type="submit" class="btn btn-submit" value="Submit">
-					  </form>
-				</div>
+				
 			</section>
 			<!--Contact Start-->
 		</main>
@@ -341,7 +343,7 @@
 		</footer>
 	</body>
 	
-	<!--<script>
+	<script>
 		AOS.init();
-	</script>-->
+	</script>
 </html>
