@@ -600,6 +600,7 @@ section[id] {
 
 	&#contact {
 		.form {
+			display: none !important;
 			input[type=text], input[type='email'], select, textarea {
 				width: 100%;
 				padding: 12px;
@@ -623,6 +624,85 @@ section[id] {
 			  input[type=submit]:hover {
 				background-color: $primary;
 			  }
+		}
+
+	
+	}
+
+	&#cta-section {
+		height: auto;
+		min-height: unset;
+
+		.inner {
+			display: flex !important;
+			flex-direction: column;
+
+
+			@include bp(m) {
+				flex-direction: row;
+			}
+
+			.left_section, .right_section {
+				padding:  30px;
+			}
+
+			.left_section {
+				flex: 1;
+
+				@include bp(lt-l) {
+					padding: 30px;
+				}
+
+				@include bp(m) {
+					width: 100%;
+				}
+			}
+
+			.right_section {
+				flex: 1;
+				flex-grow: 1;
+				background-color: $white !important;
+				display: flex;
+				justify-content: center !important;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				padding: 50px 30px 50px 30px;
+
+				*{ 
+					font-size: 1.1rem;
+					@include bp(m) {
+						font-size: 1.4rem;
+					}
+				}
+
+
+				&::before {
+					content: '';
+					background-color: $white;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					z-index: -1;
+					transform: translateX(100%);
+				}
+
+
+
+			@include bp(m) {
+				width: 100%;
+				padding: 50px !important;
+			}
+
+			@include bp(xl){
+				padding: 80px !important;
+				padding-right: 0 !important;
+			}
+
+				
+			}
 		}
 	}
 }
