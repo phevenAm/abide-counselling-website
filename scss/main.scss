@@ -357,33 +357,35 @@ section[id] {
 
 	&#about-counsellor {
 			@include autoHeight;
-			
+			@include overflowDir(right, $primary, $secondary);
+			overflow: hidden !important;
+
 		.section_content {
 			display: flex;
 			//gap: $gap-small;
 			justify-content: space-between;
 			flex-direction: column;
 
-
-			@include bp(s) {
+			@include bp(l) {
 				flex-direction: row;
-				justify-content: space-around;
+				justify-content: flex-start;
+				align-items: flex-start;
 				//gap: $gap-large;
 			}
 
 			& > div {
 				width: 100%;
 
-				@include bp(m) {
+				@include bp(l) {
 					width: 50%;
-					flex: 1;
+					//flex: 1;
 				}
 			}
 		}
 
 		.section_left {
 			padding: 0 30px 50px 30px;
-
+			background-color: $primary;
 
 			@include bp(m){
 				padding: 50px !important;
@@ -391,47 +393,55 @@ section[id] {
 			}
 
 			@include bp(xl){
-				padding: 80px !important;
-				padding-left: 0 !important;
+				//padding: 80px !important;
+				//padding-left: 0 !important;
 			}
 		}
 
 		.section_right {
-			@include overflowDir(right, $secondary);
-		}
-
-		.bust {
-			background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-			//background-image: url('../images/me/pexels-photo-14588742.jpeg');
-			background-position: center top;
+			width: 50%;
+			
+			min-width: calc(#{$max-contentWidth} / 2);
+			min-height: 500px;
+			background-image: url('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 			background-size: cover;
-			min-height: 600px;
-			transition: all $animation-speed $animation-duration;
-			width: 100%;
-			height: 100%;
-			border: none !important;
+			background-repeat: no-repeat;
+			background-position: center center;
+			right: 0;
 
-			@include bp(m){
+			@include bp(l) {
 				position: absolute;
-				min-height: 600px;
-
-			}
-			@include bp(l){
-				width: 100%;
-				height: 100%;
-			}
-
-			&::after {
-				content: '';
-				border: 5px solid $white;
-				width: 95%;
-				height: 95%;
-				left: 2.5%;
-				bottom: 2.5%;
-				//transform: translate(-50%, -50%);
-				position: absolute;
+				min-height: 1000px;
 			}
 		}
+
+		//.bust {
+		//	//background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		//	//background-image: url('../images/me/pexels-photo-14588742.jpeg');
+		//	background-image: url('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		//	background-position: center top;
+		//	background-size: cover;
+		//	transition: all $animation-speed $animation-duration;
+		//	width: auto;
+		//	min-height: 900px;
+		//	border: none !important;
+		//	position: absolute;
+
+
+		//	@include bp(m){
+		//		position: absolute;
+		//		//min-height: 600px;
+		//		right: 0;
+		//		min-height: 962px;
+		//	min-width: calc(#{$max-contentWidth / 2});
+
+
+		//	}
+		//	@include bp(l){
+		//		//width: 100%;
+		//		//height: 100%;
+		//	}
+		//}
 	}
 
 	&#services {
@@ -507,7 +517,7 @@ section[id] {
 	}
 
 	&#faqs {
-		@include background-polka;
+		//@include background-polka;
 
 		.faqs-container {
 			display: flex;
@@ -531,18 +541,22 @@ section[id] {
 			transition: all $animation-speed $animation-duration;
 			padding: 20px;
 			margin-bottom: 20px;
-			background: white;
+			background: $white;
 
 			p, li, a, *{
 				color: $black !important;
 			}
 
 			&:hover, &:active {
-				background: $primary;
+				background: $secondary;
+				
+				* {
+					color: $black !important;
+				}
 			}
 
 			&[open] {
-				background: white;
+				background: $white;
 				@include shadow;
 			}
 
@@ -638,6 +652,7 @@ section[id] {
 
 	&#contact {
 		@include autoHeight;
+		@include overflowDir(right, $primary, $secondary);
 
 		.inner {
 			display: flex !important;
@@ -680,8 +695,6 @@ section[id] {
 				align-items: center;
 				position: relative;
 				padding: 50px 30px 50px 30px;
-
-				@include overflowDir(right, $secondary);
 
 				* {
 					color: $black;

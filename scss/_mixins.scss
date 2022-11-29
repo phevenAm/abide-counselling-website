@@ -290,24 +290,67 @@
     }
 }
 
-@mixin overflowDir($direction, $backgroundCol) { //direction can only left or right
+//@mixin overflowDir($direction, $backgroundCol) { //direction can only left or right
+//    position: relative;
+//    background-color: $backgroundCol;
+
+//    &::before {
+//        content: '';
+//        background-color: inherit;
+//        $direction: 0;
+//        top: 0;
+//        width: 100%;
+//        height: 100%;
+//        position: absolute;
+//        z-index: -1;
+
+//        @if ($direction == 'right') {
+//            transform: translateX(-100%);
+//        } @else {
+//            transform: translateX(100%);
+//        }
+
+//        @if ($direction == 'right') {
+//            left: 0;
+//        } @else {
+//            right: 0;
+//        }
+//    }
+//}
+@mixin overflowDir($direction, $backgroundCol, $offsetCol) { //direction can only left or right
     position: relative;
     background-color: $backgroundCol;
+ 
+    * {
+        color: $white;
+    }
 
-    &::before {
+    &::after {
         content: '';
-        background-color: inherit;
-        $direction: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
         position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        background: $offsetCol;
         z-index: -1;
+        /* right: 0; */
+
+        * {
+            color: $white;
+        }
+        
 
         @if ($direction == 'right') {
-            transform: translateX(-100%);
-        } @else {
             transform: translateX(100%);
+            @include bp(m) {
+                transform: translateX(50%);
+            }
+        } @else {
+            transform: translateX(-100%);
+
+            @include bp(m) {
+                transform: translateX(-50%);
+            }
         }
 
         @if ($direction == 'right') {
