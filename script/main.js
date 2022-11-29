@@ -69,7 +69,7 @@ $(document).ready(function () {
 				entry.target.classList.add('active');
 
 				navItems.find((navItem) => {
-					console.log(navItem.className)
+					//console.log(navItem.className)
 					//console.log(navItem.id, entry.target.id)
 					//return navItem.id === entry.target.id
 					if (navItem.className === entry.target.id) {
@@ -94,7 +94,7 @@ $(document).ready(function () {
             $('.navbar-nav li a').each(function() {
                 var hash = $(this).prop('hash'),
                     url = $(this).attr('href');
-				console.log('nav hash')
+				//console.log('nav hash')
                 if (url.indexOf('#') > -1) {
                     $(this).attr('href', hash);
                 }

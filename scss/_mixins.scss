@@ -288,3 +288,36 @@ background-position: 0 0,28px 28px;
         left: 0;
     }
 }
+
+@mixin overflowDir($direction, $backgroundCol) { //direction can only left or right
+    position: relative;
+    background-color: $backgroundCol;
+
+    &::before {
+        content: '';
+        background-color: inherit;
+        $direction: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+
+        @if ($direction == 'right') {
+            transform: translateX(-100%);
+        } @else {
+            transform: translateX(100%);
+        }
+
+        @if ($direction == 'right') {
+            left: 0;
+        } @else {
+            right: 0;
+        }
+    }
+}
+
+@mixin autoHeight {
+    height: auto;
+    min-height: unset;
+}

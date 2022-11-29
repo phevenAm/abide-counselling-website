@@ -78,18 +78,7 @@ header {
 		font-size: 1.5rem;
 		font-family: serif;
 		text-decoration: none;
-		color: $dark-grey;
-	}
-
-	&.shrink {
-		background: $primary !important;
-		color: $white !important;
-		height: $header-height-mobile;
-		@include shadow;
-
-		*{
-			color: white !important;
-		}
+		color: $dark-grey !important;
 	}
 
 	#menuContainer {
@@ -129,6 +118,7 @@ header {
 					a {
 						text-decoration: none;
 						font-size: 1rem;
+						color: $black !important;
 					}
 				}
 			}
@@ -263,6 +253,19 @@ header {
 			}
 		}
 	}
+
+	&.shrink {
+		background: $primary !important;
+		color: $white !important;
+		height: $header-height-mobile;
+		@include shadow;
+
+		*{
+			color: white !important;
+		}
+	}
+
+	
 }
 
 
@@ -291,10 +294,10 @@ section[id] {
 
 	&.coloured-section {
 		* {
-			color: $dark-grey;
+			color: $white;
 		}
 
-		background: $secondary;
+		background: $primary;
 	}
 
 	&.no-padding-section {
@@ -353,8 +356,7 @@ section[id] {
 	}
 
 	&#about-counsellor {
-			height: auto;
-			min-height: unset;
+			@include autoHeight;
 			
 		.section_content {
 			display: flex;
@@ -371,6 +373,11 @@ section[id] {
 
 			& > div {
 				width: 100%;
+
+				@include bp(m) {
+					width: 50%;
+					flex: 1;
+				}
 			}
 		}
 
@@ -389,31 +396,29 @@ section[id] {
 			}
 		}
 
+		.section_right {
+			@include overflowDir(right, $secondary);
+		}
+
 		.bust {
-			//background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-			background-image: url('../images/me/pexels-photo-14588742.jpeg');
+			position: absolute;
+			background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+			//background-image: url('../images/me/pexels-photo-14588742.jpeg');
 			background-position: center top;
 			background-size: cover;
-			//max-width: 300px;
-			min-height: 600px;
-			//min-height: 300px;
+			min-height: 600px;			//min-height: 300px;
 			transition: all $animation-speed $animation-duration;
 			width: 100%;
 			height: 100%;
 			border: none !important;
 
 			@include bp(s){
-				//min-width: 400px;
-				//min-height: 400px;
+
 			}
 			@include bp(l){
-				min-width: 600px;
-				min-height: 600px;
 				width: 100%;
 				height: 100%;
 			}
-
-			position: relative;
 
 			&::after {
 				content: '';
@@ -468,7 +473,6 @@ section[id] {
 			.left, .right {
 				display: flex;
 				flex-direction: column;
-				//justify-content: center;
 				align-items: center;
 				flex: 1;
 
@@ -553,8 +557,7 @@ section[id] {
 	}
 
 	&#prices {
-		height: auto;
-		min-height: unset;
+		@include autoHeight;
 
 		.prices-box {
 			border: 5px solid $primary;
@@ -598,40 +601,37 @@ section[id] {
 		}
 	}
 
+	//&#contact {
+	//	.form {
+	//		display: none !important;
+	//		input[type=text], input[type='email'], select, textarea {
+	//			width: 100%;
+	//			padding: 12px;
+	//			border: 2px solid $black;
+	//			box-sizing: border-box;
+	//			margin-top: 6px;
+	//			margin-bottom: 16px;
+	//			resize: vertical;
+	//		  }
+			  
+	//		  input[type=submit] {
+	//			@extend %btn;
+	//			background-color: $black;
+	//			color: $white;
+	//			padding: 12px 20px;
+	//			border: none;
+
+	//			cursor: pointer;
+	//		  }
+			  
+	//		  input[type=submit]:hover {
+	//			background-color: $primary;
+	//		  }
+	//	}
+	//}
+
 	&#contact {
-		.form {
-			display: none !important;
-			input[type=text], input[type='email'], select, textarea {
-				width: 100%;
-				padding: 12px;
-				border: 2px solid $black;
-				box-sizing: border-box;
-				margin-top: 6px;
-				margin-bottom: 16px;
-				resize: vertical;
-			  }
-			  
-			  input[type=submit] {
-				@extend %btn;
-				background-color: $black;
-				color: $white;
-				padding: 12px 20px;
-				border: none;
-
-				cursor: pointer;
-			  }
-			  
-			  input[type=submit]:hover {
-				background-color: $primary;
-			  }
-		}
-
-	
-	}
-
-	&#cta-section {
-		height: auto;
-		min-height: unset;
+		@include autoHeight;
 
 		.inner {
 			display: flex !important;
@@ -661,7 +661,7 @@ section[id] {
 			.right_section {
 				flex: 1;
 				flex-grow: 1;
-				background-color: $white !important;
+				background-color: $secondary;
 				display: flex;
 				justify-content: center !important;
 				flex-direction: column;
@@ -669,24 +669,56 @@ section[id] {
 				position: relative;
 				padding: 50px 30px 50px 30px;
 
-				*{ 
+				@include overflowDir(right, $secondary);
+
+				*{
+					color: $black;
+					text-align: center;
 					font-size: 1.1rem;
+
 					@include bp(m) {
 						font-size: 1.4rem;
 					}
 				}
 
-
-				&::before {
-					content: '';
-					background-color: $white;
-					left: 0;
-					top: 0;
+				.quote {
+					margin: 0 !important;
+				}
+				.break {
+					position: relative;
 					width: 100%;
-					height: 100%;
-					position: absolute;
-					z-index: -1;
-					transform: translateX(100%);
+					
+					&::before {
+						position: absolute;
+						content: "";
+						width: 80%;
+						height: 2px;
+						background: $primary;
+						bottom: 50%;
+						left: 0;
+						transform: translateX(15%);
+					}
+
+					p {
+						span {
+							background-color: $secondary;
+							padding: 20px;
+						}
+						position: relative;
+
+						&::before {
+							position: absolute;
+							content: "";
+							width: 80%;
+							height: 2px;
+							background: $white;
+							bottom: 50%;
+							z-index: -1;
+							left: 0;
+							transform: translateX(15%);
+						}
+					}
+
 				}
 
 
