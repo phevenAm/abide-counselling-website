@@ -118,7 +118,7 @@ header {
 					a {
 						text-decoration: none;
 						font-size: 1rem;
-						color: $black !important;
+						color: $white;
 					}
 				}
 			}
@@ -401,18 +401,19 @@ section[id] {
 		}
 
 		.bust {
-			position: absolute;
 			background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 			//background-image: url('../images/me/pexels-photo-14588742.jpeg');
 			background-position: center top;
 			background-size: cover;
-			min-height: 600px;			//min-height: 300px;
+			min-height: 600px;
 			transition: all $animation-speed $animation-duration;
 			width: 100%;
 			height: 100%;
 			border: none !important;
 
-			@include bp(s){
+			@include bp(m){
+				position: absolute;
+				min-height: 600px;
 
 			}
 			@include bp(l){
@@ -434,30 +435,25 @@ section[id] {
 	}
 
 	&#services {
-		//position: relative;
 
-		//&::after {
-		//	content: '';
-		//	width: 50%;
-		//	left: 50%;
-		//	transform: translate(-50%, 110px);
-		//	background: $black;
-		//	top: 0%;
-		//	height: 5px;
-		//	position: absolute;
-		//}
 		.services_options {
+			width: 100%;
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
 			gap: $gap-small;
-
+			
 			@include bp(m){
 				flex-direction: row;
 				gap: $gap-large;
+				display: block;
+				position: relative;
 			}
 
 			.left {
+				@include bp(m){
+					margin-bottom: -100px;
+				}
 
 				.image {
 					background-image: url('https://images.pexels.com/photos/4057864/pexels-photo-4057864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Face to face counselling');
@@ -465,6 +461,11 @@ section[id] {
 			}
 
 			.right {
+				@include bp(m){
+					right: 0;
+					top: 0;
+				}
+
 				.image {
 					background-image: url('https://images.pexels.com/photos/4458553/pexels-photo-4458553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');			
 				}
@@ -475,22 +476,27 @@ section[id] {
 				flex-direction: column;
 				align-items: center;
 				flex: 1;
+				
+
+				h3 {
+					margin-top: 20px !important;
+				}
 
 				.image {
 					background-position: center;
 					background-size: cover;
 					background-repeat: no-repeat;
 					width: 100%;
-					min-height: 500px;
+					min-height: 250px;
 					border: 5px solid $black;
 				}
 
 				@include bp(m){
-					align-items: flex-start;
+					position: absolute;
+					width: 45%;
+					top: 0;
 
 					.image {
-						//width: 500px;
-						//height: 500px;
 						min-height: 500px;
 					}
 				}
@@ -644,23 +650,29 @@ section[id] {
 
 			.left_section, .right_section {
 				padding:  30px;
+				flex: 1;
+				flex-grow: 1;
+
+				@include bp(m) {
+					padding: 80px !important;
+				}
 			}
 
 			.left_section {
-				flex: 1;
-
-				@include bp(lt-l) {
-					padding: 30px;
-				}
-
 				@include bp(m) {
 					width: 100%;
+				}
+
+				.quote {
+					margin: 0 !important;
+				}
+
+				.author {
+					font-size: 1.5rem;
 				}
 			}
 
 			.right_section {
-				flex: 1;
-				flex-grow: 1;
 				background-color: $secondary;
 				display: flex;
 				justify-content: center !important;
@@ -671,9 +683,12 @@ section[id] {
 
 				@include overflowDir(right, $secondary);
 
-				*{
+				* {
 					color: $black;
 					text-align: center;
+				}
+
+				p {
 					font-size: 1.1rem;
 
 					@include bp(m) {
@@ -681,9 +696,6 @@ section[id] {
 					}
 				}
 
-				.quote {
-					margin: 0 !important;
-				}
 				.break {
 					position: relative;
 					width: 100%;
@@ -721,8 +733,6 @@ section[id] {
 
 				}
 
-
-
 			@include bp(m) {
 				width: 100%;
 				padding: 50px !important;
@@ -743,24 +753,29 @@ footer {
 	background: $dark-grey !important;
 	min-height: 100px;
 	width: 100%;
-
+	display: grid;
 	
 	* {
 		color: $white;
 	}
+
 	.inner {
 		max-width: $max-contentWidth;
+		margin: auto;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		margin: auto;
 		align-items: center;
 		padding: 30px;
 
 		@include bp(m) {
 			flex-direction: row;
 			justify-content: space-between;
+			padding: 0 50px !important;
+		}
 
+		@include bp(xl) {
 		}
 
 		p {
@@ -774,7 +789,7 @@ footer {
 			li {
 				list-style: none;
 				text-decoration: none;
-				
+
 				&:not(:first-of-type) {
 					margin-left: 20px;
 				}
@@ -785,7 +800,6 @@ footer {
 			}
 
 			@include bp(m) {
-				
 				li {
 					//margin-left: 20px;
 				}
