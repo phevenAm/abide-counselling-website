@@ -257,11 +257,111 @@
 }
 
 @mixin shadow {
-    box-shadow:  0.7px 0.6px 5px -58px rgba(0, 0, 0, 0.062),
-    1.7px 1.4px 11.7px -58px rgba(0, 0, 0, 0.09),
-    3.1px 2.5px 21px -58px rgba(0, 0, 0, 0.11),
-    5.1px 4.2px 34.8px -58px rgba(0, 0, 0, 0.13),
-    8.5px 6.9px 57.4px -58px rgba(0, 0, 0, 0.15),
-    14.8px 12px 100.3px -58px rgba(0, 0, 0, 0.178),
-    32px 26px 217px -58px rgba(0, 0, 0, 0.24);
+    box-shadow:
+    3px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    7.3px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    13.8px 12.5px 10px rgba(0, 0, 0, 0.035),
+    24.6px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    46px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    110px 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+}
+
+@mixin background-polka {
+    background-color: $white;
+    //opacity: 0.3;
+    background-image:  radial-gradient($primary 1.4000000000000001px, transparent 1.4000000000000001px), radial-gradient($primary 1.4000000000000001px, $white 1.4000000000000001px);
+    background-size: 56px 56px;
+    background-position: 0 0,28px 28px;
+    border: 5px solid white;
+}
+
+@mixin background-overlay {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: transparentize($dark-grey, .8);
+        top: 0;
+        left: 0;
+    }
+}
+
+//@mixin overflowDir($direction, $backgroundCol) { //direction can only left or right
+//    position: relative;
+//    background-color: $backgroundCol;
+
+//    &::before {
+//        content: '';
+//        background-color: inherit;
+//        $direction: 0;
+//        top: 0;
+//        width: 100%;
+//        height: 100%;
+//        position: absolute;
+//        z-index: -1;
+
+//        @if ($direction == 'right') {
+//            transform: translateX(-100%);
+//        } @else {
+//            transform: translateX(100%);
+//        }
+
+//        @if ($direction == 'right') {
+//            left: 0;
+//        } @else {
+//            right: 0;
+//        }
+//    }
+//}
+@mixin overflowDir($direction, $backgroundCol, $offsetCol) { //direction can only left or right
+    position: relative;
+    background-color: $backgroundCol;
+ 
+    * {
+        color: $white;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        background: $offsetCol;
+        z-index: -1;
+        /* right: 0; */
+
+        * {
+            color: $white;
+        }
+        
+
+        @if ($direction == 'right') {
+            transform: translateX(100%);
+            @include bp(m) {
+                transform: translateX(50%);
+            }
+        } @else {
+            transform: translateX(-100%);
+
+            @include bp(m) {
+                transform: translateX(-50%);
+            }
+        }
+
+        @if ($direction == 'right') {
+            left: 0;
+        } @else {
+            right: 0;
+        }
+    }
+}
+
+@mixin autoHeight {
+    height: auto;
+    min-height: unset;
 }

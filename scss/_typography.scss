@@ -3,23 +3,21 @@
 	color: $black;
 }
 
-td, div, font, p, a, li {
-	font-family: $font-copy !important;
+
 
 td, div, font, p, a, li, input, label {
-	font-size: 16px;
+	font-size: 1.2;
+	font-family: $font-copy !important;
+
+
 
 	@include bp(m){
-		font-size: 21px;
+		font-size: 1.5;
 	}
 }
 
-a:link, a {
-	color: $primary;
-}
-
-a:visited {
-	color: $black;
+a:link, a, a:visited {
+	color: $links !important;
 }
 
 h1 {
@@ -30,13 +28,22 @@ h1 {
 		font-size: 5rem;
 	}
 }
-h2{
 
+h2{
 	font-size: 1.5rem;
+	margin-top: 2.5rem;
 
 	@include bp(m) {
 		font-size: 2rem;
+		margin-top: 5rem;
 	}
 }
+h3{
+	font-size: 1.3rem;
+	//margin-top: 2.5rem;
 
+	@include bp(m) {
+		font-size: 1.8rem;
+		margin-top: 5rem;
+	}
 }

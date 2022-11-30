@@ -11,15 +11,16 @@ $amber: #e8a215;
 $green: #008580;
 
 $primary: #7f867b; 
-$secondary: #c7c7bb; //#d4c8be;
-$black: #0e1836;
+$secondary: #efeae2; //#c7c7bb;
+$black: rgb(29, 29, 29);//#0e1836;
 $white: whitesmoke;
 $grey: #e3e4e0;
+$dark-grey: #2B2E2F;
+$accent: #c28364;
 
-$light-grey: #efefef;
-$links: $secondary;
+$links: $accent;
 
-$form-border: $light-grey;
+$form-border: $grey;
 
 $success: $green;
 $error: $red;
@@ -46,4 +47,10 @@ $header-height-mobile: 80px;
 	}
 }
 
-$max-contentWidth: 1170px;
+$max-contentWidth: 1300px;//1170px;
+
+$gap-small: 30px;
+$gap-large: 100px;
+
+$animation-speed: cubic-bezier(0.075, 0.82, 0.165, 1);
+$animation-duration: 300ms;
