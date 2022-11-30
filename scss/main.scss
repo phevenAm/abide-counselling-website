@@ -14,7 +14,7 @@
 
 ::selection {
 	background: $secondary;
-	color: $white;
+	color: $black;
 	text-shadow: none;
 }
 
@@ -122,7 +122,7 @@ header {
 					a {
 						text-decoration: none;
 						font-size: 1rem;
-						color: $white;
+						color: $black !important;
 					}
 				}
 			}
@@ -151,9 +151,16 @@ header {
 				&.closed {
 					transform: translateX(150%);
 
-					ul li {
-						opacity: 0;
+					nav {
+						ul li {
+							opacity: 0;
+
+							a {
+							}
+						}
 					}
+
+					
 				}
 
 				ul {
@@ -171,6 +178,7 @@ header {
 							text-decoration: none;
 							padding: 10px;
 							font-size: 1.2rem;
+							color: $black !important;
 						}
 
 					}
@@ -264,7 +272,7 @@ header {
 		height: $header-height-mobile;
 		@include shadow;
 
-		* {
+		a, a:visited, a:link, .logo a span {
 			color: white !important;
 		}
 	}
@@ -361,84 +369,58 @@ section[id] {
 
 	&#about-counsellor {
 		@include autoHeight;
-		@include overflowDir(right, $primary, $secondary);
-		overflow: hidden !important;
-
-		.outer {
-			//display: flex;
-			//gap: $gap-small;
-			justify-content: space-between;
-			flex-direction: column;
-
+		min-height: 500px;
 			@include bp(m) {
-				flex-direction: row;
-				justify-content: flex-start;
-				align-items: flex-start;
-				justify-content: stretch;
+
 			}
 
 			.inner {
 				max-width: $max-contentWidth;
 				position: relative;
+				display: flex;
+				flex-direction: column;
+
+				@include bp(m) {
+					flex-direction: row;
+				}
 
 
 				.section_left,
 				.section_right {
+					width: 100%;
+					flex: 1;
 
-					@include bp(lt-m) {
-						width: 100%;
+					@include bp(m) {
+						//max-width: 50%;
 					}
 				}
 
 				.section_left {
 					padding: 0 30px 50px 30px;
-					background-color: $primary;
-					flex: 1;
-					display: flex;
-					flex-direction: column;
 
 					@include bp(m) {
-						padding: 50px !important;
-						width: 80%;
-						display: block;
-						position: relative;
+						//padding: 50px !important;
+						flex-direction: row;
+						border-right: 5px white double;
 
 					}
 				}
 
-				.image {
+				.section_right {
+					min-height:600px ;
+					min-width: 50%;
 					background-image: url('../images/me/pexels-photo-14588742.jpeg');
+					background-position: center;
 					background-size: cover;
 					background-repeat: no-repeat;
-					background-position: center center;
-					
 
 					@include bp(m) {
-						position: absolute;
-						right: 0;
-						min-height: 400px;
-						width: 100%;
-						top: 0;
-						height: 100%;
-						transform: translateX(100%);
+						min-height: 500px;
+						min-width: 50%;
 					}
 				}
+
 			}
-
-
-		}
-
-		//.section_right {
-		//	min-width: calc(#{$max-contentWidth} / 2.2);
-		//	background-image: url('../images/me/pexels-photo-14588742.jpeg');
-		//	//background-image: url('https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-		//	background-size: cover;
-		//	background-repeat: no-repeat;
-		//	background-position: center center;
-		//	right: 0;
-		//	align-self: stretch;
-		//	flex-grow: .05;
-		//}
 	}
 
 	&#services {
@@ -496,7 +478,7 @@ section[id] {
 					background-size: cover;
 					background-repeat: no-repeat;
 					width: 100%;
-					min-height: 250px;
+					min-height: 500px;
 					border: 5px solid $black;
 				}
 
@@ -506,7 +488,7 @@ section[id] {
 					top: 0;
 
 					.image {
-						min-height: 500px;
+						//min-height: 500px;
 					}
 				}
 			}
@@ -584,11 +566,15 @@ section[id] {
 		@include autoHeight;
 
 		.prices-box {
-			border: 5px solid $primary;
+			border: 5px double $primary;
 			padding: 15px;
 			position: relative;
 			max-width: 1000px;
 			margin: auto;
+
+			small {
+				color: $accent;
+			}
 
 			@include bp(m) {
 				padding: 30px;
@@ -601,7 +587,7 @@ section[id] {
 				transform: translate(-50%, -60%);
 				padding: 10px 20px;
 				font-size: 1rem;
-				background-color: $secondary;
+				background-color: $white;
 				margin: 0;
 			}
 
@@ -658,6 +644,8 @@ section[id] {
 	&#contact {
 		@include autoHeight;
 		@include overflowDir(right, $primary, $secondary);
+		overflow: hidden !important;
+
 
 		.inner {
 			display: flex !important;
@@ -686,10 +674,33 @@ section[id] {
 
 				.quote {
 					margin: 0 !important;
+
+					position: relative;
+
+					&::before {
+						content: '“';
+						position: absolute;
+						font-size: 30rem;
+						top: 0;
+						left: 0;
+						color: black;
+						opacity: .3;
+						transform: translate(-20%, -33%) !important;
+						z-index: -1;
+
+						@include bp(m){
+							font-size: 60rem;
+							top: 0;
+							left: 0;
+							color: black;
+							opacity: .3;
+							transform: translate(-60%, -35%) !important;
+						}
+					}
 				}
 
 				.author {
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 				}
 			}
 
@@ -708,7 +719,7 @@ section[id] {
 					font-size: 1.1rem;
 
 					@include bp(m) {
-						font-size: 1.4rem;
+						font-size: 1.2rem;
 					}
 				}
 
