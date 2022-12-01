@@ -24,6 +24,7 @@ body {
 	margin: 0;
 	background-color: $white;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 	//just to hide AOS animation's side scroll @mobile
 	//position: relative;
 
@@ -290,7 +291,7 @@ section[id] {
 	}
 
 	&[data-aos*="fade-"] {
-		overflow-x: hidden;
+		//overflow-x: hidden;
 	}
 
 	.section_subtitle {
@@ -396,9 +397,9 @@ section[id] {
 				}
 
 				.section_left {
-					padding: 0 30px 50px 30px;
-
+					
 					@include bp(m) {
+						padding: 0 30px 50px 0px;
 						//padding: 50px !important;
 						flex-direction: row;
 						border-right: 5px white double;
@@ -644,7 +645,7 @@ section[id] {
 	&#contact {
 		@include autoHeight;
 		@include overflowDir(right, $primary, $secondary);
-		overflow: hidden !important;
+		//overflow: hidden !important;
 
 
 		.inner {
