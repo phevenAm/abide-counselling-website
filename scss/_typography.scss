@@ -1,4 +1,4 @@
- input, label, h1, h2, h3, h4, h5, h6, span{
+ input, label, h1, h2, h3, h4, h5, h6{
 	font-family: $font-headings;
 	color: $black;
 }
@@ -46,4 +46,10 @@ h3{
 		font-size: 1.8rem;
 		margin-top: 5rem;
 	}
+}
+
+
+%copy {
+	font-family: $font-copy;
+	font-size: 1.2rem;
 }

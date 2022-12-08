@@ -44,6 +44,13 @@ $(document).ready(function () {
 	}
 
 
+	//!inject year
+
+	const year = document.getElementById('dynamicYear');
+	year.innerHTML = new Date().getFullYear();
+
+
+
 	//!intersection Observer
 
 	let options = {

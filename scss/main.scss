@@ -808,7 +808,9 @@ footer {
 
 		@include bp(xl) {}
 
-		p {}
+		p, span {
+			@extend %copy;
+		}
 
 		.socials {
 			display: flex;
