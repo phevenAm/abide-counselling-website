@@ -24,7 +24,6 @@ body {
 	margin: 0;
 	background-color: $white;
 	scroll-behavior: smooth;
-	overflow-x: hidden;
 	//just to hide AOS animation's side scroll @mobile
 	//position: relative;
 
@@ -52,7 +51,6 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	@extend %container-padding;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 100%;
@@ -66,6 +64,9 @@ header {
 
 	.header_inner {
 		max-width: $max-contentWidth;
+		@extend %container-padding;
+		padding-top: 0;
+		padding-bottom: 0;
 		margin: auto;
 		display: flex;
 		width: 100%;
@@ -284,14 +285,14 @@ header {
 
 section[id] {
 	min-height: 100vh;
-	@extend %container-padding;
+	//overflow: hidden;
 
 	.section_title {
 		margin-bottom: 0;
 	}
 
 	&[data-aos*="fade-"] {
-		//overflow-x: hidden;
+		overflow: hidden;
 	}
 
 	.section_subtitle {
@@ -301,6 +302,7 @@ section[id] {
 
 	.inner {
 		max-width: $max-contentWidth;
+		@extend %container-padding;
 		margin: auto;
 		width: 100%;
 	}
