@@ -1,0 +1,26 @@
+//maybe download and add fonts to project
+//Ostrich SRC https://www.creativebloq.com/typography/free-web-fonts-1131610
+
+
+
+$font-headings: 'Pacifico',
+cursive;
+$font-copy: 'Sofia Sans',
+'Open Sans',
+'Arial',
+sans-serif;
+
+$font-subheadings: 'Sofia Sans',
+'Open Sans',
+'Arial',
+sans-serif;
+
+$font-special: 'Handlee',
+cursive;
+
+
+//WOFF2 : modern browsers
+//WOFF  : fallback if woff2 is not supported
+//TTF   : Android-browser on Android 4.3 or older
+//EOT   : Internet Explorer 8 or older
+//SVG   : iOS-Safari 3.2-4.1. SVG webfonts are not supported anymore in most browsers

@@ -1,439 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-			crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="description"
+    content="A Freelance Frontend Developer in Reading that delivers, high quality, modern, responsive static websites a reasonable price - hassle-free hosting included; . They also offer services in photo-realistic rendering, print and graphics design. ">
+  <!--//TODO:-->
+  <link rel="canonical" href="**#websiteURLHERE**">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Circle & Square | Freelance Frontend Developer">
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-			integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--//TODO:-->
+  <meta property="og:description" content="**ADD ABOUT SECTION HERE**">
+  <meta property="og:url" content="**#websiteURLHERE**">
+  <meta property="og:site_name" content="Circle & Square">
+  <link rel="icon" type="image/gif" href="./media/images/logo gif.gif" />
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-			integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
-			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--------------- META END-------------->
 
-		<link rel="stylesheet" href="./css/main.css">
-		<script src="./script/main.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-		<title>Arc. - young people's counselling</title>
-	</head>
-
-	<body>
-		<header id="header">
-			<div class="header_inner">
-				<div class="logo"><a href="#landing"
-						aria-label="Arc - Articulate, rediscover, create"><span>A</span><span>rc.</span></a></div>
-				<div id="menuContainer">
-					<div class="burgermenu closed" id="burgerMenu">
-						<div></div>
-					</div>
-					<div class="nav closed" id="nav">
-
-						<ul class="navbar-nav">
-							<li class="about"><a href="#about">About</a></li>
-							<li class="services"><a href="#services">Services</a></li>
-							<li class="faqs"><a href="#faqs">FAQs</a></li>
-							<li class="prices"><a href="#prices">Prices</a></li>
-							<li class="contact"><a href="#contact">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</header>
-		<main>
-			<section data-aos="fade-up" id="landing">
-				<div class="inner">
-					<div class="landing_content">
-						<h1>Main Heading</h1>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ab.</p>
-
-						<a class="btn btn-primary" href="#about">Find out more</a>
-					</div>
-			</section>
-			<section data-aos="fade-up" id="about">
-				<div class="inner">
-					<h2 class="section_title">What is therapy</h2>
-					<p class="section_subtitle"></p>
-
-					<p>Counselling provides an opportunity to explore personal
-						difﬁculties in a conﬁdential and supportive environment. This may include expressing feelings
-						that are painful, which many of us experience at certain times in our live. When this happens,
-						it can be difﬁcult to stay positive and cope with everyday life. Counselling provides a safe and
-						non-judgemental space to explore these feeling, identifying why you feel the way you do, and
-						encouraging you to find your own solutions and move towards self-awareness and personal growth.
-					</p>
-
-				</div>
-				</div>
-			</section>
-			<!--<section data-aos="fade-up" id="about-counsellor" class="">
-				<div class="inner">
-
-					<div class="section_content">
-						<div class="section_left coloured-section">
-							<div class="section_top">
-								<h2 class="section_title">Who am I?</h2>
-								<p class="section_subtitle">Personal and professional experience</p>
-							</div>
-							<p class="about-para" data-aos="fade-in">
-								Hello, my name is Rosie.<br />
-								I am a qualified counsellor with a degree in Counselling and a CPCAB Level 5 Accredited
-								Certificate in Counselling Children and Young People. Through the use of age-appropriate
-								counselling, I aim to <strong>empower</strong> my clients to express their feelings and help
-								them bring <strong>clarity</strong> to their experiences.
-							</p>
-							<p> I am an integrative counsellor who leans on a person-centred approach, working
-								<strong>collaboratively</strong>
-								with my clients to use interventions based on what works best for them and the issues they
-								bring
-								to therapy. I specialise in working with adolescents and young people, and I enjoy using
-								<strong>creativity</strong> in my work where clients find this helpful.
-							</p>
-						</div>
-	
-						<div class="section_right" data-aos="fade-left">
-
-							<div class="bust"></div>
-						</div>
-					</div>
-				</div>
-			</section>-->
-			<section data-aos="fade-up" id="about-counsellor" class=" coloured-section">
-				<div class="inner">
-					<div class="section_left ">
-
-						<div class="section_top">
-							<h2 class="section_title">Who am I?</h2>
-							<p class="section_subtitle">Personal and professional experience</p>
-						</div>
-						<p class="about-para" data-aos="fade-in">
-							Hello, my name is Rosie.<br />
-							I am a qualified counsellor with a degree in Counselling and a CPCAB Level 5
-							Accredited
-							Certificate in Counselling Children and Young People. Through the use of
-							age-appropriate
-							counselling, I aim to <strong>empower</strong> my clients to express their feelings
-							and help
-							them bring <strong>clarity</strong> to their experiences.
-						</p>
-						<p> I am an integrative counsellor who leans on a person-centred approach, working
-							<strong>collaboratively</strong>
-							with my clients to use interventions based on what works best for them and the
-							issues they
-							bring
-							to therapy. I specialise in working with adolescents and young people, and I enjoy
-							using
-							<strong>creativity</strong> in my work where clients find this helpful.
-						</p>
-
-					</div>
-					<div class="section_right">
-
-					</div>
-				</div>
-			</section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  <script src="./scripts/main.js" defer></script>
 
 
-			<!--Services Start-->
-			<section data-aos="fade-up" id="services">
-				<div class="inner">
-					<div class="section_top">
-						<h2 class="section_title">Services</h2>
-						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
-					</div>
 
-					<div class="services_options">
-						<div class="left" data-aos="fade-right">
-							<div class="image"></div>
-							<h3>Face to face</h3>
-							<p>Unfortunately, I am currently not offering face to face therapy.</p>
-						</div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer />
 
-						<div class="right" data-aos="fade-left">
-							<div class="image"></div>
-							<h3>Can't meet face to face?</h3>
-							<p>I can provide therapy support online via Zoom or over the phone - which ever you prefer.
-							</p>
-						</div>
-					</div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Handlee&family=Pacifico&family=Roboto:wght@300;400;500&family=Sofia+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- <title>Circle & Square | Freelance Frontend Developer</title> -->
+  <!-- <title>digital deep | Freelance Digital Designer</title> -->
+  <title>Square One | Designing all things digital</title>
+</head>
+
+<!--<body data-bs-spy="scroll" data-bs-target="#navBar" data-bs-smooth-scroll="true" >-->
+<body  >
+  <header id="header">
+    <div class="header_inner">
+      <a href="#landing" id="navbar-brand" class="logo">
+        <div class="bodymovin" data-file="logo" alt="Square One Design"></div>
+      </a>
+
+      <div id="menuContainer">
+        <nav id="navBar" class="navbar navbar-nav closed ">
+          <ul class="nav" id="nav">
+            <li class="nav-item" data-aos="fade-in" data-aos-delay="500" data-aos-anchor-placement="top-bottom">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item" data-aos="fade-in" data-aos-delay="600" data-aos-anchor-placement="top-bottom">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item" data-aos="fade-in" data-aos-delay="700" data-aos-anchor-placement="top-bottom">
+              <a class="nav-link" href="#clients">Clients</a>
+            </li>
+            <li class="nav-item" data-aos="fade-in" data-aos-delay="800" data-aos-anchor-placement="top-bottom">
+              <a class="nav-link" href="#faqs">FAQs</a>
+            </li>
+            <li class="nav-item " data-aos="fade-in" data-aos-delay="900" data-aos-anchor-placement="top-bottom">
+              <a class="nav-link highlight" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="burgermenu closed" id="burgerMenu">
+          <div></div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <main>
+    <div id="cursor">
+      <div class="cursor__circle"></div>
+    </div>
+    <section id="landing">
+      <!--<div class="shape">
+        </div>-->
+      <?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2"
+        style="background-color: none; position: absolute; right: 0; height: 100%; width: 100%;   background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.59 96.09">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: none;
+              stroke: #fff;
+              stroke-miterlimit: 10;
+              stroke-width: 1.53px;
+            }
+
+            .cls-2 {
+              fill: #fff;
+            }
+
+            .cls-3 {
+              fill: #d3554c;
+            }
+
+            .cls-4 {
+              fill: #1e1d1d;
+            }
+
+            .cls-5 {
+              fill: #23475d;
+            }
+
+            .cls-6 {
+              fill: #4c959a;
+            }
+          </style>
+        </defs>
+        <g id="OBJECTS">
+          <g>
+            <g>
+              <path class="cls-3"
+                d="M5.7,44.27c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27s1.47,3.26,.27,4.61Z" />
+              <path class="cls-6"
+                d="M19.96,56.95c-1.2,1.35-3.26,1.47-4.61,.27s-1.47-3.26-.27-4.61c1.2-1.35,3.26-1.47,4.61-.27,1.35,1.2,1.47,3.26,.27,4.61Z" />
+              <path class="cls-6"
+                d="M48.48,82.31c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61s3.26-1.47,4.61-.27c1.35,1.2,1.47,3.26,.27,4.61Z" />
+              <path class="cls-4"
+                d="M62.74,94.99c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27s1.47,3.26,.27,4.61Z" />
+            </g>
+            <g>
+              <path class="cls-1"
+                d="M31.47,44c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27,1.35,1.2,1.47,3.26,.27,4.61Z" />
+              <path class="cls-3"
+                d="M45.73,56.69c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61s3.26-1.47,4.61-.27c1.35,1.2,1.47,3.26,.27,4.61Z" />
+              <path class="cls-5"
+                d="M59.99,69.37c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27s1.47,3.26,.27,4.61Z" />
+            </g>
+            <g>
+              <path class="cls-5"
+                d="M42.99,31.06c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61s3.26-1.47,4.61-.27c1.35,1.2,1.47,3.26,.27,4.61Z" />
+              <path class="cls-4"
+                d="M57.25,43.74c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27s1.47,3.26,.27,4.61Z" />
+              <path class="cls-2"
+                d="M71.5,56.42c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27s1.47,3.26,.27,4.61Z" />
+              <path class="cls-3"
+                d="M85.76,69.1c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27,1.35,1.2,1.47,3.26,.27,4.61Z" />
+            </g>
+            <g>
+              <path class="cls-2"
+                d="M40.24,5.43c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61s3.26-1.47,4.61-.27c1.35,1.2,1.47,3.26,.27,4.61Z" />
+              <path class="cls-3"
+                d="M68.76,30.8c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27s1.47,3.26,.27,4.61Z" />
+              <path class="cls-3"
+                d="M83.02,43.48c-1.2,1.35-3.26,1.47-4.61,.27-1.35-1.2-1.47-3.26-.27-4.61,1.2-1.35,3.26-1.47,4.61-.27,1.35,1.2,1.47,3.26,.27,4.61Z" />
+            </g>
+          </g>
+        </g>
+      </svg>
+
+      <div class="inner" data-aos-once="true" data-aos="fade-in" data-aos-delay="1300">
+        <h1>Great Design</h1>
+        <div class="subheading">
+          <p>begins here...</p>
+          <!--<a class="btn btn-primary landing-btn" cursor-class="arrow" href="#contact"> Get started </a>-->
+        </div>
+
+      </div>
+    </section>
+    <!--About me Start-->
+    <section id="about">
+      <div class="inner">
+
+        <div class="block">
+          <div class="left">
+
+            <h2 class="section_title" data-aos-once="true" data-aos="fade-in" data-aos-delay="100">Who and Why</h2>
+            <h3 class="section_subtitle" data-aos-once="true" data-aos="fade-in" data-aos-delay="200">A little about
+              the designer</p>
 
 
-				</div>
+              <p data-aos-once="true" data-aos="fade-in" data-aos-delay="300">Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Veritatis sint quod deleniti nobis, magni
+                accusantium reprehenderit, voluptatum sit vero ea doloremque cupiditate qui id impedit incidunt fugiat
+                debitis dolore voluptates!
+                use BS as module maybe: <a
+                  href="https://getbootstrap.com/docs/5.0/getting-started/javascript/#using-bootstrap-as-a-module">BS
+                  module</a>
+                <br><br>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis sint quod deleniti nobis, magni
+                accusantium reprehenderit, voluptatum sit vero ea doloremque cupiditate qui id impedit incidunt fugiat
+                debitis dolore voluptates!
+                <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><br> <strong>Porro maiores aliquam,
+                  perferendis nemo
+                  esse dolorum!</strong>
+              </p>
 
-			</section>
-			<!--Services End-->
-			<!--FAQs Start-->
-			<section data-aos="fade-up" id="faqs" class="coloured-section">
-				<div class="inner">
-					<div class="section_top">
-						<h2 class="section_title">Frequently asked questions</h2>
-						<p class="section_subtitle">and the common answers</p>
+          </div>
+          <div class="right">
+            <div class="aboutContainer" data-aos-once="true" data-aos="fade-left" data-aos-delay="400">
+              <!--<img
+                  src="https://images.pexels.com/photos/13326901/pexels-photo-13326901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt="Stephen's Picture">-->
+              <div class="img"></div>
 
-						<div class="faqs-container">
-							<div class="inner">
-								<details data-aos="fade-up">
-									<summary id="summary"> What is online/telephone counselling?</summary>
-									<p> Online/telephone counselling gives you the opportunity to access
-										counselling at a time
-										and in a
-										place that is convenient to you. It can help you with a wide range of
-										issues such as
-										anxiety,
-										stress, depression, loss, relationship issues, loneliness, identity,
-										self-esteem and
-										confidence.
-										<br /><br />
+              <div class="info">
+                <h4 data-aos-once="true" data-aos="fade-left" data-aos-delay="600">Experience</h4>
+                <ul>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-delay="800"><i
+                      class="fa-solid fa-graduation-cap"></i></span> Degree in Technical Product Design</li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-delay="900"><span><i
+                        class="fa-solid fa-swatchbook"></i></span> 10+ years Product Design experience</li>
+                  <!--<li data-aos-once="true" data-aos="fade-left" data-aos-delay="1000"><i class="fa-solid fa-computer-mouse"></i></span> 3 Years Development</li>-->
+                </ul>
+                <h4 data-aos-once="true" data-aos="fade-left" data-aos-delay="1200" style="margin-top: 60px;">Hobbies
+                </h4>
+                <ul>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-delay="1300"><i
+                      class="fa-solid fa-music"></i></span> Playing the piano</li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-delay="1400"><i
+                      class="fa-solid fa-mountain-sun"></i></span> Hiking</li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-delay="1600"><i
+                      class="fa-solid fa-camera-retro"></i></span> Photography</li>
+                </ul>
+                <div class="dot" class="nav-link" cursor-class="link"><i class="fa-solid fa-arrow-up"></i></div>
+              </div>
 
-										It may not be suitable for everyone but it is an alternative to
-										face-to-face interaction
-										and can be
-										just as helpful. I will advise you if face-to-face counselling, or some
-										other form of
-										support,
-										might be more suitable for you.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary"> How long is a session?</summary>
-									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-										international pavilions, award-winning fireworks and seasonal special events.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">Can I attend a session with my child?</summary>
-									<p> Yes, I aim to meet with parents/guardians and their child in an initial meeting
-										before
-										counselling
-										begins. In some cases, it is appropriate (or necessary) for parents/guardians to
-										attend
-										on occasions
-										when sessions are reviewed. This gives parents/guardians to opportunity to ask
-										questions
-										and discuss
-										any concerns they have.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">What issues do you work with?</summary>
-									<p>
-									<div class="list">
-										<ul>
-											<li>Addition</li>
-											<li>Anger</li>
-											<li>Anxiety</li>
-											<li>Bereavement</li>
-											<li>Bullying</li>
-											<li>Depression</li>
-										</ul>
-										<ul>
-											<li>Abuse</li>
-											<li>Identity</li>
-											<li>Self-esteem</li>
-											<li>Spirituality</li>
-											<li>Relationships</li>
-											<li>Trauma</li>
-										</ul>
-									</div>
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">What should I expect in the first session?</summary>
-									<p> During our first session we will discuss your reasons for coming to counselling
-										and
-										possible
-										goals you would like to work towards. This session will be more about getting to
-										know
-										each other
-										so that we may decide if we would like to work with each other.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">What are your hours?</summary>
-									<p> Please contact me via email below to see my current availability.<br /><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--About me End-->
 
-										Contact me to book your free 10-minute phone consultation or feel free to ask
-										any
-										questions you
-										have. This will help us to establish if I am the best suited therapist for you
-										based on
-										my
-										training and experience. If I am not, I will try my best to recommend an
-										alternative
-										therapist.
-									</p>
-								</details>
-							</div>
-							<!--<div class="inner">
-								<details data-aos="fade-up">
-									<summary id="summary">What are your hours?</summary>
-									<p> Please contact me via email below to see my current availability.<br/><br/>
+    <!--About me Start-->
+    <section id="showcase">
+      <div class="inner">
+        <div class="pausePlay" cursor-class="link"><i class="fa-solid fa-play"></i></div>
+        <video id="showcaseVideo" width="100%" height="auto" muted loop cursor-class="link"
+          poster="https://images.pexels.com/photos/9934462/pexels-photo-9934462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+          <source src="./media/video/112 white border cropped ezgif.com-gif-maker.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+    <!--About me End-->
+    <!--Services Start-->
+    <section id="services" class="coloured-section">
+      <div class="inner">
+        <div class="section_top">
+          <h2 class="section_title" data-aos-once="true" data-aos="fade-in" data-aos-delay="100">The what</h2>
+          <h3 class="section_subtitle" data-aos-once="true" data-aos="fade-in" data-aos-delay="200">Personal and
+            professional experience</p>
+        </div>
 
-										Contact me to book your free 10-minute phone consultation or feel free to ask any
-										questions you
-										have. This will help us to establish if I am the best suited therapist for you based on
-										my
-										training and experience. If I am not, I will try my best to recommend an alternative
-										therapist.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">Epcot Center</summary>
-									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-										international pavilions, award-winning fireworks and seasonal special events.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">Epcot Center</summary>
-									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-										international pavilions, award-winning fireworks and seasonal special events.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">Epcot Center</summary>
-									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-										international pavilions, award-winning fireworks and seasonal special events.
-									</p>
-								</details>
-								<details data-aos="fade-up">
-									<summary id="summary">Epcot Center</summary>
-									<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions,
-										international pavilions, award-winning fireworks and seasonal special events.
-									</p>
-								</details>
-							</div>-->
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--FAQs End-->
+        <div class="cardsContainer">
+          <div class="card" data-value="web" data-folder="modals/services" data-file="services_web" data-aos-once="true"
+            data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="top-bottom">
+            <h3>Web Design</h3>
+            <ul>
+              <li>Static Website Design</li>
 
-			<!--Prices Start-->
-			<section data-aos="fade-up" id="prices">
-				<div class="inner">
-					<div class="section_top">
-						<h2 class="section_title">Prices</h2>
-						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
-					</div>
+              <li>Hosting and Content Management</li>
+              <li>HTML Email Templates</li>
+            </ul>
 
-					<div class="prices-box">
-						<h3>Prices</h3>
-						<ul>
-							<li class="price">
-								<p><strong>Free introductory 10 minute phone consultation.</strong></p>
-							</li>
-							<li class="price">
-								<p class="price_item">Discounted introductory first session</p>
-								<p class="price_value">£30</p>
-							</li>
-							<li class="price">
-								<p class="price_item">Face to face/Online Counselling <br />
-									<small>For young people (11+) and adults</small>
-								</p>
-								<p class="price_value">£40</p>
-							</li>
-							<li class="price">
-								<p class="price_item">Students <br /><small>(over 18)</small></p>
-								<p class="price_value">£35</p>
-							</li>
-							<li class="price">
-								<p class="price_item">12 Sessions <br><small>(Discounted)</small></p>
-								<p class="price_value">£440</p>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<!--Prices End-->
+            <div class="buttonContainer">
 
-			<!--Contact End-->
-			<!--<section data-aos="fade-up" id="contact" class="coloured-section">-->
-			<!--<div class="inner ">
-					<div class="section_top">
-						<h2 class="section_title">Get in touch</h2>
-						<p class="section_subtitle">Lorem ipsum dolor sit amet consectetur.</p>
-					</div>
-					<div class="div">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#servicesModal"
+                aria-labelledby="Services Additional Information Modal" data-target="#servicesAdditionalInfo"
+                cursor-class="arrow">
+                More Info
+              </button>
+            </div>
 
-					</div>
+          </div>
 
-					<div class="form">
-						<form action="/action_page.php">
-							<label for="fname">First Name <span aria-label="required">*</span></label>
-							<input type="text" id="fname" name="firstname" required placeholder="Your name..">
-						
-							<label for="lname">Last Name <span aria-label="required">*</span></label>
-							<input type="text" id="lname" name="lastname" required placeholder="Your last name..">
+          <div class="card" data-value="print" data-file="services_print" data-folder="modals/services"
+            data-aos-once="true" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top-bottom">
+            <h3>Print Design</h3>
+            <ul>
+              <li>Leaflets</li>
+              <li>Booklets</li>
+              <li>Business Cards</li>
+            </ul>
+            <div class="buttonContainer">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#servicesModal"
+                aria-labelledby="Services Additional Information Modal" data-target="#servicesAdditionalInfo"
+                cursor-class="arrow">
+                More Info
+              </button>
+            </div>
+          </div>
 
-							<label for="email">Last Name <span aria-label="required">*</span></label>
-							<input type="email" id="email" name="email" required placeholder="email@example.com">
-						
-							<label for="country">Topic</label>
-							<select id="topic" name="topix">
-							  <option value="nxiety">Anxiety</option>
-							  <option value="depression">Depression</option>
-							  <option value="lgbtq">LQBTQ+</option>
-							  <option value="self-harm">Self harm</option>
-							  <option value="Other">Other</option>
-							</select>
-						
-							<label for="subject">Subject</label>
-							<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-						
-							<input type="submit" class="btn btn-submit" value="Submit">
-						  </form>
-					</div>
-				</div>-->
-			<!--</section>-->
+          <div class="card" data-value="3d" data-folder="modals/services" data-file="services_3d" data-aos-once="true"
+            data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="top-bottom">
+            <h3>3D design </h3>
+            <ul>
+              <li>3D Still Renders</li>
+              <li>3D Video Renders</li>
+              <li>(3 - 1)D Animation</li>
+            </ul>
 
-			<section data-aos="fade-up" id="contact" class=" cta-section">
-				<div class="inner">
-					<div class="left_section">
-						<div class="section_top">
-							<h2 class="quote">“It is only when we take chances, when our lives improve. The initial and
-								the most difficult risk that we need to take is to become honest.”<br /><br /> </h2>
-							<p class="author"> — Walter Anderson</p>
-						</div>
-					</div>
-					<div class="right_section">
-						<div class="email">
-							<p>Send me an email!
-								<a href="mailto:rosiemissah@outlook.com">hello@counselling-name.co.uk</a>
-							</p>
-						</div>
+            <div class="buttonContainer">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#servicesModal"
+                aria-labelledby="Services Additional Information Modal" data-target="#servicesAdditionalInfo"
+                cursor-class="arrow">
+                More Info
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-						<div class="break">
-							<p><span>or</span></p>
-						</div>
+      <!--Services Modal -->
+      <div class="modal fade" id="servicesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-title">Loading...</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Loading...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Services Modal End-->
+    </section>
+    <!--Services End-->
 
-						<div class="phone">
-							<p>Let's have a quick chat
-								<a href="mailto:rosiemissah@outlook.com">hello@counselling-name.co.uk</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--Contact Start-->
-		</main>
-		<footer id="footer" class="footer">
-			<div class="inner">
-				<p class="copy">&copy; <span id="dynamicYear"></span> Arc</p>
-				<ul class="socials">
-					<li><a href="#" aria-label="View Instagram Page"><i class="fa-brands fa-instagram"></i></a> </li>
-					<li><a href="#" aria-label="View Etsy Shop"><i class="fa-brands fa-etsy"></i></a> </li>
-				</ul>
-			</div>
-		</footer>
-	</body>
+    <!--Clients Start -->
+    <section id="clients">
+      <div class="inner">
+        <div class="section_top">
+          <h2 class="section_title" data-aos-once="true" data-aos="fade-in" data-aos-delay="100">Clients</h2>
+          <h3 class="section_subtitle" data-aos-once="true" data-aos="fade-in" data-aos-delay="200">Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit. Debitis, maxime?</h3>
+        </div>
 
-	<script>
-		AOS.init();
-	</script>
+        <div class="clientsLogos" data-aos-once="true" data-aos="fade-in" data-aos-delay="400">
+          <!--//!use transparent images!!-->
+          <div class="logoContainer client clientOne" cursor-class="arrow">
+            <h5>
+              <button type="button" id="clientLogo" data-bs-toggle="modal" data-bs-target="#clientsModal"
+                aria-labelledby="Services Additional Information Modal for B-cam" cursor-class="arrow"
+                data-folder="modals/clients" data-file="clients_bcam">
+                <img src="./media/images/clients/bcam/logo.svg" alt="B-Cam" aria-label="hidden">
+              </button>
+            </h5>
+          </div>
+          <div class="logoContainer client clientTwo" cursor-class="arrow">
+            <h5>
+              <button type="button" id="clientLogo" data-bs-toggle="modal" data-bs-target="#clientsModal"
+                aria-labelledby=" Services Additional Information Modal for MewMew & Fluffy"
+                data-folder="modals/clients" data-file="clients_mewmew">
+                <img src="./media/images/clients/mewmew/logo.png" alt="MewMew & Fluffy" aria-label="hidden">
+              </button>
+            </h5>
+          </div>
+          <div class="logoContainer client clientThree" cursor-class="arrow">
+            <h5>
+              <button type="button" id="clientLogo" data-bs-toggle="modal" data-bs-target="#clientsModal"
+                aria-labelledby="Services Additional Information Modal for Autodesk" data-folder="modals/clients"
+                data-file="clients_autodesk">
+                <img src="./media/images/clients/autodesk/logo.svg" alt="autodesk" aria-label="hidden">
+              </button>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <!--Services Modal -->
+      <div class="modal fade" id="clientsModal" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-title">Loading...</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Loading...</p>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Services Modal End-->
+    </section>
+    <!--Clients End-->
+
+    <!--Testimonials Start-->
+    <section id="testimonials">
+      <div class="inner">
+        <quote class="quote" data-aos-once="true" data-aos="fade-in" data-aos-delay="100">“... a patient individual
+          who has no problem creating many iterations throughout the
+          design process. I highly recommend Stephen for his professional skills in Product Design.”<br /><br />
+        </quote>
+        <p class="author" data-aos-once="true" data-aos="fade-in" data-aos-delay="250"> — Marian L. <br />
+          <small>MewMew & Fluffy</small></p>
+      </div>
+    </section>
+    <!--Testimonials End-->
+    <!--FAQs Start-->
+    <section id="faqs" class="">
+      <div class="inner">
+
+        <h2 class="section_title" data-aos-once="true" data-aos="fade-in" data-aos-delay="100">Frequently asked
+          questions</h2>
+        <h3 class="section_subtitle" data-aos-once="true" data-aos="fade-in" data-aos-delay="200">and the common
+          answers</p>
+
+          <div class="faqs-container">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item" data-aos-once="true" data-aos="fade-up" data-aos-delay="400"
+                data-aos-anchor-placement="top-bottom">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    What is a 'static' website?
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <p>A static site has no dynamic content and does not process any data - the content will stay the
+                      same until updated. A static site doesn't have some of the following functionality: forms, user
+                      sign-in, shop/store, and payments. These sites are generally cheaper as they do not require
+                      backend technologies like form validation and databases.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos-once="true" data-aos="fade-up" data-aos-delay="500"
+                data-aos-anchor-placement="top-bottom">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    How long does it take to make a website?
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <p>For a standard website, it takes 4 weeks in total. This means 2 weeks for the initial build. You
+                      then
+                      have a
+                      week for feedback. I take another week to action your edits. This timeline increases for more
+                      complex,
+                      custom websites that fall out of my scope for a standard build. Another factor is
+                      availability - I work on one product at a time. Doing so ensures I deliver the highest
+                      quality
+                      project to you. Please <a href="#contact">get in touch</a> for more details.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos-once="true" data-aos="fade-up" data-aos-delay="600"
+                data-aos-anchor-placement="top-bottom">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Do you manage website hosting and maintanence?
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <p>Totally! I can host your static site on your behalf, or on a hosting platform of your choice. If
+                      you're familiar with web-hosting, you'll recieve the website's compiled source-code (subject to
+                      contract) for you to host and maintain - I can advise but the decision is yours!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos-once="true" data-aos="fade-up" data-aos-delay="700"
+                data-aos-anchor-placement="top-bottom">
+                <h2 class="accordion-header" id="flush-headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    What are your rates?
+                  </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <p>Please contact me via the email form below to discuss this.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos-once="true" data-aos="fade-up" data-aos-delay="800"
+                data-aos-anchor-placement="top-bottom">
+                <h2 class="accordion-header" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Can you build my Wix/Squarespace website?
+                  </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <p>Yes, I have no issues delivering a website using those tools as they provide functionality that a
+                      static site doesn't.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <!--FAQs End-->
+
+    <!--Contact start-->
+    <section id="contact" class="cta-section coloured-section">
+      <div class="inner">
+        <div class="left_section" id="formComment">
+          <h1 data-aos-once="true" data-aos="fade-in" data-aos-delay="100">Come Say Hello!</h1>
+        </div>
+        <div class="right_section">
+          <div class="form" id="contactForm" data-aos-once="true" data-aos="fade-in" data-aos-delay="250">
+            <form action="/action_page.php" name="contact" method="post" data-netlify="true" onSubmit="submit">
+              <label for="fname">Name <span aria-label="required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="Your name..." cursor-class="link">
+
+              <label for="email">Email <span aria-label="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="youremail@email.com"
+                cursor-class="link">
+
+              <label for="topic">Subect <span aria-label="required">*</span></label>
+              <div id="selectWrapper">
+                <select id="topic" name="topic" cursor-class="link">
+                  <option value="website">Website</option>
+                  <option value="print">Print</option>
+                  <option value="3d">3D Design</option>
+                  <option value="other">Generic / Other</option>
+                </select>
+              </div>
+
+              <label for="subject">Say something! <span aria-label="required">*</span></label>
+              <textarea id="textArea" name="textArea" placeholder="Write something..." style="height:200px"
+                cursor-class="link"></textarea>
+
+              <input type="submit" class="btn btn-submit" value="Submit" cursor-class="arrow">
+            </form>
+          </div>
+        </div>
+    </section>
+    <!--Contact End-->
+  </main>
+  <footer id="footer" class="footer">
+    <div class="inner">
+      <p class="copy"><span id="dynamicYear"></span> &copy; Circle & Square</p>
+      <ul class="socials">
+        <li data-aos-once="true" data-aos="fade-in" data-aos-delay="500" data-aos-anchor-placement="top-bottom">
+          <a aria-label='Behance' href="https://www.behance.net/smissah/" target="_blank"><i
+              class="fa-brands fa-square-behance"></i></a>
+        </li>
+        <li data-aos-once="true" data-aos="fade-in" data-aos-delay="1100" data-aos-anchor-placement="top-bottom">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li data-aos-once="true" data-aos="fade-in" data-aos-delay="1200" data-aos-anchor-placement="top-bottom">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+  </script>
+
+  <script>
+    AOS.init();
+  </script>
+
+
+</body>
 
 </html>

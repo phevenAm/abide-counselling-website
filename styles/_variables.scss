@@ -1,0 +1,130 @@
+// breakpoints 
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1500px; // Extra Large custom breakpoint 
+
+// colors
+
+//light theme
+$red: #B30000;
+$amber: #e8a215;
+$green: #5cdb95;
+
+//$primary: #d66a60;
+//$secondary: #e59866; //#c7c7bb;
+$black: #080808; //#0e1836;
+$white: whitesmoke;
+$grey: #ececec;
+$dark-grey: #2B2E2F;
+
+
+$primary:#EAE7DC;
+$primary-dark : #d1bda1;
+$secondary: #d3554c;
+$accent:  #8054df;
+$color-text: #23475d;
+
+$links: $secondary;
+
+//$colors: (
+//	primary : $primary,
+//	textPrimary : #E85A4F,
+//	secondary : $secondary,//#E98074,
+//	textSecondary : $primary,
+//	tertiary : #d1bda1,
+//	textTertiary : #1e1d1d,
+//	shade: #1e1d1d,
+//	textShade: $white,
+//	neutral: $white,
+//	textNeutral: #1e1d1d,
+//);
+////dark theme
+//$colors-dark: (
+//	primary : #1e1d1d,
+//	textPrimary: $primary,
+//	secondary: #3a3939,
+//	textSecondary: $primary,
+//	tertiary : #bd880c,
+//	textTertiary : #1e1d1d,
+//	shade: $primary,
+//	textShade: #1e1d1d,
+//	neutral: #1e1d1d,
+//	textNeutral: $primary,
+//);
+
+//converting scss variable into css variable
+//:root {
+
+//	@each $name,
+//	$color in $colors {
+//		--color-#{$name} : #{$color};
+//	}
+
+//	--theme: 'light';
+//}
+
+//@media(prefers-color-scheme: dark) {
+//	:root {
+
+//		@each $name,
+//		$color in $colors-dark {
+//			--color-#{$name} : #{$color};
+//		}
+
+//		--theme : 'dark';
+//	}
+//}
+
+//creating a function to get color instead of using css varible
+//@function getColor($color-name) {
+//	@return var(--color-#{$color-name});
+//}
+
+
+
+
+
+
+// fonts
+$icon-font: fontAwesome, 'Font Awesome 5 Regular', 'font Awesome', 'Font Awesome 5';
+$icon-weight: 900;
+@mixin thin-icon {-webkit-text-stroke: 2px $secondary;}
+// fontAwesome Icons
+$arrow-right: '\f054';
+$arrow-down: '\f078';
+$plus:  '+';
+$minus:  '+';
+
+$header-height: 100px;
+$header-height-mobile: 50px;//80px;
+
+
+%container-padding {
+	padding: 60px 30px; // 120px 30px;
+
+	@include bp(m) {
+		padding: 90px 60px; //120px 60px;
+	}
+}
+
+$max-contentWidth: 1700px; //1170px;
+
+
+
+$animation-duration: 450ms;
+$animation-delay: 200ms;
+$animation-ease: cubic-bezier(.51,.92,.24,1.15);
+$animationStyle: $animation-duration $animation-ease $animation-delay !important;
+//$animation-speed: $animation-duration cubic-bezier(.51,.92,.24,1.15) $animation-delay !important;
+
+
+//spacing
+$gap-small: 30px;
+$gap-large: 90px;
+
+
+//radius
+$radius-small: 30px;
+$radius-large: 60px;
