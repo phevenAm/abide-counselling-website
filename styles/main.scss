@@ -142,7 +142,7 @@ header {
 							content: '';
 							position: absolute;
 							height: 2px;
-							background-color: $secondary;
+							background-color: $primary;
 							left: 0;
 							bottom: 5px;
 							width: 0%;
@@ -221,6 +221,7 @@ header {
 
 						&::after {
 							width: 0 !important;
+							background-color: $black;
 						}
 					}
 				}
@@ -583,187 +584,6 @@ section[id] {
 		}
 	}
 
-	//&#about {
-	//	display: flex;
-	//	justify-content: center;
-	//	align-items: center;
-	//	flex-direction: column;
-	//	//@include autoHeight;
-
-	//	p:not([class]) {
-	//		max-width: 80ch;
-	//	}
-
-	//	.inner {
-	//		.block {
-	//			display: flex;
-	//			gap: $gap-small;
-	//			flex-direction: column;
-	//			align-items: flex-start;
-	//			justify-content: space-between;
-
-	//			@include bp(m) {
-	//				gap: $gap-large;
-	//				align-items: center;
-	//				flex-direction: row;
-	//				justify-content: center;
-	//			}
-
-	//			.left {
-	//				flex-grow: 1;
-	//			}
-
-	//			.right {
-	//				width: 100%;
-
-	//				.aboutContainer {
-	//					position: relative;
-	//					transition: all 550ms ease-in-out !important;
-	//					background-color: $grey;
-	//					padding: 20px;
-	//
-	//					min-width: 290px;
-	//					margin-left: auto;
-	//					margin-right: auto;
-	//					display: flex;
-	//					flex-direction: column;
-	//					justify-content: space-around;
-
-	//					@include bp(s) {
-	//						flex-direction: row !important;
-	//						gap: $gap-small;
-	//					}
-
-	//					@include bp(m) {
-	//						gap: $gap-small;
-	//						flex-wrap: wrap;
-	//						padding: 30px;
-	//					}
-
-	//					@include bp(l) {
-	//						flex-direction: row !important;
-	//						background-color: none;
-	//						padding: 0;
-	//						border: 0;
-	//					}
-
-	//				}
-
-	//				.img {
-	//
-	//					//background-image: url('https://images.pexels.com/photos/13326901/pexels-photo-13326901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-	//					background-image: url('https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-	//					background-repeat: no-repeat;
-	//					background-size: cover;
-	//					background-position: center center;
-	//					min-width: 250px;
-	//					min-height: 450px;
-	//					@include shadow;
-	//					flex: 1;
-
-	//					@include bp(s) {
-	//						background-position: top;
-	//						min-width: 300px;
-	//					}
-
-	//					@include bp(m) {
-	//						background-position: top;
-	//						min-width: 360px;
-	//						min-height: 300px;
-	//					}
-
-	//					@include bp(l) {
-	//						min-width: 550px;
-	//						min-height: 550px;
-	//					}
-	//				}
-
-	//				.info {
-	//					transition: all 550ms ease-in-out;
-	//					//flex: 1;
-	//					margin-top: 50px;
-	//					width: 100%;
-
-	//					h5 {
-	//						margin-bottom: 20px;
-	//					}
-
-	//					ul {
-	//						li {
-	//							display: flex;
-	//							justify-content: flex-start;
-	//							margin-bottom: 10px;
-	//							align-items: center;
-
-	//							i.fa-solid {
-	//								color: $secondary !important;
-	//								margin-right: 20px;
-	//								width: 20px;
-	//							}
-	//						}
-	//					}
-
-	//					@include bp(l) {
-	//						position: absolute;
-	//						z-index: -1;
-	//						background-color: $primary;
-	//						padding: $gap-small;
-	//						top: 0;
-	//						height: 100%;
-	//	
-	//						transform: rotate(-10deg) scale(.99);
-	//						padding-right: 80px;
-	//						margin-top: 0;
-	//						transition: all $animationStyle;
-
-	//						& p {
-	//							font-size: 1rem !important;
-	//						}
-
-	//						&.active {
-	//							@include shadow;
-	//							z-index: 1;
-	//							transform: rotate(0) scale(1);
-	//						}
-	//					}
-
-	//				}
-
-	//				.dot {
-	//					@extend %close-btn;
-	//					top: -25px;
-	//					position: absolute;
-	//					right: 20px;
-	//					z-index: 1;
-	//					opacity: 0;
-	//					display: grid;
-	//					place-content: center;
-
-	//					@include bp(l) {
-	//						opacity: 1;
-	//						@include shadow;
-	//					}
-
-	//					&:not(.active) {
-	//						transform: rotate(11deg);
-
-	//						&:hover,
-	//						&:focus,
-	//						&:focus-within {
-	//							transform: scale(1.05) rotate(11deg) !important;
-	//						}
-	//					}
-
-	//					&.active {
-	//						top: 20px;
-	//					}
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
-
-
 		&#about-counsellor {
 			.inner {
 				display: flex;
@@ -797,11 +617,24 @@ section[id] {
 				.right_section {
 					position: relative;
 					img{
-						@include shadow;
-						position: absolute;
-						top: 50%;
-						left: 80%;
-						transform: translate(-50%, -50%);
+						//padding: $gap-large;
+						width: 100%;
+						max-width: 80vw;
+
+						@include bp(m) {
+							max-width: 800px;
+							width: unset;
+						}
+
+						@include bp(l) {
+							max-width: 1200px;
+							width: unset;
+							@include shadow;
+							position: absolute;
+							top: 50%;
+							left: 100%;
+							transform: translate(-50%, -50%);
+						}
 					}
 				}
 			}
