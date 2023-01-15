@@ -9,19 +9,21 @@
 	padding: 10px 20px;
 	transition: all $animationStyle;
 	text-align: center;
-	border-radius: $radius-small;
+	border-radius: 0;
+	color: $color-text ;
+
 
 	@include webkitRemove;
 
 	a,
 	a:visited {
-		color: $black;
+		color: $color-text;
 	}
 
 	&:hover,
 	&:active,
 	&:focus {
-		color: $white !important;
+		color: $color-text;
 		background: $secondary;
 	}
 

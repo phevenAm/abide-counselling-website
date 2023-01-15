@@ -7,22 +7,6 @@ $(function () {
 	const allSections = Array.from(document.querySelectorAll('section'));
 	//const nav = document.getElementById('testingres')
 	//!animting logo
-	const icons = document.getElementsByClassName("bodymovin");
-	//returns a node list of all my bodymovin icons
-
-	const iconsArray = Array.from(icons); //turns the node list into an array
-
-	iconsArray.forEach((icon) => {
-		const anim = bodymovin.loadAnimation({
-			container: icon, //each icon becomes a container
-			// path: `./media/images/json-icons/logo.json`,
-			path: `./media/images/json-icons/${icon.dataset.file}.json`,
-			// render: "svg",
-			render: "canvas",
-			autoplay: true,
-			loop: false,
-		});
-	});
 
 	//! Navbar toggle
 
@@ -56,42 +40,6 @@ $(function () {
 	}
 
 	//!services cards
-	const servicesContainter = document.getElementById("services");
-	const cards = document.querySelectorAll('.card')
-	const title = document.querySelector('section#services .section_title');
-	const subtitle = document.querySelector('section#services .section_subtitle');
-	console.log(servicesContainter)
-
-	cards.forEach(card => {
-		card.addEventListener('mouseenter', () => {
-			servicesContainter.style.transition = 'all 250ms ease-in-out';
-			servicesContainter.style.backgroundColor = '#edbb99';
-			servicesContainter.style.backgroundPosition = 'center center';
-			servicesContainter.style.color = 'black';
-
-			if (window.innerWidth >= '200') { // top top images on mobile cause it cant be seen anywy - used to be 900
-				if (card.dataset.value === '3d') {
-					servicesContainter.style.backgroundImage = `url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/d208fa66332687.5eebe1887a00f.png')`;
-					title.style.color = "#f5f5f5";
-					subtitle.style.color = "#f5f5f5";
-				}
-
-				if (card.dataset.value === 'print') {
-					servicesContainter.style.backgroundImage = `url('https://goodmockups.com/wp-content/uploads/2019/01/Free-DL-One-Page-Leaflet-Flyer-Mockup-PSD-Set.jpg')`;
-					title.style.color = "#f5f5f5";
-					subtitle.style.color = "#f5f5f5";
-				}
-
-				if (card.dataset.value === 'web') {
-					servicesContainter.style.backgroundImage = `url('https://psfiles.com/wp-content/uploads/2022/04/Free-Responsive-Website-Design-Mockup-PSD.jpg`;
-					//title.style.color = "#23475d";
-					//subtitle.style.color = "#23475d";
-					title.style.color = "#f5f5f5";
-					subtitle.style.color = "#f5f5f5";
-				}
-			}
-		});
-	});
 
 	//!inject year
 	const year = document.getElementById('dynamicYear');

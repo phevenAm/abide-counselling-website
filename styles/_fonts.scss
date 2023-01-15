@@ -3,20 +3,18 @@
 
 
 
-$font-headings: 'Pacifico',
-cursive;
-$font-copy: 'Sofia Sans',
-'Open Sans',
-'Arial',
-sans-serif;
+$font-headings: 'Playfair Display', serif;
+$font-copy: 'Playfair Display', 'Lato',
+	'Open Sans',
+	'Arial',
+	sans-serif;
 
-$font-subheadings: 'Sofia Sans',
-'Open Sans',
-'Arial',
-sans-serif;
+$font-subheadings: 'Lato',
+	'Open Sans',
+	'Arial',
+	sans-serif;
 
-$font-special: 'Handlee',
-cursive;
+$font-special: cursive, sans-serif;
 
 
 //WOFF2 : modern browsers

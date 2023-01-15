@@ -135,7 +135,7 @@ header {
 
 					a {
 						text-decoration: none;
-						color: $color-text;
+						color: $white;
 						padding: 10px 0;
 
 						&::after {
@@ -162,7 +162,7 @@ header {
 
 							@extend %btn;
 							background-color: $secondary;
-							color: $white !important;
+							color: $color-text !important;
 							padding: 10px 15px;
 							margin: auto;
 
@@ -172,12 +172,10 @@ header {
 								&:hover,
 								&:focus,
 								&:focus-within {
-									transform: scale(1.05);
-									background: $black;
+									background: $primary;
 								}
 
 								&:active {
-									transform: scale(.95);
 									border-bottom: 0;
 									background: $black;
 								}
@@ -289,7 +287,6 @@ header {
 				width: 30px;
 				position: absolute;
 				transition: all $animationStyle;
-				border-radius: $radius-small;
 				background-color: $secondary;
 			}
 
@@ -324,7 +321,7 @@ header {
 					background-color: $secondary;
 					height: 4px;
 					position: absolute;
-					border-radius: $radius-small;
+
 					top: 50%;
 					left: 50%;
 					transform: translate(-50%, -50%);
@@ -354,11 +351,10 @@ header {
 	}
 
 	&.shrink {
-		color: $white;
 		height: 90px;
 		@include shadow;
 		//@include frostBG(darken($primary, 1%));
-		background-color: $primary;
+		background-color: $white;
 		//background-color: $primary;
 
 
@@ -366,7 +362,7 @@ header {
 		a:visited,
 		a:link,
 		.logo a span {
-			color: $color-text;
+			color: $color-text !important;
 		}
 	}
 
@@ -455,7 +451,7 @@ section[id] {
 		font-size: 1.2rem !important;
 		font-family: $font-copy !important;
 		font-weight: 700;
-		color: $secondary;
+		color: $accent;
 
 		@include bp(m) {
 			font-size: 1.4rem !important;
@@ -475,7 +471,7 @@ section[id] {
 
 	&.coloured-section {
 		* {
-			color: $white;
+			color: $color-text;
 		}
 
 		background: $secondary;
@@ -488,7 +484,10 @@ section[id] {
 
 
 	&#landing {
-		background-color: $primary;
+		background-color: $primary; //svg animate leaves growing
+		//background-image: url('https://images.pexels.com/photos/1126380/pexels-photo-1126380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		background-position: center;
+		background-size: cover;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -584,185 +583,230 @@ section[id] {
 		}
 	}
 
-	&#about {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		//@include autoHeight;
+	//&#about {
+	//	display: flex;
+	//	justify-content: center;
+	//	align-items: center;
+	//	flex-direction: column;
+	//	//@include autoHeight;
 
-		p:not([class]) {
-			max-width: 80ch;
-		}
+	//	p:not([class]) {
+	//		max-width: 80ch;
+	//	}
 
-		.inner {
-			.block {
+	//	.inner {
+	//		.block {
+	//			display: flex;
+	//			gap: $gap-small;
+	//			flex-direction: column;
+	//			align-items: flex-start;
+	//			justify-content: space-between;
+
+	//			@include bp(m) {
+	//				gap: $gap-large;
+	//				align-items: center;
+	//				flex-direction: row;
+	//				justify-content: center;
+	//			}
+
+	//			.left {
+	//				flex-grow: 1;
+	//			}
+
+	//			.right {
+	//				width: 100%;
+
+	//				.aboutContainer {
+	//					position: relative;
+	//					transition: all 550ms ease-in-out !important;
+	//					background-color: $grey;
+	//					padding: 20px;
+	//
+	//					min-width: 290px;
+	//					margin-left: auto;
+	//					margin-right: auto;
+	//					display: flex;
+	//					flex-direction: column;
+	//					justify-content: space-around;
+
+	//					@include bp(s) {
+	//						flex-direction: row !important;
+	//						gap: $gap-small;
+	//					}
+
+	//					@include bp(m) {
+	//						gap: $gap-small;
+	//						flex-wrap: wrap;
+	//						padding: 30px;
+	//					}
+
+	//					@include bp(l) {
+	//						flex-direction: row !important;
+	//						background-color: none;
+	//						padding: 0;
+	//						border: 0;
+	//					}
+
+	//				}
+
+	//				.img {
+	//
+	//					//background-image: url('https://images.pexels.com/photos/13326901/pexels-photo-13326901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	//					background-image: url('https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	//					background-repeat: no-repeat;
+	//					background-size: cover;
+	//					background-position: center center;
+	//					min-width: 250px;
+	//					min-height: 450px;
+	//					@include shadow;
+	//					flex: 1;
+
+	//					@include bp(s) {
+	//						background-position: top;
+	//						min-width: 300px;
+	//					}
+
+	//					@include bp(m) {
+	//						background-position: top;
+	//						min-width: 360px;
+	//						min-height: 300px;
+	//					}
+
+	//					@include bp(l) {
+	//						min-width: 550px;
+	//						min-height: 550px;
+	//					}
+	//				}
+
+	//				.info {
+	//					transition: all 550ms ease-in-out;
+	//					//flex: 1;
+	//					margin-top: 50px;
+	//					width: 100%;
+
+	//					h5 {
+	//						margin-bottom: 20px;
+	//					}
+
+	//					ul {
+	//						li {
+	//							display: flex;
+	//							justify-content: flex-start;
+	//							margin-bottom: 10px;
+	//							align-items: center;
+
+	//							i.fa-solid {
+	//								color: $secondary !important;
+	//								margin-right: 20px;
+	//								width: 20px;
+	//							}
+	//						}
+	//					}
+
+	//					@include bp(l) {
+	//						position: absolute;
+	//						z-index: -1;
+	//						background-color: $primary;
+	//						padding: $gap-small;
+	//						top: 0;
+	//						height: 100%;
+	//	
+	//						transform: rotate(-10deg) scale(.99);
+	//						padding-right: 80px;
+	//						margin-top: 0;
+	//						transition: all $animationStyle;
+
+	//						& p {
+	//							font-size: 1rem !important;
+	//						}
+
+	//						&.active {
+	//							@include shadow;
+	//							z-index: 1;
+	//							transform: rotate(0) scale(1);
+	//						}
+	//					}
+
+	//				}
+
+	//				.dot {
+	//					@extend %close-btn;
+	//					top: -25px;
+	//					position: absolute;
+	//					right: 20px;
+	//					z-index: 1;
+	//					opacity: 0;
+	//					display: grid;
+	//					place-content: center;
+
+	//					@include bp(l) {
+	//						opacity: 1;
+	//						@include shadow;
+	//					}
+
+	//					&:not(.active) {
+	//						transform: rotate(11deg);
+
+	//						&:hover,
+	//						&:focus,
+	//						&:focus-within {
+	//							transform: scale(1.05) rotate(11deg) !important;
+	//						}
+	//					}
+
+	//					&.active {
+	//						top: 20px;
+	//					}
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
+
+
+		&#about-counsellor {
+			.inner {
 				display: flex;
-				gap: $gap-small;
-				flex-direction: column;
-				align-items: flex-start;
 				justify-content: space-between;
+				height: 100vh;
+				flex-direction: column;
+				
 
 				@include bp(m) {
-					gap: $gap-large;
-					align-items: center;
 					flex-direction: row;
-					justify-content: center;
 				}
 
-				.left {
-					flex-grow: 1;
-				}
-
-				.right {
+				.left_section, .right_section{
+					background-color: $white;
 					width: 100%;
+					height: 100%;
 
-					.aboutContainer {
-						position: relative;
-						transition: all 550ms ease-in-out !important;
-						background-color: $grey;
-						padding: 20px;
-						border-radius: $radius-small;
-						min-width: 290px;
-						margin-left: auto;
-						margin-right: auto;
-						display: flex;
-						flex-direction: column;
-						justify-content: space-around;
-
-						@include bp(s) {
-							flex-direction: row !important;
-							gap: $gap-small;
-						}
-
-						@include bp(m) {
-							gap: $gap-small;
-							flex-wrap: wrap;
-							padding: 30px;
-						}
-
-						@include bp(l) {
-							flex-direction: row !important;
-							background-color: none;
-							padding: 0;
-							border: 0;
-						}
-
-					}
-
-					.img {
-						border-radius: $radius-small;
-						//background-image: url('https://images.pexels.com/photos/13326901/pexels-photo-13326901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-						background-image: url('https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-						background-repeat: no-repeat;
-						background-size: cover;
-						background-position: center center;
-						min-width: 250px;
-						min-height: 450px;
-						@include shadow;
-						flex: 1;
-
-						@include bp(s) {
-							background-position: top;
-							min-width: 300px;
-						}
-
-						@include bp(m) {
-							background-position: top;
-							min-width: 360px;
-							min-height: 300px;
-						}
-
-						@include bp(l) {
-							min-width: 550px;
-							min-height: 550px;
-						}
-					}
-
-					.info {
-						transition: all 550ms ease-in-out;
-						//flex: 1;
-						margin-top: 50px;
+					@include bp(m) {
 						width: 100%;
-
-						h5 {
-							margin-bottom: 20px;
-						}
-
-						ul {
-							li {
-								display: flex;
-								justify-content: flex-start;
-								margin-bottom: 10px;
-								align-items: center;
-
-								i.fa-solid {
-									color: $secondary !important;
-									margin-right: 20px;
-									width: 20px;
-								}
-							}
-						}
-
-						@include bp(l) {
-							position: absolute;
-							z-index: -1;
-							background-color: $primary;
-							padding: $gap-small;
-							top: 0;
-							height: 100%;
-							border-radius: $radius-small;
-							transform: rotate(-10deg) scale(.99);
-							padding-right: 80px;
-							margin-top: 0;
-							transition: all $animationStyle;
-
-							& p {
-								font-size: 1rem !important;
-							}
-
-							&.active {
-								@include shadow;
-								z-index: 1;
-								transform: rotate(0) scale(1);
-							}
-						}
-
 					}
+				}
 
-					.dot {
-						@extend %close-btn;
-						top: -25px;
+				.left_section {
+					display: grid;
+					place-content: center;
+
+					.textBox {
+					}
+				}
+
+				.right_section {
+					position: relative;
+					img{
+						@include shadow;
 						position: absolute;
-						right: 20px;
-						z-index: 1;
-						opacity: 0;
-						display: grid;
-						place-content: center;
-
-						@include bp(l) {
-							opacity: 1;
-							@include shadow;
-						}
-
-						&:not(.active) {
-							transform: rotate(11deg);
-
-							&:hover,
-							&:focus,
-							&:focus-within {
-								transform: scale(1.05) rotate(11deg) !important;
-							}
-						}
-
-						&.active {
-							top: 20px;
-						}
+						top: 50%;
+						left: 80%;
+						transform: translate(-50%, -50%);
 					}
 				}
 			}
 		}
-	}
+
 
 	&#showcase {
 		@include autoHeight;
@@ -843,7 +887,7 @@ section[id] {
 					box-sizing: border-box;
 					position: relative;
 					border: none;
-					border-radius: $radius-small;
+
 					overflow: hidden;
 					justify-content: space-between;
 					margin: 15px;
@@ -1080,10 +1124,9 @@ section[id] {
 			transition: all $animationStyle;
 
 			.accordion-item {
-				border-radius: $radius-small;
 
 				& .collapsed {
-					border-radius: $radius-small;
+
 				}
 
 				.accordion-header {
@@ -1101,7 +1144,7 @@ section[id] {
 
 					&:not(.collapsed) {
 						background-color: $primary;
-						border-radius: $radius-small;
+	
 						border-bottom-left-radius: 0 !important;
 						border-bottom-right-radius: 0 !important;
 						border-bottom: 0;
@@ -1127,7 +1170,6 @@ section[id] {
 
 			.card {
 				border: 0;
-				border-radius: $radius-small;
 				margin-bottom: 15px;
 
 				&-header {
@@ -1357,6 +1399,7 @@ section[id] {
 				h1 {
 					font-size: 90px;
 					text-align: center;
+					color: $accent;
 
 					@include bp(m) {
 						font-size: 130px;
@@ -1420,7 +1463,7 @@ section[id] {
 						@include webkitRemove;
 						@extend %copy;
 						padding: 20px !important;
-						border-radius: $radius-small;
+	
 
 						&::placeholder,
 						select div,
@@ -1428,12 +1471,11 @@ section[id] {
 							color: $color-text !important;
 
 							@include bp(m) {
-								color: $white !important;
+								//color: $white !important;
 							}
 						}
 
 						@include bp(m) {
-							@include frostBG($primary-dark);
 							width: 100%;
 							padding: 12px;
 							box-sizing: border-box;
@@ -1490,7 +1532,6 @@ section[id] {
 					input[type='text'],
 					input[type='email'],
 					textarea {
-						border-radius: $radius-small !important;
 						font-size: 1rem !important;
 
 						cursor: text !important;
@@ -1539,10 +1580,10 @@ section[id] {
 						}
 
 						@include bp(m) {
-							color: $black !important;
+							color: $white !important;
 
 							span {
-								color: $black !important;
+								color: $white !important;
 							}
 						}
 					}
@@ -1606,38 +1647,6 @@ footer {
 				}
 			}
 
-			@include bp(1800px) {
-				display: flex;
-				align-items: center;
-				flex-direction: column;
-				z-index: 1000;
-				height: 200px;
-				width: 30px;
-				position: fixed;
-				top: 40vh;
-				left: 1.2rem;
-				// background-color: $c-grey;
-
-				li {
-					margin-left: 0 !important;
-				}
-
-				i {
-					color: $color-text !important;
-
-					mix-blend-mode: difference;
-					font-size: 1.8rem;
-
-					opacity: .9;
-					margin: 1.5rem 0;
-					transition: all $animationStyle;
-
-					&:hover {
-						transform: scale(1.1) translateY(-5px);
-						color: $secondary !important;
-					}
-				}
-			}
 		}
 	}
 }
