@@ -293,17 +293,8 @@
 }
 
 @mixin shadow {
-    box-shadow:
-    -4.8px -4px 0.6px -53px rgba(0, 0, 0, 0.237),
-    -8.7px -7.4px 1.3px -53px rgba(0, 0, 0, 0.368),
-    -11.6px -9.9px 2.2px -53px rgba(0, 0, 0, 0.435),
-    -13.3px -11.3px 3.4px -53px rgba(0, 0, 0, 0.459),
-    -13.5px -11.4px 4.9px -53px rgba(0, 0, 0, 0.456),
-    -11.6px -9.8px 6.9px -53px rgba(0, 0, 0, 0.438),
-    -6.9px -5.8px 9.8px -53px rgba(0, 0, 0, 0.415),
-    2.1px 1.8px 14.2px -53px rgba(0, 0, 0, 0.405),
-    18.3px 15.5px 21.9px -53px rgba(0, 0, 0, 0.431),
-    46px 39px 39px -53px rgba(0, 0, 0, 0.57);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 }
 
 @mixin background-polka {

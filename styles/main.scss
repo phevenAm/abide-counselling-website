@@ -352,7 +352,7 @@ header {
 	&.shrink {
 		height: 90px;
 		@include shadow;
-		background-color: $white;
+		background-color: $secondary;
 
 		a,
 		a:visited,
@@ -540,34 +540,35 @@ section[id] {
 	}
 
 		&#about-counsellor {
-		
+			@include autoHeight;
+			//min-height: 80vh;
 			.inner {
 				position: relative;
-				//max-width: $max-contentWidth;
+				max-width: $max-contentWidth;
 				@include bp(m) {
-					background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-					background-size: 50vw;
-					background-position: right center;
+					background-size: clamp(200px, 50%,  1000px);
+					//background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+					background-image: url('https://images.pexels.com/photos/14455734/pexels-photo-14455734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+					background-position: right;
 					background-repeat: no-repeat;
 				}
 
 				.container {
-					//position: absolute;
 					top: 50%;
 					width: 100%;
 					left: 0;
-					//background-color: rgba(227, 17, 52, 0.193);
 					margin-top: $gap-large;
 					padding: 0;
-					display: grid;
-					grid-template-columns: repeat(1, auto);
-					grid-template-rows: repeat(2, auto);
-					grid-gap: $gap-large;
+					gap: $gap-large;
+					//display: grid;
+					//grid-template-columns: 1fr, auto;
+					//grid-template-rows: 1fr, 1fr;
+					//grid-gap: $gap-small;
 
-					@include bp(m){
-						grid-template-columns: 1fr, .5fr;
-						grid-template-rows:  1fr, auto;
-					}
+					//@include bp(m){
+					//	grid-template-columns: 1fr, .5fr;
+					//	grid-template-rows:  1fr, 1fr;
+					//}
 
 					.left_section, .right_section{
 						width: 100%;
@@ -580,10 +581,10 @@ section[id] {
 
 					.left_section {
 						@extend %container-padding;
-						background-color: $white;
 						
 						@include bp(m){
 							max-width: 60%;
+							@include frostBG($white);
 							@include shadow;
 							margin-left: -100px;
 						}
@@ -595,7 +596,7 @@ section[id] {
 
 					.right_section {
 						min-height: 600px;
-						background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+						background-image: url('https://images.pexels.com/photos/14455734/pexels-photo-14455734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						background-size: cover;
 						background-repeat: no-repeat;
 						background-position: center;
@@ -603,6 +604,7 @@ section[id] {
 
 						@include bp(m) {
 							background-image: none !important;
+							min-height: unset
 						}
 					}
 				}
@@ -610,46 +612,6 @@ section[id] {
 			}
 		}
 
-
-	&#showcase {
-		@include autoHeight;
-		background: $primary;
-
-		.inner {
-			position: relative;
-		}
-
-		video {
-			@include shadow;
-		}
-
-		.pausePlay {
-			@extend %close-btn;
-			position: absolute;
-			z-index: 1;
-			top: 50%;
-			right: 50%;
-			transform: translate(50%, -50%);
-			display: grid;
-			place-content: center;
-			@include shadow;
-			transition: left $animationStyle opacity 2s ease-in-out 900ms;
-			//should the button really be dancning around?? UX??
-
-			&.playing {
-				opacity: .5;
-				right: 0px;
-
-				&:hover {
-					opacity: 1;
-				}
-			}
-
-			@include bp(m) {
-
-			}
-		}
-	}
 
 	&#services {
 		transition: background-image $animationStyle;
@@ -658,194 +620,61 @@ section[id] {
 		position: relative;
 		overflow: hidden;
 
-
 		.inner {
 			max-width: $max-contentWidth;
 
 			.cardsContainer {
-				margin: 0 auto;
 				display: flex;
+				justify-content: stretch;
+				justify-items: stretch;
+				gap: $gap-large;
 				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				flex-grow: 1;
 
 				@include bp(m) {
-					align-items: stretch;
 					flex-direction: row;
 				}
 
-				.buttonContainer {
-					display: flex;
-				}
+				.card{
+					height: 100%;
 
-				.card {
-					padding: 30px;
-					width: 100%;
-					max-width: 650px; //450px;
-					display: flex;
-					flex-direction: column;
-					//!min-height: 350px; height breaks it!!! so stop!!
-					@include frostBG($white);
-					box-sizing: border-box;
-					position: relative;
-					border: none;
+					.image {
+						background-position: center;
+						background-size: cover;
+						background-repeat: no-repeat;
+						min-height: 400px;
+					}
 
-					overflow: hidden;
-					justify-content: space-between;
-					margin: 15px;
-					flex-grow: 1;
+					.body {
+						padding: $gap-small;
+					}
 
-					@include bp(m) {
-						padding: 20px;
-						justify-content: flex-start;
-						padding: 30px;
-						//!min-height: 590px; height breaks it!!! so stop
-
-						&:first-child {
-							margin-left: 0;
+					&#remote {
+						.image {
+							background-image: url('https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
-						&:last-child {
-							margin-right: 0;
-						}
+						
 					}
 
-					@include bp(l) {
-						margin: $gap-small;
-					}
-
-					&:hover {
-						@include shadow;
-
-						&::after {
-							opacity: 1;
-						}
-					}
-
-
-					@include bp(m) {
-						justify-content: flex-start;
-						padding: 30px;
-					}
-
-					* {
-						color: $color-text !important;
-					}
-
-					h3 {
-						margin-top: 0 !important;
-						margin-left: 10px;
-					}
-
-					ul {
-						margin-left: 10px;
-
-						@include bp(m) {
-							flex-grow: 1;
+					&#facetoface {
+						.image {
+							background-image: url('https://images.pexels.com/photos/4057864/pexels-photo-4057864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
-						li {
-							list-style: square;
-							margin-bottom: 10px;
-							margin-left: $gap-small;
-
-							&::marker {
-								color: $secondary;
-							}
-						}
-					}
-
-					.buttonContainer {
-						display: grid;
-						//place-content: center;
-
-						button {
-							@extend %btn;
-							width: 100%;
-							border: 2px solid $secondary;
-							background-color: transparent;
+						@include bp(l) {
+							margin-top: -150px;
 						}
 					}
 				}
+
 			}
 		}
 
-		@include modalStyle;
-
-	}
-
-	&#clients {
-		background-color: $primary;
-
-		.clientsLogos {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100% !important;
-			flex-wrap: wrap;
-			margin: auto;
-			gap: $gap-small;
-			flex-direction: column;
-			margin-top: $gap-large;
-
-			@include bp(xs) {
-				flex-direction: row;
-			}
-
-			@include bp(m) {
-				justify-content: flex-start;
-			}
-
-			.logoContainer {
-				max-width: 292px; //300px;
-				transition: all $animationStyle;
-				position: relative;
-				overflow: hidden;
-				margin: $gap-small;
-				background: none !important;
-
-				h5 {
-					margin-bottom: 0;
-
-					img {
-						filter: grayscale(100%);
-					}
-
-					&:hover {
-						* {
-							filter: none !important;
-						}
-					}
-				}
-			}
-
-
-			button {
-				display: grid;
-				place-content: center;
-				height: 100%;
-				min-width: 200px;
-				width: 100%;
-				border: none !important;
-				background: none;
-			}
-
-			img {
-				width: 100%;
-				height: 100%;
-				max-width: 150px;
-				border-radius: 0 !important;
-			}
-
-		}
-
-		@include modalStyle;
+		//@include modalStyle;
 	}
 
 	&#testimonials {
-		background-color: $secondary;
+		background-color: $primary;
 		@include autoHeight;
 		position: relative;
 		overflow: hidden;
@@ -1072,44 +901,6 @@ section[id] {
 	}
 
 
-	&#promo {
-		@include autoHeight;
-		max-height: 500px !important; //needs to be the same as carousel height
-		overflow: hidden;
-		position: grid;
-		place-content: center;
-
-		.inner {
-			padding: 0 !important; //for carousel
-		}
-
-		.carousel {
-			background-color: $primary;
-
-			&-inner {
-				max-height: 500px; //needs to be the same as promo height
-				overflow: hidden !important;
-			}
-
-			&-item {
-				height: 100%;
-			}
-
-
-			* {
-				color: $white;
-			}
-
-			.carousel-control-next-icon,
-			.carousel-control-prev-icon {
-				transform: scale(1.5);
-				background-color: $black;
-				cursor: pointer;
-				padding: 5px;
-			}
-		}
-
-	}
 
 	&#contact {
 		// min-height: 140vh;
