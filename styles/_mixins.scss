@@ -513,14 +513,24 @@
 }
 
 @mixin gridTemplate {
-    //27 cols max
+    //variables on variables partial
+    //27 cols/row max
     display: grid;
     grid-template-rows: repeat(19,minmax(calc(#{$container-width} * #{$row-height-scaling-factor}), auto));
     grid-template-columns: minmax(#{$grid-gutter}, 1fr) repeat(24, minmax(0, #{$cell-max-width})) minmax(#{$grid-gutter}, 1fr);
     row-gap: 11px;
     column-gap: 11px;
     grid-auto-flow: dense;
+    -ms-display: grid;
+    -ms-grid-template-rows: repeat(19,minmax(calc(#{$container-width} * #{$row-height-scaling-factor}), auto));
+    -ms-grid-template-columns: minmax(#{$grid-gutter}, 1fr) repeat(24, minmax(0, #{$cell-max-width})) minmax(#{$grid-gutter}, 1fr);
+    -ms-row-gap: 11px;
+    -ms-column-gap: 11px;
+    -ms-grid-auto-flow: dense;
+    transition: all $animationStyle;
 }
+
+
 
 @mixin breakpointColours {//help me style for breakpoints
     background-color: aqua;

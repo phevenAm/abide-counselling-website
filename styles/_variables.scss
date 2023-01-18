@@ -129,6 +129,34 @@ $gap-large: 90px;
 $radius-small: 30px;
 $radius-large: 60px;
 
+@mixin radiusResponsiveLarge {
+	border-radius: .8rem;
+
+	@include bp(s) {
+		border-radius: 1rem;
+	}
+	@include bp(m) {
+		border-radius: 1.4rem;
+	}
+	@include bp(l) {
+		border-radius: 2rem;
+	}
+}
+
+@mixin radiusResponsiveSmall {
+	border-radius: .4rem;
+
+	@include bp(s) {
+		border-radius: .5rem;
+	}
+	@include bp(m) {
+		border-radius: .7rem;
+	}
+	@include bp(l) {
+		border-radius: 1rem;
+	}
+}
+
 
 
 /*
