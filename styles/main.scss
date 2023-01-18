@@ -393,7 +393,7 @@ header {
 
 section[id] {
 	min-height: 100vh;
-	overflow-x: hidden; //for Aos
+	overflow-x: hidden !important; //for Aos
 
 	* {
 		transition: all 230ms ease-in-out;
@@ -447,7 +447,9 @@ section[id] {
 
 	&#landing {
 		background-color: $primary; //svg animate leaves growing
-		background-image: url('https://images.pexels.com/photos/4840134/pexels-photo-4840134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
 		background-position: center;
 		background-size: cover;
 		display: flex;
@@ -462,6 +464,7 @@ section[id] {
 
 
 		@include bp(m) {
+			//background-image: url('https://images.pexels.com/photos/5256140/pexels-photo-5256140.jpeg?auto=compress&cs=tinysrgb&w=6000&h=4000&dpr=1');
 			padding-top: $header-height;
 			//justify-content: center;
 		}
@@ -573,6 +576,7 @@ section[id] {
 				.textBox {
 					background-color: $white;
 					grid-area: 24/1/20/27;
+					z-index: 2;
 					@include radiusResponsiveLarge;
 
 					@include bp(s) {
@@ -638,7 +642,7 @@ section[id] {
 				display: flex;
 				justify-content: stretch;
 				justify-items: stretch;
-				gap: $gap-small;
+				gap: $gap-large;
 				flex-direction: column;
 
 				@include bp(m) {
@@ -646,7 +650,6 @@ section[id] {
 				}
 
 				@include bp(l) {
-					gap: $gap-large;
 				}
 
 				.card{
