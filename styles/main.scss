@@ -93,11 +93,11 @@ header {
 		@extend %container-padding;
 		padding-top: 10px !important;
 		padding-bottom: 10px !important;
-		
 
-		a.logo{
+
+		a.logo {
 			text-decoration: none;
-			font-size: 2rem ;
+			font-size: 2rem;
 			font-family: $font-headings;
 
 			@include bp(s) {
@@ -203,7 +203,7 @@ header {
 
 				a {
 
-					font-size: 1.5rem ;
+					font-size: 1.5rem;
 
 					&:hover,
 					&:focus,
@@ -226,8 +226,7 @@ header {
 							opacity: 0;
 						}
 
-						a {
-						}
+						a {}
 					}
 				}
 
@@ -356,7 +355,10 @@ header {
 		}
 
 		.burgermenu {
-			div, &::before, &::after {
+
+			div,
+			&::before,
+			&::after {
 				background-color: $color-text !important;
 			}
 		}
@@ -385,7 +387,9 @@ header {
 	}
 }
 
-section[id], section[class] { //! only sections used in nav should have ID else JS will break.
+section[id],
+section[class] {
+	//! only sections used in nav should have ID else JS will break.
 	min-height: 100vh;
 	overflow-x: hidden !important; //for Aos
 
@@ -557,7 +561,7 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 		.inner {
 			@include gridTemplate;
 
-			> div {
+			>div {
 				padding: $gap-small;
 			}
 
@@ -582,17 +586,19 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 					padding-left: 0;
 					padding-right: 0;
 				}
-				
+
 
 				@include bp(s) {
 					grid-area: 4/1/20/15;
 				}
 
-				@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
+				@include bp(m) {
+					/* gridarea: startTop/startLeft/endBottom/endRight*/
 					//grid-area: 12/1/20/27
 					grid-area: 5/1/20/15;
 					@include shadow;
 				}
+
 				@include bp(l) {
 					grid-area: 4/1/15/15;
 				}
@@ -616,7 +622,7 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 					min-height: 400px;
 					min-width: 300px;
 				}
-				
+
 				@include bp(m) {
 					grid-area: 1/13/20/27;
 					min-height: 400px;
@@ -637,7 +643,10 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 
 		.inner {
 			max-width: $max-contentWidth;
-		
+
+			@include bp(m) {
+				margin-top: -150px;
+			}
 
 			.cardsContainer {
 				display: flex;
@@ -650,10 +659,9 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 					flex-direction: row;
 				}
 
-				@include bp(l) {
-				}
+				@include bp(l) {}
 
-				.card{
+				.card {
 					height: 100%;
 					@include radiusResponsiveLarge;
 
@@ -677,7 +685,7 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 							background-image: url('https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
-						
+
 					}
 
 					&#facetoface {
@@ -799,9 +807,7 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 							font-weight: bold;
 						}
 
-						.price_value {
-
-						}
+						.price_value {}
 					}
 				}
 			}
@@ -838,15 +844,15 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 
 			.accordion-item {
 				@include radiusResponsiveLarge;
-				
+
 				& .collapsed {
 					@include radiusResponsiveLarge;
 				}
-				
+
 				.accordion-header {
 					margin-top: $gap-small;
 				}
-				
+
 				.accordion-button {
 					@include radiusResponsiveLarge;
 					font-size: 18px;
@@ -859,7 +865,7 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 
 					&:not(.collapsed) {
 						background-color: $primary;
-	
+
 						border-bottom-left-radius: 0 !important;
 						border-bottom-right-radius: 0 !important;
 						border-bottom: 0;
@@ -1153,7 +1159,7 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 						padding: 20px !important;
 
 						@include radiusResponsiveLarge;
-	
+
 
 						&::placeholder,
 						select div,
