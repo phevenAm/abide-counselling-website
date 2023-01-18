@@ -23,7 +23,6 @@
  	}
 
  	@include bp(m) {
- 		line-height: 1.4;
  		font-size: 24px;
  	}
  }
@@ -48,7 +47,7 @@
  	}
 
  	@include bp(l) {
- 		font-size: 4rem;
+ 		//font-size: 4rem;
  		margin-top: 3rem;
  	}
  }

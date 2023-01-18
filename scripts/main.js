@@ -161,7 +161,7 @@ $(function () {
 
 
 
-		//!********************************//!INJECTING MODAL CONTENT START*************************************//
+	//!********************************//!INJECTING MODAL CONTENT START*************************************//
 
 
 	function loadHtml(id, filePath, filename) {
@@ -186,23 +186,23 @@ $(function () {
 			return;
 		}
 	}
-		//? Injecting services modal content
-		const cardsArr = document.querySelectorAll('.card');
-		cardsArr.forEach(card => {
-			card.addEventListener('click', () => {
-				loadHtml('servicesModal', card.dataset.folder, card.dataset.file);
-			});
+	//? Injecting services modal content
+	const cardsArr = document.querySelectorAll('.card');
+	cardsArr.forEach(card => {
+		card.addEventListener('click', () => {
+			loadHtml('servicesModal', card.dataset.folder, card.dataset.file);
 		});
+	});
 
-		//? Injecting clients modal content
-		const clientsArr = document.querySelectorAll('#clientLogo');
-		clientsArr.forEach(client => {
-			client.addEventListener('click', () => {
-				loadHtml('clientsModal', client.dataset.folder, client.dataset.file);
-			});
+	//? Injecting clients modal content
+	const clientsArr = document.querySelectorAll('#clientLogo');
+	clientsArr.forEach(client => {
+		client.addEventListener('click', () => {
+			loadHtml('clientsModal', client.dataset.folder, client.dataset.file);
 		});
-	
-//!********************************//!INJECTING MODAL CONTENT END*************************************//
+	});
+
+	//!********************************//!INJECTING MODAL CONTENT END*************************************//
 
 
 
@@ -233,62 +233,92 @@ $(function () {
 
 
 
-	//!********************************//!MANUAL NAV SCROLLSPY END*************************************//
+	//!********************************//!MANUAL NAV SCROLLSPY Start*************************************//
 
 
-	let options = {
-		root: null, //which element as viewport (wholepage as default)
-		rootMargin: `0px 0px -99% 0px`, // adjusts the above root top,right, bottom, left
-		threshold: .01 //percentage overlap (0 - 1)
-	}
+	//let options = {
+	//	root: null, //which element as viewport (wholepage as default)
+	//	rootMargin: `0px 0px -99% 0px`, // adjusts the above root top,right, bottom, left
+	//	threshold: .01 //percentage overlap (0 - 1)
+	//}
 
-	//!callback function that's called when my target touches a space (enters / leaves),
-	let observer = new IntersectionObserver(isTouching, options)
-	document.querySelectorAll('section[id]').forEach((singleSection) => {
-		observer.observe(singleSection)
-		//!list of all the things it plans to watch
-		//console.log('watching:' + singleSection.innerHTML) 
-	})
+	////!callback function that's called when my target touches a space (enters / leaves),
+	//let observer = new IntersectionObserver(isTouching, options)
+	//document.querySelectorAll('section[id]').forEach((singleSection) => {
+	//	observer.observe(singleSection)
+	//	//!list of all the things it plans to watch
+	//	//console.log('watching:' + singleSection.innerHTML) 
+	//})
 
-	function isTouching(entries, observer) { //array of the things its watching, the obverser
-		entries.forEach((entry) => {
-			//console.log(navItems)
-			if (entry.isIntersecting) {
-				//console.log(entry.target.id)
-				entry.target.classList.add('active');
+	//function isTouching(entries, observer) { //array of the things its watching, the obverser
+	//	entries.forEach((entry) => {
+	//		//console.log(navItems)
+	//		if (entry.isIntersecting) {
+	//			//console.log(entry.target.id)
+	//			entry.target.classList.add('active');
 
-				navItems.find((navItem) => {
-					//console.log(navItem.hash.toString().slice(1)) //remove the hash symbol
-					//console.log(navItem.id, entry.target.id)
-					//return navItem.id === entry.target.id
-					if (navItem.hash.toString().slice(1) === entry.target.id) {
-						navItem.classList.add('active');
-					} else {
-						navItem.classList.remove('active');
-					}
-					return
-				})
+	//			navItems.find((navItem) => {
+	//				//console.log(navItem.hash.toString().slice(1)) //remove the hash symbol
+	//				//console.log(navItem.id, entry.target.id)
+	//				//return navItem.id === entry.target.id
+	//				if (navItem.hash.toString().slice(1) === entry.target.id) {
+	//					navItem.classList.add('active');
+	//				} else {
+	//					navItem.classList.remove('active');
+	//				}
+	//				return
+	//			})
 
-				//observer.unobserve(entry.target);
-			} else {
-				entry.target.classList.remove('active');
-			}
-		})
-	}
+	//			//observer.unobserve(entry.target);
+	//		} else {
+	//			entry.target.classList.remove('active');
+	//		}
+	//	})
+	//}
 
 
 	//var hashFix = (function() {
-    //    $(function() {
-    //        $('.navbar-nav ul.nav li a').each(function() {
-    //            var hash = $(this).prop('hash'),
-    //                url = $(this).attr('href');
+	//    $(function() {
+	//        $('.navbar-nav ul.nav li a').each(function() {
+	//            var hash = $(this).prop('hash'),
+	//                url = $(this).attr('href');
 	//			//console.log('nav hash')
-    //            if (url.indexOf('#') > -1) {
-    //                $(this).attr('href', hash);
-    //            }
-    //        });
-    //    });
-    //}());
+	//            if (url.indexOf('#') > -1) {
+	//                $(this).attr('href', hash);
+	//            }
+	//        });
+	//    });
+	//}());
 	//!********************************//!MANUAL NAV SCROLLSPY END*************************************//
+
+
+	//!********************************//!MANUAL NAV SCROLLSPY Take 2 Start*************************************//
+
+	/* SCROLL SECTIONS ACTIVE LINK */
+	const sections = document.querySelectorAll("section[id]");
+
+	function scrollActive() {
+		const scrollY = window.pageYOffset;
+
+		sections.forEach((current) => {
+			const sectionHeight = current.offsetHeight,
+				sectionTop = current.offsetTop - 58,
+				sectionId = current.getAttribute("id");
+					//const test = document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]");
+					//console.log(test)
+
+			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
+			  } else {
+				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
+			  }
+		});
+	}
+	window.addEventListener("scroll", scrollActive);
+
+
+	//!********************************//!MANUAL NAV SCROLLSPY Take 2 END*************************************//
+
+
 
 });

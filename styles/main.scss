@@ -98,6 +98,7 @@ header {
 		a.logo{
 			text-decoration: none;
 			font-size: 2rem ;
+			font-family: $font-headings;
 		}
 
 		@include bp(s) {
@@ -122,6 +123,17 @@ header {
 
 	#menuContainer {
 		position: relative;
+
+		@include bp(m) {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+
+			li {
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+		}
 
 		#navBar {
 
@@ -163,36 +175,6 @@ header {
 								width: 100%;
 							}
 						}
-
-						&.highlight {
-
-							@extend %btn;
-							background-color: $secondary;
-							color: $color-text !important;
-							padding: 10px 15px;
-							margin: auto;
-
-							@include bp (m) {
-								margin-left: $gap-small;
-
-								&:hover,
-								&:focus,
-								&:focus-within {
-									background: $primary;
-								}
-
-								&:active {
-									border-bottom: 0;
-									background: $black;
-								}
-							}
-
-
-
-							&::after {
-								display: none;
-							}
-						}
 					}
 				}
 			}
@@ -219,11 +201,13 @@ header {
 
 				a {
 
+					font-size: 1.5rem ;
+
 					&:hover,
 					&:focus,
 					&:focus-within,
 					&.active {
-						color: $secondary;
+						color: $accent !important;
 
 						&::after {
 							width: 0 !important;
@@ -241,7 +225,6 @@ header {
 						}
 
 						a {
-							font-size: 2rem !important;
 						}
 					}
 				}
@@ -290,15 +273,17 @@ header {
 			&::before,
 			&::after {
 				content: '';
-				height: 4px;
+				height: 3px;
 				width: 30px;
 				position: absolute;
 				transition: all $animationStyle;
-				background-color: $accent;
+				background-color: $white;
+				border-radius: 100px;
 			}
 
 			div {
 				transition: width 600ms $animation-ease 200ms;
+				border-radius: 100px;
 			}
 
 			//!TODO: this should really use .open class and have no class by default
@@ -325,8 +310,8 @@ header {
 				//div is middle line
 				div {
 					width: 40px;
-					background-color: $accent;
-					height: 4px;
+					background-color: $white;
+					height: 3px;
 					position: absolute;
 
 					top: 50%;
@@ -338,6 +323,7 @@ header {
 				&::before {
 					top: 0;
 					transform: translateY(50%);
+
 				}
 
 				&::after {
@@ -366,6 +352,12 @@ header {
 		.logo a span {
 			color: $color-text !important;
 		}
+
+		.burgermenu {
+			div, &::before, &::after {
+				background-color: $color-text !important;
+			}
+		}
 	}
 }
 
@@ -391,7 +383,7 @@ header {
 	}
 }
 
-section[id] {
+section[id], section[class] { //! only sections used in nav should have ID else JS will break.
 	min-height: 100vh;
 	overflow-x: hidden !important; //for Aos
 
@@ -445,7 +437,7 @@ section[id] {
 	}
 
 
-	&#landing {
+	&.landing {
 		background-color: $primary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -488,7 +480,7 @@ section[id] {
 			}
 
 			@include bp(xl) {
-				font-size: 10rem;
+				//font-size: 10rem;
 			}
 		}
 
@@ -548,84 +540,94 @@ section[id] {
 		}
 	}
 
+	&#about {
+		@include autoHeight;
+		background-color: $grey;
+	}
 
-		&#about-counsellor {
-			background: $white;
-			@include autoHeight;
 
-			//@include breakpointColours;
+	&.about-counsellor {
+		background: $white;
+		@include autoHeight;
 
-			.inner {
-				@include gridTemplate;
+		//@include breakpointColours;
 
-				> div {
-					padding: $gap-small;
+		.inner {
+			@include gridTemplate;
+
+			> div {
+				padding: $gap-small;
+			}
+
+			.section_top {
+				grid-area: 1/1/3/27;
+				z-index: 1;
+				padding: 0;
+
+				@include bp(m) {
+					//grid-area: 1/1/3/20;
+
+				}
+			}
+
+			.textBox {
+				background-color: $white;
+				grid-area: 24/1/20/27;
+				z-index: 2;
+				@include radiusResponsiveLarge;
+
+				@include bp(lt-m) {
+					padding-left: 0;
+					padding-right: 0;
+				}
+				
+
+				@include bp(s) {
+					grid-area: 4/1/20/15;
 				}
 
-				.section_top {
-					grid-area: 1/1/3/27;
-					z-index: 1;
-					padding: 0;
-
-					@include bp(m) {
-						//grid-area: 1/1/3/20;
-
-					}
+				@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
+					//grid-area: 12/1/20/27
+					grid-area: 5/1/20/15;
+					@include shadow;
 				}
-
-				.textBox {
-					background-color: $white;
-					grid-area: 24/1/20/27;
-					z-index: 2;
-					@include radiusResponsiveLarge;
-
-					@include bp(s) {
-						grid-area: 4/1/20/15;
-					}
-
-					@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
-						//grid-area: 12/1/20/27
-						grid-area: 5/1/20/15;
-						@include shadow;
-					}
-					@include bp(l) {
-						grid-area: 4/1/15/15;
-
-					}
+				@include bp(l) {
+					grid-area: 4/1/15/15;
 				}
+			}
 
-				.image {
-					background-color: $secondary;
-					@include radiusResponsiveLarge;
-					background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-					background-repeat: no-repeat;
-					background-position: center;
-					background-size: cover;
-					grid-area: 4/1/20/27;
+			.image {
+				background-color: $secondary;
+				@include radiusResponsiveLarge;
+				background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				grid-area: 4/1/20/27;
+				min-height: 400px;
+				min-width: 250px;
+
+
+
+				@include bp(s) {
+					grid-area: 4/16/20/27;
 					min-height: 400px;
-					min-width: 250px;
+					min-width: 300px;
+				}
+				
+				@include bp(m) {
+					grid-area: 1/13/20/27;
+					min-height: 400px;
+					min-width: 300px;
+				}
 
-
-
-					@include bp(s) {
-						grid-area: 4/16/20/27;
-						min-height: 400px;
-						min-width: 300px;
-					}
-					
-					@include bp(m) {
-						grid-area: 1/13/20/27;
-						min-height: 400px;
-						min-width: 300px;
-					}
-
-					@include bp(l) {
-						min-height: 400px;
-						min-width: 600px;
-					}
+				@include bp(l) {
+					min-height: 400px;
+					min-width: 600px;
 				}
 			}
 		}
+	}
 
 	&#services {
 		transition: background-image $animationStyle;
@@ -696,7 +698,7 @@ section[id] {
 		//@include modalStyle;
 	}
 
-	&#testimonials {
+	&.testimonials {
 		background-color: $primary;
 		@include autoHeight;
 		position: relative;
@@ -967,7 +969,7 @@ section[id] {
 					left: 50%;
 					transform: translate(-50%, -50%);
 					font-family: $font-headings;
-					font-size: 90px;
+					font-size: 70px;
 					line-height: 1;
 					text-align: center;
 					z-index: 0;
@@ -1203,7 +1205,7 @@ section[id] {
 
 					label {
 						float: left;
-						color: $white;
+						color: $black;
 						//padding-bottom: 5px;
 
 						&[for="subject"] {
@@ -1211,7 +1213,7 @@ section[id] {
 						}
 
 						span {
-							color: $white;
+							color: $black;
 						}
 
 						@include bp(m) {
