@@ -12,6 +12,8 @@
 	border-radius: 0;
 	color: $color-text ;
 
+	@include radiusResponsiveLarge;
+
 
 	@include webkitRemove;
 

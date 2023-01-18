@@ -93,12 +93,16 @@ header {
 		@extend %container-padding;
 		padding-top: 10px !important;
 		padding-bottom: 10px !important;
+		
+
+		a.logo{
+			text-decoration: none;
+			font-size: 2rem ;
+		}
 
 		@include bp(s) {
 			a.logo {
 				color: $white;
-				text-decoration: underline !important;
-				transform: scale(1.25) !important;
 			}
 		}
 
@@ -352,7 +356,9 @@ header {
 	&.shrink {
 		height: 90px;
 		@include shadow;
-		background-color: $secondary;
+		//background-color: $secondary;
+		@include frostBG($white);
+
 
 		a,
 		a:visited,
@@ -441,7 +447,7 @@ section[id] {
 
 	&#landing {
 		background-color: $primary; //svg animate leaves growing
-		//background-image: url('https://images.pexels.com/photos/1126380/pexels-photo-1126380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		background-image: url('https://images.pexels.com/photos/4840134/pexels-photo-4840134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 		background-position: center;
 		background-size: cover;
 		display: flex;
@@ -487,7 +493,7 @@ section[id] {
 			position: relative;
 
 			p {
-				color: $color-text;
+				color: $secondary;
 				font-size: 1.8rem;
 
 				@include bp(m) {
@@ -541,10 +547,10 @@ section[id] {
 
 
 		&#about-counsellor {
-			background: $secondary;
+			background: $white;
 			@include autoHeight;
 
-			@include breakpointColours;
+			//@include breakpointColours;
 
 			.inner {
 				@include gridTemplate;
@@ -555,7 +561,7 @@ section[id] {
 
 				.section_top {
 					grid-area: 1/1/3/27;
-
+					z-index: 1;
 					padding: 0;
 
 					@include bp(m) {
@@ -565,21 +571,18 @@ section[id] {
 				}
 
 				.textBox {
-					@include frostBG($white);
-				    //grid-area: 1/4/15/15;
-
+					background-color: $white;
 					grid-area: 24/1/20/27;
-
-					//@include radiusResponsiveLarge;
+					@include radiusResponsiveLarge;
 
 					@include bp(s) {
 						grid-area: 4/1/20/15;
-
 					}
 
 					@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
 						//grid-area: 12/1/20/27
 						grid-area: 5/1/20/15;
+						@include shadow;
 					}
 					@include bp(l) {
 						grid-area: 4/1/15/15;
@@ -589,7 +592,7 @@ section[id] {
 
 				.image {
 					background-color: $secondary;
-					//@include radiusResponsiveLarge;
+					@include radiusResponsiveLarge;
 					background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 					background-repeat: no-repeat;
 					background-position: center;
@@ -635,23 +638,27 @@ section[id] {
 				display: flex;
 				justify-content: stretch;
 				justify-items: stretch;
-				gap: $gap-large;
+				gap: $gap-small;
 				flex-direction: column;
 
 				@include bp(m) {
 					flex-direction: row;
 				}
 
+				@include bp(l) {
+					gap: $gap-large;
+				}
+
 				.card{
 					height: 100%;
-					//@include radiusResponsiveLarge;
+					@include radiusResponsiveLarge;
 
 					.image {
 						background-position: center;
 						background-size: cover;
 						background-repeat: no-repeat;
 						min-height: 400px;
-						//@include radiusResponsiveLarge;
+						@include radiusResponsiveLarge;
 						border-bottom-left-radius: 0 !important;
 						border-bottom-right-radius: 0 !important;
 
@@ -674,7 +681,7 @@ section[id] {
 							background-image: url('https://images.pexels.com/photos/4057864/pexels-photo-4057864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
-						@include bp(l) {
+						@include bp(m) {
 							margin-top: -150px;
 						}
 					}
@@ -768,16 +775,18 @@ section[id] {
 			transition: all $animationStyle;
 
 			.accordion-item {
-
+				@include radiusResponsiveLarge;
+				
 				& .collapsed {
-
+					@include radiusResponsiveLarge;
 				}
-
+				
 				.accordion-header {
 					margin-top: $gap-small;
 				}
-
+				
 				.accordion-button {
+					@include radiusResponsiveLarge;
 					font-size: 18px;
 					color: $color-text;
 					font-family: $font-copy;
@@ -792,9 +801,12 @@ section[id] {
 						border-bottom-left-radius: 0 !important;
 						border-bottom-right-radius: 0 !important;
 						border-bottom: 0;
+						color: $white;
 
 						&::after {
 							content: '-';
+							font-weight: 500;
+							font-family: sans-serif;
 						}
 
 					}
@@ -804,11 +816,19 @@ section[id] {
 						background: none;
 						display: grid;
 						place-content: center;
+						font-weight: 500;
+						font-family: sans-serif;
 					}
 
 					p {
 						color: $black;
 					}
+				}
+
+				.accordion-body {
+					@include radiusResponsiveLarge;
+					border-top-left-radius: 0 !important;
+					border-top-right-radius: 0 !important;
 				}
 			}
 
@@ -1069,6 +1089,8 @@ section[id] {
 						@include webkitRemove;
 						@extend %copy;
 						padding: 20px !important;
+
+						@include radiusResponsiveLarge;
 	
 
 						&::placeholder,
@@ -1112,18 +1134,22 @@ section[id] {
 						width: 100%;
 
 						&::after {
-							content: $arrow-down;
+							//content: $arrow-down;
+							content: '⌄';
 							position: absolute;
 							font-size: 1.2rem;
 							bottom: 30px;
 							right: 15px;
 							top: 0px;
 							transform: translateY(50%);
-							color: $white;
+							color: $black !important;
 							z-index: 1;
-							font-family: $icon-font;
-							@include thin-icon;
+							font-weight: 100;
+							//font-family: $icon-font;
+							//@include thin-icon;
 							pointer-events: none; // click passes throught to select
+							line-height: 1;
+							font-family: sans-serif;
 
 						}
 

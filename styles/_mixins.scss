@@ -289,7 +289,7 @@
 
 @mixin frostBG($color) {
     backdrop-filter: blur(5px);
-    background: transparentize($color, 0.3);
+    background: transparentize($color, 0.01);
 }
 
 @mixin shadow {
