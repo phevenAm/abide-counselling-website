@@ -128,3 +128,18 @@ $gap-large: 90px;
 //radius
 $radius-small: 30px;
 $radius-large: 60px;
+
+
+
+/*
+CSS GRID
+*/
+
+
+$site-gutter: 3vw;
+$site-max-width: $max-contentWidth;
+$grid-gutter: calc((#{$site-gutter}, 4vw) - 11.0px);
+$cell-max-width: calc(((#{$site-max-width}, 1500px) - (11.0px * (24 - 1)) ) / 24 );
+$inset-padding: 0vw;
+$row-height-scaling-factor: 0.0215;
+$container-width: min((#{$site-max-width}, 1500px), calc(100vw - (#{$site-gutter}, 4vw) * 2 - (#{$inset-padding})));

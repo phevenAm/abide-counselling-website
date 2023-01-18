@@ -580,7 +580,8 @@ section[id] {
 					}
 
 					.left_section {
-						@extend %container-padding;
+						//@extend %container-padding;
+						padding: $gap-small;
 						
 						@include bp(m){
 							max-width: 60%;
@@ -612,6 +613,49 @@ section[id] {
 			}
 		}
 
+		&#grid {
+			background: $secondary;
+			.inner {
+				@include gridTemplate;
+
+				> div {
+					padding: $gap-small;
+				}
+
+				.textBox {
+					@include frostBG($white);
+				    grid-area: 1/4/15/15;
+					border-radius: $radius-small;
+
+					@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
+						grid-area: 3/1/15/15;
+					}
+
+					@include bp(l) {
+						
+					}
+				}
+
+				.image {
+					background-color: $secondary;
+					border-radius: $radius-small;
+					background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+					grid-area: 1/13/20/26;
+					
+					@include bp(m) {
+						grid-area: 1/13/20/27;
+						
+					}
+
+					@include bp(l) {
+						
+					}
+				}
+			}
+		}
 
 	&#services {
 		transition: background-image $animationStyle;
@@ -622,6 +666,7 @@ section[id] {
 
 		.inner {
 			max-width: $max-contentWidth;
+		
 
 			.cardsContainer {
 				display: flex;
