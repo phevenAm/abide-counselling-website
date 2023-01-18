@@ -1,11 +1,14 @@
 $(function () {
 	var nav = $('nav')[0];
 	//const nav = document.querySelector('nav.nav');
-	const navItems = Array.from(document.querySelectorAll('#navBar ul.nav li'));
+	const navItems = Array.from(document.querySelectorAll('#navBar ul.nav li a'));
 	const header = document.getElementById('header');
 	const burgermenu = document.getElementById('burgerMenu');
 	const allSections = Array.from(document.querySelectorAll('section'));
-	//const nav = document.getElementById('testingres')
+
+	const navLinks = document.querySelectorAll('#navbar ul li a');
+	console.log(navLinks)
+
 	//!animting logo
 
 	//! Navbar toggle
@@ -25,6 +28,8 @@ $(function () {
 			closeNav();
 		})
 	})
+
+	console.log(navItems);
 
 	//! Header shrink
 	window.addEventListener('scroll', () => {
@@ -228,79 +233,6 @@ $(function () {
 
 
 
-
-	//!********************************//!SVG Landing ANIMATION START*************************************//
-	const svgsArr = Array.from(document.querySelectorAll('path[class^="cls-"]'));
-
-	svgsArr.forEach((el, i, zIndex) => {
-		let to = {
-			x: Math.random() * (i % 2 === 0 ? -11 : 11),
-			y: Math.random() * 12
-		};
-
-		let anim = el.animate(
-			[{
-					transform: "translate(0, 0)"
-				},
-				{
-					transform: `translate(${to.x}rem, ${to.y}rem)`
-				},
-			], {
-				duration: (Math.random() + 1) * 8000, // random duration (originally 2000)
-				direction: "alternate",
-				fill: "both",
-				iterations: Infinity,
-				easing: "ease-in-out"
-			}
-		);
-	});
-	//!********************************//!SVG ANIMATION END*************************************//
-
-
-	//!********************************//!PURPLE BUTTON CONTENT START*************************************//
-
-	const aboutMeBtn = document.querySelector('.aboutContainer div.dot');
-	const additionalInfo = document.querySelector('.aboutContainer div.info');
-
-	aboutMeBtn.addEventListener('click', () => {
-
-
-		if (aboutMeBtn.classList.contains('active')) {
-			aboutMeBtn.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`
-		} else {
-			aboutMeBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`
-		}
-
-		additionalInfo.classList.toggle('active');
-		aboutMeBtn.classList.toggle('active');
-	})
-
-
-	//  if modal is open set body overflow Y to hidden
-
-
-
-	//video close btn
-	const showcaseVidBtn = document.querySelector('.pausePlay')
-	const showcaseVideo = document.querySelector('video#showcaseVideo');
-
-	showcaseVidBtn.addEventListener('click', () => {
-		console.log('clicked')
-		if (showcaseVidBtn.classList.contains('playing')) {
-			showcaseVideo.pause();
-			showcaseVidBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
-			//console.log('paused')
-			showcaseVidBtn.classList.remove('playing');
-		} else {
-			showcaseVidBtn.classList.add('playing');
-			showcaseVideo.play();
-			showcaseVidBtn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-			//console.log('playing')
-		}
-	});
-	//!********************************//!PURPLE BUTTON CONTENT END*************************************//
-
-
 	//!********************************//!MANUAL NAV SCROLLSPY END*************************************//
 
 
@@ -312,7 +244,7 @@ $(function () {
 
 	//!callback function that's called when my target touches a space (enters / leaves),
 	let observer = new IntersectionObserver(isTouching, options)
-	document.querySelectorAll('section').forEach((singleSection) => {
+	document.querySelectorAll('section[id]').forEach((singleSection) => {
 		observer.observe(singleSection)
 		//!list of all the things it plans to watch
 		//console.log('watching:' + singleSection.innerHTML) 
@@ -326,10 +258,10 @@ $(function () {
 				entry.target.classList.add('active');
 
 				navItems.find((navItem) => {
-					//console.log(navItem.className)
+					//console.log(navItem.hash.toString().slice(1)) //remove the hash symbol
 					//console.log(navItem.id, entry.target.id)
 					//return navItem.id === entry.target.id
-					if (navItem.className === entry.target.id) {
+					if (navItem.hash.toString().slice(1) === entry.target.id) {
 						navItem.classList.add('active');
 					} else {
 						navItem.classList.remove('active');
@@ -345,18 +277,18 @@ $(function () {
 	}
 
 
-	var hashFix = (function() {
-        $(function() {
-            $('.navbar-nav ul.nav li a').each(function() {
-                var hash = $(this).prop('hash'),
-                    url = $(this).attr('href');
-				//console.log('nav hash')
-                if (url.indexOf('#') > -1) {
-                    $(this).attr('href', hash);
-                }
-            });
-        });
-    }());
+	//var hashFix = (function() {
+    //    $(function() {
+    //        $('.navbar-nav ul.nav li a').each(function() {
+    //            var hash = $(this).prop('hash'),
+    //                url = $(this).attr('href');
+	//			//console.log('nav hash')
+    //            if (url.indexOf('#') > -1) {
+    //                $(this).attr('href', hash);
+    //            }
+    //        });
+    //    });
+    //}());
 	//!********************************//!MANUAL NAV SCROLLSPY END*************************************//
 
 });
