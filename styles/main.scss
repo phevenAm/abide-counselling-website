@@ -99,11 +99,13 @@ header {
 			text-decoration: none;
 			font-size: 2rem ;
 			font-family: $font-headings;
-		}
 
-		@include bp(s) {
-			a.logo {
+			@include bp(s) {
 				color: $white;
+			}
+
+			@include bp(m) {
+				font-size: 2.5rem;
 			}
 		}
 
@@ -630,9 +632,6 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 	}
 
 	&#services {
-		transition: background-image $animationStyle;
-		background-size: cover;
-		background-repeat: no-repeat;
 		position: relative;
 		overflow: hidden;
 
@@ -711,7 +710,7 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 			margin-bottom: -60px !important;
 			font-size: 1.5rem;
 			line-height: 1.4;
-			font-family: sans-serif;
+			font-family: $font-headings;
 
 			@include bp(m) {
 				font-size: 2.0rem;
@@ -742,11 +741,69 @@ section[id], section[class] { //! only sections used in nav should have ID else 
 			line-height: .4;
 			opacity: .3;
 			//transform: translateY(-3%);
+			font-family: $font-headings;
 			top: 20%;
 
 			@include bp(m) {
 				top: 40%;
 				font-size: 60rem;
+			}
+		}
+	}
+
+	&#prices {
+		@include autoHeight;
+
+		.inner {
+			@include gridTemplate;
+
+			.section_top {
+				grid-area: 1/1/3/27;
+				z-index: 1;
+				padding: 0;
+
+				@include bp(m) {
+					//grid-area: 1/1/3/20;
+
+				}
+			}
+
+			.prices-box {
+				grid-area: 3/1/27/27;
+				width: 100%;
+				padding: $gap-small;
+				border: 2px solid $accent;
+
+				* {
+					font-size: 1.2rem;
+
+					@include bp(m) {
+						font-size: 1.5rem;
+					}
+				}
+
+				@include bp(l) {
+					padding: $gap-large;
+				}
+
+				p.subtitle strong {
+					padding-bottom: $gap-large !important;
+					color: $accent !important;
+					font-weight: bold !important;
+				}
+
+				ul {
+					li.price {
+						.price_item {
+							font-family: $font-headings;
+							font-weight: bold;
+						}
+
+						.price_value {
+
+						}
+					}
+				}
 			}
 		}
 	}
