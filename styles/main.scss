@@ -225,9 +225,6 @@ header {
 						li {
 							opacity: 0;
 						}
-
-						a {
-						}
 					}
 				}
 
@@ -551,7 +548,7 @@ section[id] {
 	}
 
 	&#about {
-		@include autoHeight;
+		//@include autoHeight;
 		background-color: $grey;
 	}
 
@@ -760,81 +757,8 @@ section[id] {
 		}
 	}
 
-	&#prices {
-		@include autoHeight;
-
-		.inner {
-			@include gridTemplate;
-
-			.section_top {
-				grid-area: 1/1/3/27;
-				z-index: 1;
-				padding: 0;
-
-				@include bp(m) {
-					//grid-area: 1/1/3/20;
-
-				}
-			}
-
-			.prices-box {
-				grid-area: 3/1/27/27;
-				max-width: $max-contentWidth;
-				width: 100%;
-				padding: $gap-small;
-				border: 6px solid $accent;
-				margin: unset;
-				height: fit-content;
-				@include radiusResponsiveLarge;
-
-				* {
-					font-size: 1rem;
-
-					@include bp(s) {
-						font-size: 1.5rem;
-					}
-				}
-
-				@include bp(xl) {
-					padding: $gap-large;
-				}
-
-				p.subtitle {
-					color: $accent !important;
-					font-weight: bold !important;
-					text-align: center !important;
-				}
-
-				ul {
-					display: flex;
-					flex-direction: column;
-					height: 100%;
-					justify-content: flex-start;
-					margin-top: $gap-large;
-
-					@include bp(s) {
-						justify-content: space-evenly;
-					}
-
-					li.price {
-						.price_item {
-							font-family: $font-headings;
-							font-weight: bold;
-							padding-right: 10px;
-							line-height: 1;
-						}
-
-						.price_value {
-							font-weight: bold;
-						}
-					}
-				}
-			}
-		}
-	}
-
 	&#faqs {
-		@include autoHeight;
+		//@include autoHeight;
 		background-color: $grey;
 		overflow: hidden;
 
@@ -974,7 +898,98 @@ section[id] {
 	}
 
 	&#prices {
-		//@include autoHeight;
+		@include autoHeight;
+
+		.inner {
+			@include gridTemplate;
+
+			.section_top {
+				grid-area: 1/1/3/27;
+				z-index: 1;
+				padding: 0;
+
+				@include bp(m) {
+					//grid-area: 1/1/3/20;
+
+				}
+			}
+
+			.prices-box {
+				grid-area: 3/1/27/27;
+				max-width: $max-contentWidth;
+				width: 100%;
+				padding: $gap-small;
+				border: 6px solid $accent;
+				margin: unset;
+				height: fit-content;
+				@include radiusResponsiveLarge;
+
+				h3 {
+					position: absolute;
+					left: 50%;
+					top: 0;
+					transform: translate(-50%, -60%);
+					padding: 10px 20px;
+					font-size: 1rem;
+					background-color: $white;
+					margin: 0;
+	
+					@include bp(m) {
+						padding: 10px 40px;
+						font-size: 1.5rem;
+					}
+				}
+
+				* {
+					font-size: 1rem;
+
+					@include bp(s) {
+						font-size: 1.5rem;
+					}
+				}
+
+				@include bp(xl) {
+					padding: $gap-large;
+				}
+
+				p.subtitle {
+					color: $accent !important;
+					font-weight: bold !important;
+					text-align: center !important;
+				}
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+					justify-content: flex-start;
+					margin-top: $gap-small;
+
+					@include bp(s) {
+						justify-content: space-evenly;
+					}
+
+					li.price {
+
+						@include bp(s){
+							display: flex;
+							justify-content: space-between;
+						}
+
+						.price_item {
+							font-family: $font-headings;
+							font-weight: bold;
+							padding-right: 10px;
+							line-height: 1;
+						}
+
+						.price_value {
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
 
 		.prices-box {
 			border: 5px double $secondary;
@@ -987,35 +1002,9 @@ section[id] {
 				padding: 30px;
 			}
 
-			h3 {
-				position: absolute;
-				left: 50%;
-				top: 0;
-				transform: translate(-50%, -60%);
-				padding: 10px 20px;
-				font-size: 1rem;
-				background-color: $white;
-				margin: 0;
-			}
 
-			ul {
-				padding: 0 !important;
 
-				li.price {
-					display: flex;
-					list-style: none;
-					justify-content: space-between;
-				}
-			}
-
-			@include bp(m) {
-				padding: 50px;
-
-				h3 {
-					padding: 10px 40px;
-					font-size: 1.5rem;
-				}
-			}
+			
 		}
 	}
 
