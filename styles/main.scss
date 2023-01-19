@@ -93,11 +93,11 @@ header {
 		@extend %container-padding;
 		padding-top: 10px !important;
 		padding-bottom: 10px !important;
+		
 
-
-		a.logo {
+		a.logo{
 			text-decoration: none;
-			font-size: 2rem;
+			font-size: 2rem ;
 			font-family: $font-headings;
 
 			@include bp(s) {
@@ -203,7 +203,7 @@ header {
 
 				a {
 
-					font-size: 1.5rem;
+					font-size: 1.5rem ;
 
 					&:hover,
 					&:focus,
@@ -226,7 +226,8 @@ header {
 							opacity: 0;
 						}
 
-						a {}
+						a {
+						}
 					}
 				}
 
@@ -355,10 +356,7 @@ header {
 		}
 
 		.burgermenu {
-
-			div,
-			&::before,
-			&::after {
+			div, &::before, &::after {
 				background-color: $color-text !important;
 			}
 		}
@@ -387,9 +385,7 @@ header {
 	}
 }
 
-section[id],
-section[class] {
-	//! only sections used in nav should have ID else JS will break.
+section[id] {
 	min-height: 100vh;
 	overflow-x: hidden !important; //for Aos
 
@@ -427,6 +423,14 @@ section[class] {
 		margin: auto;
 		width: 100%;
 		@extend %container-padding;
+
+		.section_top {
+			margin-bottom: $gap-small;
+
+			@include bp(m) {
+				margin-bottom: $gap-large;
+			}
+		}
 	}
 
 	&.coloured-section {
@@ -443,7 +447,7 @@ section[class] {
 	}
 
 
-	&.landing {
+	&#landing {
 		background-color: $primary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -552,7 +556,7 @@ section[class] {
 	}
 
 
-	&.about-counsellor {
+	&#about-counsellor {
 		background: $white;
 		@include autoHeight;
 
@@ -561,7 +565,7 @@ section[class] {
 		.inner {
 			@include gridTemplate;
 
-			>div {
+			> div {
 				padding: $gap-small;
 			}
 
@@ -581,26 +585,25 @@ section[class] {
 				grid-area: 24/1/20/27;
 				z-index: 2;
 				@include radiusResponsiveLarge;
+				margin-top: -10px;
 
 				@include bp(lt-m) {
 					padding-left: 0;
 					padding-right: 0;
 				}
-
+				
 
 				@include bp(s) {
-					grid-area: 4/1/20/15;
+					grid-area: 3/1/20/15;
 				}
 
-				@include bp(m) {
-					/* gridarea: startTop/startLeft/endBottom/endRight*/
+				@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
 					//grid-area: 12/1/20/27
-					grid-area: 5/1/20/15;
+					grid-area: 3/1/20/15;
 					@include shadow;
 				}
-
 				@include bp(l) {
-					grid-area: 4/1/15/15;
+					grid-area: 3/1/15/15;
 				}
 			}
 
@@ -622,7 +625,7 @@ section[class] {
 					min-height: 400px;
 					min-width: 300px;
 				}
-
+				
 				@include bp(m) {
 					grid-area: 1/13/20/27;
 					min-height: 400px;
@@ -643,10 +646,7 @@ section[class] {
 
 		.inner {
 			max-width: $max-contentWidth;
-
-			@include bp(m) {
-				margin-top: -150px;
-			}
+		
 
 			.cardsContainer {
 				display: flex;
@@ -659,9 +659,10 @@ section[class] {
 					flex-direction: row;
 				}
 
-				@include bp(l) {}
+				@include bp(l) {
+				}
 
-				.card {
+				.card{
 					height: 100%;
 					@include radiusResponsiveLarge;
 
@@ -685,7 +686,7 @@ section[class] {
 							background-image: url('https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
-
+						
 					}
 
 					&#facetoface {
@@ -705,7 +706,7 @@ section[class] {
 		//@include modalStyle;
 	}
 
-	&.testimonials {
+	&#testimonials {
 		background-color: $primary;
 		@include autoHeight;
 		position: relative;
@@ -778,36 +779,54 @@ section[class] {
 
 			.prices-box {
 				grid-area: 3/1/27/27;
+				max-width: $max-contentWidth;
 				width: 100%;
 				padding: $gap-small;
-				border: 2px solid $accent;
+				border: 6px solid $accent;
+				margin: unset;
+				height: fit-content;
+				@include radiusResponsiveLarge;
 
 				* {
-					font-size: 1.2rem;
+					font-size: 1rem;
 
-					@include bp(m) {
+					@include bp(s) {
 						font-size: 1.5rem;
 					}
 				}
 
-				@include bp(l) {
+				@include bp(xl) {
 					padding: $gap-large;
 				}
 
-				p.subtitle strong {
-					padding-bottom: $gap-large !important;
+				p.subtitle {
 					color: $accent !important;
 					font-weight: bold !important;
+					text-align: center !important;
 				}
 
 				ul {
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+					justify-content: flex-start;
+					margin-top: $gap-large;
+
+					@include bp(s) {
+						justify-content: space-evenly;
+					}
+
 					li.price {
 						.price_item {
 							font-family: $font-headings;
 							font-weight: bold;
+							padding-right: 10px;
+							line-height: 1;
 						}
 
-						.price_value {}
+						.price_value {
+							font-weight: bold;
+						}
 					}
 				}
 			}
@@ -844,15 +863,15 @@ section[class] {
 
 			.accordion-item {
 				@include radiusResponsiveLarge;
-
+				
 				& .collapsed {
 					@include radiusResponsiveLarge;
 				}
-
+				
 				.accordion-header {
 					margin-top: $gap-small;
 				}
-
+				
 				.accordion-button {
 					@include radiusResponsiveLarge;
 					font-size: 18px;
@@ -865,7 +884,7 @@ section[class] {
 
 					&:not(.collapsed) {
 						background-color: $primary;
-
+	
 						border-bottom-left-radius: 0 !important;
 						border-bottom-right-radius: 0 !important;
 						border-bottom: 0;
@@ -999,8 +1018,6 @@ section[class] {
 			}
 		}
 	}
-
-
 
 	&#contact {
 		// min-height: 140vh;
@@ -1159,7 +1176,7 @@ section[class] {
 						padding: 20px !important;
 
 						@include radiusResponsiveLarge;
-
+	
 
 						&::placeholder,
 						select div,

@@ -29,8 +29,6 @@ $(function () {
 		})
 	})
 
-	console.log(navItems);
-
 	//! Header shrink
 	window.addEventListener('scroll', () => {
 		if (window.scrollY >= '100' || window.innerWidth < '1000') {
@@ -295,7 +293,7 @@ $(function () {
 	//!********************************//!MANUAL NAV SCROLLSPY Take 2 Start*************************************//
 
 	/* SCROLL SECTIONS ACTIVE LINK */
-	const sections = document.querySelectorAll("section[id]");
+	const sections = Array.from(document.querySelectorAll("section[data-contentId]"));
 
 	function scrollActive() {
 		const scrollY = window.pageYOffset;
@@ -304,14 +302,12 @@ $(function () {
 			const sectionHeight = current.offsetHeight,
 				sectionTop = current.offsetTop - 58,
 				sectionId = current.getAttribute("id");
-					//const test = document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]");
-					//console.log(test)
 
 			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
 				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
-			  } else {
+			} else {
 				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
-			  }
+			}
 		});
 	}
 	window.addEventListener("scroll", scrollActive);
