@@ -149,7 +149,7 @@ header {
 					position: relative;
 
 					@include bp(m) {
-						margin-left: 20px;
+						margin-left: 10px;
 						flex-direction: row;
 					}
 
@@ -452,7 +452,8 @@ section[id] {
 		background-color: $primary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-		background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
+		background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
 		background-position: center;
 		background-size: cover;
 		display: flex;
@@ -500,14 +501,17 @@ section[id] {
 
 			p {
 				color: $secondary;
-				font-size: 1.8rem;
-
+				font-size: 1.2rem;
+				line-height: 1;
+				max-width: 40ch;
+				
 				@include bp(m) {
-					font-size: 4rem;
+					font-size: 1.5rem;
+					max-width: 50ch;
+					//font-size: 4rem;
 				}
 
 				@include bp(l) {
-					font-size: 5rem;
 				}
 			}
 
@@ -552,8 +556,9 @@ section[id] {
 	}
 
 	&#about {
-		//@include autoHeight;
+		@include autoHeight;
 		background-color: $grey;
+		padding-bottom: 70px;
 	}
 
 
@@ -606,6 +611,10 @@ section[id] {
 				@include bp(l) {
 					grid-area: 3/1/15/15;
 				}
+
+				img {
+					max-width: 200px;
+				}
 			}
 
 			.image {
@@ -639,6 +648,14 @@ section[id] {
 					min-width: 600px;
 				}
 			}
+
+			.additionalText {
+				//background-color: red;
+				@include radiusResponsiveLarge;
+				background-color: $grey;
+				min-height: fit-content;
+				grid-area: 25/1/24/27;
+			}
 		}
 	}
 
@@ -668,6 +685,10 @@ section[id] {
 					height: 100%;
 					@include radiusResponsiveLarge;
 
+					@include bp(m) {
+						width: 100%;
+					}
+
 					.image {
 						background-position: center;
 						background-size: cover;
@@ -696,10 +717,14 @@ section[id] {
 							background-image: url('https://images.pexels.com/photos/4057864/pexels-photo-4057864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
+						
+
 						@include bp(m) {
 							margin-top: -150px;
 						}
 					}
+
+
 				}
 
 			}
@@ -708,8 +733,11 @@ section[id] {
 		//@include modalStyle;
 	}
 
-	&#testimonials {
-		background-color: $primary;
+	&#quote {
+		background-color: $accent;
+		background-position: center;
+		background-size: cover;
+		backdrop-filter: blur(5px);
 		@include autoHeight;
 		position: relative;
 		overflow: hidden;
@@ -747,7 +775,7 @@ section[id] {
 			font-family: serif;
 			left: 0;
 			//color: inherit;
-			color: darken($secondary, 20%);
+			color: darken($accent, 20%);
 			top: 50%;
 			line-height: .4;
 			opacity: .3;
@@ -929,22 +957,6 @@ section[id] {
 				height: fit-content;
 				@include radiusResponsiveLarge;
 
-				h3 {
-					position: absolute;
-					left: 50%;
-					top: 0;
-					transform: translate(-50%, -60%);
-					padding: 10px 20px;
-					font-size: 1rem;
-					background-color: $white;
-					margin: 0;
-	
-					@include bp(m) {
-						padding: 10px 40px;
-						font-size: 1.5rem;
-					}
-				}
-
 				* {
 					font-size: 1rem;
 
@@ -959,8 +971,6 @@ section[id] {
 
 				p.subtitle {
 					color: $accent !important;
-					font-weight: bold !important;
-					text-align: center !important;
 				}
 
 				ul {
@@ -979,6 +989,7 @@ section[id] {
 						@include bp(s){
 							display: flex;
 							justify-content: space-between;
+							margin-bottom: $gap-small;
 						}
 
 						.price_item {
@@ -986,6 +997,10 @@ section[id] {
 							font-weight: bold;
 							padding-right: 10px;
 							line-height: 1;
+							
+							small {
+								font-family: $font-copy !important;
+							}
 						}
 
 						.price_value {
@@ -993,310 +1008,50 @@ section[id] {
 						}
 					}
 				}
+
+				.disclaimer {
+					margin-top: $gap-large;
+					line-height: .8;
+
+					@include bp(m) {
+						text-align: center;
+					}
+				}
 			}
-		}
-
-		.prices-box {
-			border: 5px double $secondary;
-			padding: 15px;
-			position: relative;
-			max-width: 1000px;
-			margin: auto;
-
-			@include bp(m) {
-				padding: 30px;
-			}
-
-
-
 			
 		}
 	}
 
 	&#contact {
-		// min-height: 140vh;
-		// padding-top: 30px;
-		height: 100%;
 		padding-top: 0 !important;
 		padding-bottom: 0 !important;
-
-		@include bp(m) {
-			@include overflowDir(right, $secondary, $primary);
-
-		}
+		@include autoHeight;
+		//@include bp(m) {
+		//	@include overflowDir(right, $primary, $secondary);
+		//}
 
 		.inner {
 			display: flex;
-			align-items: center;
-			height: 100%;
-			min-height: 100vh;
-			padding-top: 30px;
-			padding-bottom: 30px;
-			max-width: $max-contentWidth;
-			position: relative;
+			justify-content: space-evenly;
+			flex-direction: column;
+			text-align: center;
 
-			@include bp(lt-m) {
-				&::before {
-					content: 'Come Say Hello';
-					position: absolute;
-					top: 15%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					font-family: $font-headings;
-					font-size: 70px;
-					line-height: 1;
+
+			@include bp(m) {
+				text-align: left;
+				flex-direction: row;
+			}
+
+
+			.details {
+			display: grid;
+			place-content: center;
+
+				p {
 					text-align: center;
-					z-index: 0;
-					color: #9e423c;
-				}
-			}
 
-			* {
-				&:focus-within {
+					a {
 
-					&::before,
-					&::after {
-						color: $white !important;
-					}
-				}
-			}
-
-			.left_section,
-			.right_section {
-				padding: 0px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: flex-start;
-				width: 100%;
-				display: flex;
-
-
-				@include bp(s) {
-					height: 100%;
-				}
-
-				@include bp(m) {
-
-					width: 100%;
-					padding: 60px;
-				}
-
-				@include bp(xl) {
-					// padding: 80px;
-
-				}
-			}
-
-			.left_section {
-				text-align: center;
-				align-items: center;
-				display: none;
-
-				@include bp(m) {
-					display: flex;
-					width: 100%;
-					text-align: right;
-					align-items: flex-end;
-					padding-left: 0;
-				}
-
-				h1 {
-					font-size: 90px;
-					text-align: center;
-					color: $accent;
-
-					@include bp(m) {
-						font-size: 130px;
-					}
-
-					@include bp(l) {
-						font-size: 150px;
-						text-align: right;
-					}
-				}
-			}
-
-			.right_section {
-				display: flex;
-				justify-content: flex-end;
-				flex-direction: column;
-				align-items: center;
-				position: relative;
-				//background-color: getColor(tertiary);
-				background: none !important;
-
-				* {
-					color: $black;
-					text-align: center;
-				}
-
-				@include bp(m) {
-					justify-content: center !important;
-					padding-right: 0;
-
-					&::before {
-						content: '' !important;
-					}
-				}
-
-
-
-
-
-
-
-
-				.form {
-					position: relative;
-
-					input[type=text],
-					input[type='email'],
-					select,
-					textarea {
-						width: 100%;
-						padding: 5px;
-						border: none;
-						box-sizing: border-box;
-						margin-top: 5px;
-						margin-bottom: 15px;
-						resize: vertical;
-						text-align: left;
-						font-family: $font-copy;
-						color: $color-text;
-						@include frostBG($white);
-						@include webkitRemove;
-						@extend %copy;
-						padding: 20px !important;
-
-						@include radiusResponsiveLarge;
-	
-
-						&::placeholder,
-						select div,
-						select * {
-							color: $color-text !important;
-
-							@include bp(m) {
-								//color: $white !important;
-							}
-						}
-
-						@include bp(m) {
-							width: 100%;
-							padding: 12px;
-							box-sizing: border-box;
-							margin-top: 6px;
-							margin-bottom: 16px;
-							resize: vertical;
-							text-align: left;
-							font-family: $font-copy;
-							//@include frostBG($white);
-						}
-
-
-
-						* {
-							text-align: left;
-						}
-
-						&:focus-within {
-							background-color: $white !important;
-						}
-					}
-
-					#selectWrapper {
-						position: relative;
-						padding: 0;
-						float: right;
-						border: 0;
-						width: 100%;
-
-						&::after {
-							//content: $arrow-down;
-							content: '⌄';
-							position: absolute;
-							font-size: 1.2rem;
-							bottom: 30px;
-							right: 15px;
-							top: 0px;
-							transform: translateY(50%);
-							color: $black !important;
-							z-index: 1;
-							font-weight: 100;
-							//font-family: $icon-font;
-							//@include thin-icon;
-							pointer-events: none; // click passes throught to select
-							line-height: 1;
-							font-family: sans-serif;
-
-						}
-
-
-
-						select {
-							cursor: pointer !important;
-							margin: 0;
-						}
-					}
-
-					input[type='text'],
-					input[type='email'],
-					textarea {
-						font-size: 1rem !important;
-
-						cursor: text !important;
-						@include webkitRemove;
-						padding: 5px;
-					}
-
-					input[type=submit] {
-						@extend %btn;
-						background-color: $black;
-						color: $white !important;
-						padding: 12px 20px;
-						border: none;
-						cursor: pointer;
-						float: left;
-						@include webkitRemove;
-
-						@include bp(lt-m) {
-							max-width: unset;
-							margin-top: 15px;
-						}
-					}
-
-					input[type=submit]:hover {
-						background-color: $secondary;
-						color: $primary !important;
-						transition: all $animationStyle;
-
-						@include bp(lt-m) {
-							background-color: $primary;
-							color: $black !important;
-						}
-					}
-
-					label {
-						float: left;
-						color: $black;
-						//padding-bottom: 5px;
-
-						&[for="subject"] {
-							margin-top: 20px;
-						}
-
-						span {
-							color: $black;
-						}
-
-						@include bp(m) {
-							color: $white !important;
-
-							span {
-								color: $white !important;
-							}
-						}
 					}
 				}
 			}

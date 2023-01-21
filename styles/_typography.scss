@@ -14,7 +14,7 @@
  	color: $black;
  	font-size: 1.0rem;
  	font-family: $font-copy;
- 	line-height: 1.4;
+ 	line-height: 1.2;
  	font-weight: 400;
 
  	@include bp(s) {
@@ -139,7 +139,11 @@
 
  small {
  	color: $accent !important;
-	font-size: .7rem !important;
+	font-size: .8rem !important;
+
+	@include bp(m) {
+		font-size: 1rem !important;
+	}
  }
 
  h1 {
