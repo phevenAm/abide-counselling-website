@@ -149,8 +149,11 @@ header {
 					position: relative;
 
 					@include bp(m) {
-						margin-left: 10px;
+						margin: 0 10px;
 						flex-direction: row;
+						text-align: left;
+						width: auto;
+						justify-content: center;
 					}
 
 					a {
@@ -435,7 +438,7 @@ section[id] {
 	}
 
 	&.coloured-section {
-		* {
+		*:not(.section_subtitle) {
 			color: $color-text;
 		}
 
@@ -557,14 +560,15 @@ section[id] {
 
 	&#about {
 		@include autoHeight;
-		background-color: $grey;
+		background-color: $white;
 		padding-bottom: 70px;
 	}
 
 
 	&#about-counsellor {
-		background: $white;
+		//background: $white;
 		@include autoHeight;
+		@include background-polka;
 
 		//@include breakpointColours;
 
@@ -587,7 +591,7 @@ section[id] {
 			}
 
 			.textBox {
-				background-color: $white;
+				background-color: transparent;
 				grid-area: 24/1/20/27;
 				z-index: 2;
 				@include radiusResponsiveLarge;
@@ -605,16 +609,15 @@ section[id] {
 
 				@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
 					//grid-area: 12/1/20/27
-					grid-area: 3/1/20/15;
+					grid-area: 3/1/17/15;
 					@include shadow;
+					background-color: $white;
 				}
 				@include bp(l) {
-					grid-area: 3/1/15/15;
+					grid-area: 3/1/12/15;
 				}
 
-				img {
-					max-width: 200px;
-				}
+			
 			}
 
 			.image {
@@ -652,9 +655,15 @@ section[id] {
 			.additionalText {
 				//background-color: red;
 				@include radiusResponsiveLarge;
-				background-color: $grey;
+				background-color: $white;
 				min-height: fit-content;
 				grid-area: 25/1/24/27;
+
+				img {
+					margin: auto;
+					max-width: 200px;
+					margin-top: 20px;
+				}
 			}
 		}
 	}
@@ -717,10 +726,9 @@ section[id] {
 							background-image: url('https://images.pexels.com/photos/4057864/pexels-photo-4057864.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
-						
 
 						@include bp(m) {
-							margin-top: -150px;
+							margin-top: -140px;
 						}
 					}
 
@@ -792,7 +800,7 @@ section[id] {
 
 	&#faqs {
 		//@include autoHeight;
-		background-color: $grey;
+		background-color: $secondary;
 		overflow: hidden;
 
 		.faqs-container {
