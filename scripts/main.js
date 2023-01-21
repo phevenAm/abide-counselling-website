@@ -266,4 +266,14 @@ $(function () {
 
 
 
+	//!********************************//!Isolate nav contact Start*************************************//
+	const contactLink = document.querySelectorAll(" a.nav-link");
+	console.log(contactLink)
+	//!********************************//!Isolate nav contact END*************************************//
+
+
+
+
+
+
 });
