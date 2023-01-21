@@ -358,6 +358,10 @@ header {
 			}
 		}
 	}
+
+	&.pullUp {
+		transform: translateY(-100%);
+	}
 }
 
 .cursor {
@@ -607,7 +611,8 @@ section[id] {
 			.image {
 				background-color: $secondary;
 				@include radiusResponsiveLarge;
-				background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+				//background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+				background-image: url('../media/images/profile/IMG_1906.JPG');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: cover;
@@ -624,7 +629,7 @@ section[id] {
 				}
 				
 				@include bp(m) {
-					grid-area: 1/13/20/27;
+					grid-area: 2/13/19/27;
 					min-height: 400px;
 					min-width: 300px;
 				}

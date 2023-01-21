@@ -42,6 +42,14 @@ $(function () {
 		header.classList.add('shrink');
 	}
 
+
+	//! pull header up on down scroll
+
+	window.addEventListener('scroll', (e) => {
+		console.log(e)
+		console.log(scrollY)
+	})
+
 	//!services cards
 
 	//!inject year
@@ -229,65 +237,6 @@ $(function () {
 	// }));
 	//!********************************//!EXPANDING MODAL CARDS END*************************************//
 
-
-
-	//!********************************//!MANUAL NAV SCROLLSPY Start*************************************//
-
-
-	//let options = {
-	//	root: null, //which element as viewport (wholepage as default)
-	//	rootMargin: `0px 0px -99% 0px`, // adjusts the above root top,right, bottom, left
-	//	threshold: .01 //percentage overlap (0 - 1)
-	//}
-
-	////!callback function that's called when my target touches a space (enters / leaves),
-	//let observer = new IntersectionObserver(isTouching, options)
-	//document.querySelectorAll('section[id]').forEach((singleSection) => {
-	//	observer.observe(singleSection)
-	//	//!list of all the things it plans to watch
-	//	//console.log('watching:' + singleSection.innerHTML) 
-	//})
-
-	//function isTouching(entries, observer) { //array of the things its watching, the obverser
-	//	entries.forEach((entry) => {
-	//		//console.log(navItems)
-	//		if (entry.isIntersecting) {
-	//			//console.log(entry.target.id)
-	//			entry.target.classList.add('active');
-
-	//			navItems.find((navItem) => {
-	//				//console.log(navItem.hash.toString().slice(1)) //remove the hash symbol
-	//				//console.log(navItem.id, entry.target.id)
-	//				//return navItem.id === entry.target.id
-	//				if (navItem.hash.toString().slice(1) === entry.target.id) {
-	//					navItem.classList.add('active');
-	//				} else {
-	//					navItem.classList.remove('active');
-	//				}
-	//				return
-	//			})
-
-	//			//observer.unobserve(entry.target);
-	//		} else {
-	//			entry.target.classList.remove('active');
-	//		}
-	//	})
-	//}
-
-
-	//var hashFix = (function() {
-	//    $(function() {
-	//        $('.navbar-nav ul.nav li a').each(function() {
-	//            var hash = $(this).prop('hash'),
-	//                url = $(this).attr('href');
-	//			//console.log('nav hash')
-	//            if (url.indexOf('#') > -1) {
-	//                $(this).attr('href', hash);
-	//            }
-	//        });
-	//    });
-	//}());
-	//!********************************//!MANUAL NAV SCROLLSPY END*************************************//
 
 
 	//!********************************//!MANUAL NAV SCROLLSPY Take 2 Start*************************************//
