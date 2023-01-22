@@ -504,6 +504,8 @@ section[id] {
 				transform: translateX(-50%);
 				color: white !important;
 				background: none !important;
+				padding: 0;
+				text-align: left;
 
 				@include bp(s) {
 					left: 0;
@@ -979,30 +981,67 @@ section[id] {
 	}
 
 	&#contact {
-		padding-top: 0 !important;
-		padding-bottom: 0 !important;
+	
 		@include autoHeight;
-		//@include bp(m) {
-		//	@include overflowDir(right, $primary, $secondary);
-		//}
+		min-height: 50vh;
 
+		@include bp(m) {
+			@include overflowDir(right, $accent, url('https://images.pexels.com/photos/2629372/pexels-photo-2629372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'));
+		}
+	
 		.inner {
 			display: flex;
 			justify-content: space-evenly;
 			flex-direction: column;
 			text-align: center;
+			flex-grow: 1;
+			height: 100%;
+			padding-top: 30px !important;
+			padding-bottom: 30px !important;
 
+			& > div {
+				width: 100%;
+
+				@include bp(m) {
+					padding: 0 $gap-small;
+
+					&.left {
+						padding-right: $gap-large;
+					}
+
+					&.right {
+						padding-left: $gap-large;
+					}
+				}
+
+				&.left {
+					display: grid;
+					place-content: center;
+
+					div.section_top{
+						margin-bottom: 0 !important;
+					}
+					p {
+						max-width: 50ch;
+						text-align: center;
+
+						@include bp(m) {
+							text-align: left;
+						}
+					}
+				}
+			}
 
 			@include bp(m) {
 				text-align: left;
 				flex-direction: row;
 			}
 
-
 			.details {
-			display: grid;
-			place-content: center;
-			overflow: hidden;
+				display: grid;
+				place-content: center;
+				overflow: hidden;
+				width: 100%;
 
 				p {
 					text-align: center;
