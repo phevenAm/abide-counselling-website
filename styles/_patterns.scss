@@ -202,7 +202,7 @@
 	top: 0;
 	pointer-events: none;
 	will-change: transform;
-	mix-blend-mode: difference;
+	//mix-blend-mode: difference;
 	cursor: pointer !important;
 }
 
@@ -225,8 +225,8 @@
 	#cursor.arrow .cursor__circle {
 		width: 64px; //128px;
 		height: 64px; //128px;
-		background-color: #073099;
-		border-color: #073099;
+		background-color: $accent;
+		border-color: $accent;
 		opacity: 1;
 	}
 
@@ -249,7 +249,7 @@
 	#cursor.link .cursor__circle {
 		width: 48px;
 		height: 48px;
-		background-color: rgba(227, 222, 193, 0.08);
+		background-color: transparentize($accent, .5);
 		border-color: transparent;
 		opacity: 1;
 	}

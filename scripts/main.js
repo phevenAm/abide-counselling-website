@@ -45,10 +45,10 @@ $(function () {
 
 	//! pull header up on down scroll
 
-	window.addEventListener('scroll', (e) => {
-		console.log(e)
-		console.log(scrollY)
-	})
+	//window.addEventListener('scroll', (e) => {
+	//	console.log(e)
+	//	console.log(scrollY)
+	//})
 
 	//!services cards
 
@@ -267,9 +267,35 @@ $(function () {
 
 
 	//!********************************//!Isolate nav contact Start*************************************//
-	const contactLink = document.querySelectorAll(" a.nav-link");
-	console.log(contactLink)
+	//const contactLink = document.querySelectorAll(" a.nav-link");
+	//console.log(contactLink)
+
+	
 	//!********************************//!Isolate nav contact END*************************************//
+
+
+	//!********************************//!Hide Nav on scroll Start*************************************//
+	let oldScroll = 0;
+
+	window.addEventListener("scroll", (e) => {
+		newScroll = window.pageYOffset;
+		console.log('new:  ' + newScroll, "old:  " + oldScroll)
+
+		if(oldScroll - newScroll < 0) {
+			//console.log('scrolling down')
+			setTimeout(function() {
+				header.classList.contains('shrink') ? header.classList.add('pullUp') : '';
+			},1000);
+		} else if (oldScroll - newScroll > 0){
+			//console.log('scrolling up', count);
+			setTimeout(function() {
+				header.classList.remove('pullUp');
+			},1000);
+		}
+		oldScroll = newScroll;
+	});
+
+	//!********************************//!Hide Nav on scroll END*************************************//
 
 
 

@@ -27,64 +27,6 @@ $color-text: #23475d;
 
 $links: $accent;
 
-//$colors: (
-//	primary : $primary,
-//	textPrimary : #E85A4F,
-//	secondary : $secondary,//#E98074,
-//	textSecondary : $primary,
-//	tertiary : #d1bda1,
-//	textTertiary : #1e1d1d,
-//	shade: #1e1d1d,
-//	textShade: $white,
-//	neutral: $white,
-//	textNeutral: #1e1d1d,
-//);
-////dark theme
-//$colors-dark: (
-//	primary : #1e1d1d,
-//	textPrimary: $primary,
-//	secondary: #3a3939,
-//	textSecondary: $primary,
-//	tertiary : #bd880c,
-//	textTertiary : #1e1d1d,
-//	shade: $primary,
-//	textShade: #1e1d1d,
-//	neutral: #1e1d1d,
-//	textNeutral: $primary,
-//);
-
-//converting scss variable into css variable
-//:root {
-
-//	@each $name,
-//	$color in $colors {
-//		--color-#{$name} : #{$color};
-//	}
-
-//	--theme: 'light';
-//}
-
-//@media(prefers-color-scheme: dark) {
-//	:root {
-
-//		@each $name,
-//		$color in $colors-dark {
-//			--color-#{$name} : #{$color};
-//		}
-
-//		--theme : 'dark';
-//	}
-//}
-
-//creating a function to get color instead of using css varible
-//@function getColor($color-name) {
-//	@return var(--color-#{$color-name});
-//}
-
-
-
-
-
 
 // fonts
 $icon-font: fontAwesome, 'Font Awesome 5 Regular', 'font Awesome', 'Font Awesome 5';

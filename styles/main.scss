@@ -35,18 +35,6 @@
 	text-shadow: none;
 }
 
-.bodymovin {
-	width: 85px;
-	height: 85px;
-	position: relative;
-
-	cursor: pointer;
-
-	&:hover {
-		filter: invert(1);
-	}
-}
-
 .hide {
 	display: none;
 }
@@ -108,19 +96,7 @@ header {
 				font-size: 2.5rem;
 			}
 		}
-
-		.bodymovin {
-			width: 60px;
-			cursor: pointer;
-
-			&:hover {
-				filter: invert(1);
-			}
-		}
 	}
-
-
-
 
 
 	#menuContainer {
@@ -508,7 +484,7 @@ section[id] {
 				font-size: 1.2rem;
 				line-height: 1;
 				max-width: 40ch;
-				margin-bottom: $gap-large;
+				margin-bottom: $gap-small;
 				
 				@include bp(m) {
 					font-size: 1.5rem;
@@ -526,37 +502,14 @@ section[id] {
 				z-index: 2;
 				left: 50%;
 				transform: translateX(-50%);
+				color: white !important;
+				background: none !important;
 
 				@include bp(s) {
 					left: 0;
 					transform: translateX(0);
 				}
 			}
-		}
-
-		path[class^="cls-"] {
-			z-index: 3;
-			transform: fill $animationStyle;
-
-			@include shadow;
-
-			&:hover {
-				//fill: $secondary;
-				width: 80%;
-				height: 80%;
-
-				@if (fill==$secondary) {
-					fill: $accent;
-				}
-
-				@else if (fill !=$secondary) {
-					fill: $secondary;
-				}
-			}
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			transition: transform(0, 0) !important;
 		}
 	}
 
