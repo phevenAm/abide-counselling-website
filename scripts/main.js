@@ -279,10 +279,8 @@ $(function () {
 
 	window.addEventListener("scroll", (e) => {
 		newScroll = window.pageYOffset;
-		console.log('new:  ' + newScroll, "old:  " + oldScroll)
 
 		if(oldScroll - newScroll < 0) {
-			//console.log('scrolling down')
 			setTimeout(function() {
 				header.classList.contains('shrink') ? header.classList.add('pullUp') : '';
 			},1000);
