@@ -133,9 +133,13 @@
 
 
  ul {
- 	list-style: none;
  	padding: 0;
  }
+
+ ul li {
+	list-style-type: initial;
+	margin-left: 30px;
+}
 
  small {
  	color: $accent !important;

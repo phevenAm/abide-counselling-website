@@ -276,22 +276,41 @@ $(function () {
 
 	//!********************************//!Hide Nav on scroll Start*************************************//
 	let oldScroll = 0;
+	let mouseInteraction = false;
+
+	$('header').mouseenter(function() { //detect if mouse is on the header
+		mouseInteraction = true;
+	})
+	$('header').mouseleave(function() {
+		mouseInteraction = false;
+	})
 
 	window.addEventListener("scroll", (e) => {
 		newScroll = window.pageYOffset;
+		//console.log('new:  ' + newScroll, "old:  " + oldScroll)
 
-		if(oldScroll - newScroll < 0) {
-			setTimeout(function() {
-				header.classList.contains('shrink') ? header.classList.add('pullUp') : '';
-			},1000);
-		} else if (oldScroll - newScroll > 0){
+		if (oldScroll >= window.innerHeight && oldScroll - newScroll < 0) {
+			if(mouseInteraction === false)  {
+				setTimeout(function () {
+					header.classList.contains('shrink') ? header.classList.add('pullUp') : '';
+				}, 1000);
+			};
+		} else if (oldScroll - newScroll > 0) {
 			//console.log('scrolling up', count);
-			setTimeout(function() {
+			setTimeout(function () {
 				header.classList.remove('pullUp');
-			},1000);
+			}, 1000);
 		}
 		oldScroll = newScroll;
 	});
+
+	window.addEventListener('mousemove', function(e) {
+		if(e.clientY <= window.innerHeight / 12) { //activates header when mouse moves to top 12th of path
+			setTimeout(function () {
+				header.classList.contains('shrink') ? header.classList.remove('pullUp') : '';
+			}, 0);
+		}
+	})
 
 	//!********************************//!Hide Nav on scroll END*************************************//
 
