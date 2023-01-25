@@ -433,12 +433,11 @@ section[id] {
 	&#landing {
 		background-color: $primary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
+		background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/3028961/pexels-photo-3028961.jpeg?auto=compress&cs=tinysrgb&w=3798&h=2532&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/5309507/pexels-photo-5309507.jpeg?auto=compress&cs=tinysrgb&w=3280&h=4101&dpr=1');
-		background-position: center top;
+		background-position: center;
 		background-size: cover;
 		display: flex;
 		flex-direction: column;
@@ -551,17 +550,6 @@ section[id] {
 		position: relative;
 		overflow: hidden;
 
-		&::before {
-			content: '';
-			position: absolute;
-			width: 500px;
-			min-height: 20px;
-			right: -20px;
-			top: 250px;
-			background-image: url('../media/svg/large-wave-white.svg');
-			background-repeat: repeat-x;
-		}
-
 		.inner {
 			@include gridTemplate;
 
@@ -579,7 +567,6 @@ section[id] {
 				}
 
 				.section_title {
-					color: $white;
 					width: auto;
 				}
 
@@ -679,18 +666,6 @@ section[id] {
 	&#services {
 		position: relative;
 		overflow: hidden;
-
-		&::before {
-			content: '';
-			position: absolute;
-			width: 800px;
-			min-height: 800px;
-			right: 0px;
-			bottom: 100px;
-			transform: translate(45%, 45%) !important;
-			background-image: url('../media/svg/offset\ rings.svg');
-			background-repeat: no-repeat;
-		}
 
 		.inner {
 			max-width: $max-contentWidth;
