@@ -45,7 +45,7 @@ body {
 	padding: 0;
 	margin: 0;
 	background-color: $white;
-	font-size: 16px ;
+	font-size: 18px ;
 }
 
 body {
@@ -433,8 +433,8 @@ section[id] {
 	&#landing {
 		background-color: $primary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-		background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
+		background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/3028961/pexels-photo-3028961.jpeg?auto=compress&cs=tinysrgb&w=3798&h=2532&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/5309507/pexels-photo-5309507.jpeg?auto=compress&cs=tinysrgb&w=3280&h=4101&dpr=1');
 		background-position: center;
@@ -534,21 +534,17 @@ section[id] {
 		&::before {
 			content: '';
 			position: absolute;
-			width: 100%;
-			min-height: 20px;
+			width: 50%;
+			min-height: 10px;
 			left: -20px;
-			top: 100px;
-			background-image: url('../media/svg/large-wave.svg');
-			background-repeat: no-repeat;
+			bottom: 100px;
+			background: $primary;
 		}
 	}
 
 
 	&#about-counsellor {
 		@include autoHeight;
-
-		position: relative;
-		overflow: hidden;
 
 		.inner {
 			@include gridTemplate;
@@ -586,10 +582,9 @@ section[id] {
 				
 
 				p {
-					color: $white;
+					color: $color-text;
 
 					@include bp(m) {
-						color: $color-text;
 					}
 				}
 
@@ -988,7 +983,9 @@ section[id] {
 					}
 
 					li.price {
-
+						list-style: none;
+						margin-left: 0;
+						
 						@include bp(s){
 							display: flex;
 							justify-content: space-between;
@@ -1031,7 +1028,7 @@ section[id] {
 		min-height: 400px;
 		@include bp(m) {
 			min-height: 50vh;
-			@include overflowDir(right, $accent, url('https://images.pexels.com/photos/5152398/pexels-photo-5152398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'));
+			@include overflowDir(right, $accent, url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1'));
 		}
 	
 		.inner {
@@ -1102,7 +1099,6 @@ section[id] {
 
 footer {
 	background-color: $black !important;
-
 	width: 100%;
 	display: grid;
 
