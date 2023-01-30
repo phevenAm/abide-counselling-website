@@ -641,25 +641,26 @@ section[id] {
 					min-width: 600px;
 				}
 			}
+		}
+	}
 
-			.additionalText {
-				@include radiusResponsiveLarge;
-				background-color: $white;
-				min-height: fit-content;
-				grid-area: 25/1/24/27;
+	&#qualifications {
+		@include radiusResponsiveLarge;
+		background-color: $white;
+		min-height: fit-content;
+		grid-area: 25/1/24/27;
 
-				img {
-					margin: auto;
-					max-width: 200px;
-					margin-top: 20px;
-				}
-			}
+		img {
+			margin: auto;
+			max-width: 200px;
+			margin-top: 20px;
 		}
 	}
 
 	&#services {
 		position: relative;
 		overflow: hidden;
+		background: $secondary;
 
 		.inner {
 			max-width: $max-contentWidth;
@@ -1039,6 +1040,15 @@ section[id] {
 			height: 100%;
 			padding-top: 30px !important;
 			padding-bottom: 30px !important;
+			
+			@include bp(lt-m) {
+				background-image: url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
+				background-size: contain;
+
+				*{
+					color: $white;
+				}
+			}
 
 			& > div {
 				width: 100%;
