@@ -801,6 +801,16 @@ section[id] {
 		}
 	}
 
+	&#parralax {
+		background-image: url('https://images.pexels.com/photos/1209118/pexels-photo-1209118.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/808510/pexels-photo-808510.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		@include autoHeight;
+		min-height: 40vh;
+	}
+
 	&#faqs {
 		//@include autoHeight;
 		background-color: $secondary;
@@ -1025,6 +1035,7 @@ section[id] {
 
 						.price_value {
 							font-weight: bold;
+							//font-family: $font-headings;
 						}
 					}
 				}
