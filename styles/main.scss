@@ -45,7 +45,7 @@ body {
 	padding: 0;
 	margin: 0;
 	background-color: $white;
-	font-size: 18px ;
+	font-size: 18px;
 }
 
 body {
@@ -82,11 +82,11 @@ header {
 		@extend %container-padding;
 		padding-top: 10px !important;
 		padding-bottom: 10px !important;
-		
 
-		a.logo{
+
+		a.logo {
 			text-decoration: none;
-			font-size: 2rem ;
+			font-size: 2rem;
 			font-family: $font-headings;
 
 			@include bp(s) {
@@ -97,228 +97,241 @@ header {
 				font-size: 2.5rem;
 			}
 		}
-	}
 
+		& #isolate {
+			background-color: $white !important;
+			font-family: $font-headings;
+			padding: 15px 25px;
+			@include radiusResponsiveLarge;
 
-	#menuContainer {
-		position: relative;
-
-		@include bp(m) {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-
-			li {
-				margin-left: 20px;
-				margin-right: 20px;
+			&:hover {
+				@include shadow;
 			}
 		}
 
-		#navBar {
+		#menuContainer {
+			position: relative;
 
-			//!NAV NOT MOBILE FIRST
-			ul {
-				display: flex;
-				list-style: none;
-				margin: 15px 0;
+			@include bp(m) {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
 
-				li.nav-item {
-					position: relative;
-					list-style-type: none !important;
+				li {
+					margin-left: 20px;
+					margin-right: 20px;
+				}
+			}
 
-					@include bp(m) {
-						margin: 0 10px;
-						flex-direction: row;
-						text-align: left;
-						width: auto;
-						justify-content: center;
+			#navBar {
+
+				//!NAV NOT MOBILE FIRST
+				ul {
+					display: flex;
+					list-style: none;
+					margin: 15px 0;
+
+					li.nav-item {
+						position: relative;
+						list-style-type: none !important;
+
+						@include bp(m) {
+							margin: 0 10px;
+							flex-direction: row;
+							text-align: left;
+							width: auto;
+							justify-content: center;
+						}
+
+						a {
+							text-decoration: none;
+							color: $white;
+							padding: 10px 0;
+							font-family: $font-headings;
+
+							&::after {
+								content: '';
+								position: absolute;
+								height: 4px;
+								background-color: $primary;
+								left: 0;
+								bottom: 5px;
+								width: 0%;
+								transition: width $animationStyle;
+							}
+
+							&:hover,
+							&:focus,
+							&:focus-within,
+							&.active {
+								&::after {
+									width: 100%;
+								}
+							}
+						}
 					}
+				}
+
+				@include bp(lt-m) {
+					background-color: $white;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: bottom;
+					min-height: 100vh; //50vh;
+					min-width: 100vw; //315px;
+					position: absolute;
+					top: -45px; //-55px;
+					right: -30px; //-40px; //-50px;
+					display: flex;
+					align-items: flex-start;
+					justify-content: flex-start;
+					padding-top: $header-height-mobile;
+					transform: translateX(0);
+					padding-left: 0;
+					transition: all 250ms ease-in-out;
+					//@include frostBG($white);
+					@include shadow;
 
 					a {
-						text-decoration: none;
-						color: $white;
-						padding: 10px 0;
-						font-family: $font-headings;
 
-						&::after {
-							content: '';
-							position: absolute;
-							height: 2px;
-							background-color: $primary;
-							left: 0;
-							bottom: 5px;
-							width: 0%;
-							transition: width $animationStyle;
-						}
+						font-size: 1.5rem;
 
 						&:hover,
 						&:focus,
 						&:focus-within,
 						&.active {
+							color: $accent !important;
+
 							&::after {
-								width: 100%;
+								width: 0 !important;
+								background-color: $black;
 							}
+						}
+					}
+
+					&.closed {
+						transform: translateX(150%);
+
+						ul {
+							li {
+								opacity: 0;
+							}
+						}
+					}
+
+					ul {
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						width: 90vw;
+						margin-left: auto;
+						margin-right: auto;
+
+						li {
+							list-style: none;
+							margin-top: $gap-small;
+							text-align: center;
+							margin-bottom: $gap-small;
+
+
+
+							a.nav-link {
+								text-decoration: none;
+								padding: 10px;
+								color: $color-text !important;
+							}
+
 						}
 					}
 				}
 			}
 
-			@include bp(lt-m) {
-				background-color: $white;
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: bottom;
-				min-height: 100vh; //50vh;
-				min-width: 100vw; //315px;
+			.burgermenu {
+				z-index: 500;
+				width: 30px;
+				height: 30px;
+				top: 30px; //20px;
+				right: 30px;
+				cursor: pointer;
 				position: absolute;
-				top: -45px; //-55px;
-				right: -30px; //-40px; //-50px;
-				display: flex;
-				align-items: flex-start;
-				justify-content: flex-start;
-				padding-top: $header-height-mobile;
-				transform: translateX(0);
-				padding-left: 0;
-				transition: all 250ms ease-in-out;
-				//@include frostBG($white);
-				@include shadow;
+				top: 0;
+				right: 0;
+				transform: translate(-50%, -50%);
 
-				a {
 
-					font-size: 1.5rem ;
+				//::before is top line. relative to .burgermenu. This is initial setup
+				&::before,
+				&::after {
+					content: '';
+					height: 3px;
+					width: 30px;
+					position: absolute;
+					transition: all $animationStyle;
+					background-color: $white;
+					border-radius: 100px;
+				}
 
-					&:hover,
-					&:focus,
-					&:focus-within,
-					&.active {
-						color: $accent !important;
+				div {
+					transition: width 600ms $animation-ease 200ms;
+					border-radius: 100px;
+				}
 
-						&::after {
-							width: 0 !important;
-							background-color: $black;
-						}
+				//!TODO: this should really use .open class and have no class by default
+				&:not(.closed) {
+					div {
+						width: 0px;
+					}
+
+					&::before {
+						background-color: $black;
+						top: 15px;
+						transform: translateY(-50%) rotate(45deg);
+					}
+
+					&::after {
+						background-color: $black;
+						bottom: 15px;
+						transform: translateY(50%) rotate(315deg);
 					}
 				}
 
 				&.closed {
-					transform: translateX(150%);
 
-					ul {
-						li {
-							opacity: 0;
-						}
+					//div is middle line
+					div {
+						width: 40px;
+						background-color: $white;
+						height: 3px;
+						position: absolute;
+
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+
+					}
+
+					&::before {
+						top: 0;
+						transform: translateY(50%);
+
+					}
+
+					&::after {
+						bottom: 0;
+						transform: translateY(-50%);
 					}
 				}
 
-				ul {
-					height: 100%;
-					display: flex;
-					flex-direction: column;
-					width: 90vw;
-					margin-left: auto;
-					margin-right: auto;
-
-					li {
-						list-style: none;
-						margin-top: $gap-small;
-						text-align: center;
-						margin-bottom: $gap-small;
-
-
-
-						a.nav-link {
-							text-decoration: none;
-							padding: 10px;
-							color: $color-text !important;
-						}
-
-					}
+				//hide buger @ desktop
+				@include bp(m) {
+					display: none !important;
 				}
-			}
-		}
-
-		.burgermenu {
-			z-index: 500;
-			width: 30px;
-			height: 30px;
-			top: 30px; //20px;
-			right: 30px;
-			cursor: pointer;
-			position: absolute;
-			top: 0;
-			right: 0;
-			transform: translate(-50%, -50%);
-
-
-			//::before is top line. relative to .burgermenu. This is initial setup
-			&::before,
-			&::after {
-				content: '';
-				height: 3px;
-				width: 30px;
-				position: absolute;
-				transition: all $animationStyle;
-				background-color: $white;
-				border-radius: 100px;
-			}
-
-			div {
-				transition: width 600ms $animation-ease 200ms;
-				border-radius: 100px;
-			}
-
-			//!TODO: this should really use .open class and have no class by default
-			&:not(.closed) {
-				div {
-					width: 0px;
-				}
-
-				&::before {
-					background-color: $black;
-					top: 15px;
-					transform: translateY(-50%) rotate(45deg);
-				}
-
-				&::after {
-					background-color: $black;
-					bottom: 15px;
-					transform: translateY(50%) rotate(315deg);
-				}
-			}
-
-			&.closed {
-
-				//div is middle line
-				div {
-					width: 40px;
-					background-color: $white;
-					height: 3px;
-					position: absolute;
-
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-
-				}
-
-				&::before {
-					top: 0;
-					transform: translateY(50%);
-
-				}
-
-				&::after {
-					bottom: 0;
-					transform: translateY(-50%);
-				}
-			}
-
-			//hide buger @ desktop
-			@include bp(m) {
-				display: none !important;
 			}
 		}
 	}
+
+
+
 
 	&.shrink {
 		height: 90px;
@@ -335,7 +348,10 @@ header {
 		}
 
 		.burgermenu {
-			div, &::before, &::after {
+
+			div,
+			&::before,
+			&::after {
 				background-color: $color-text !important;
 			}
 		}
@@ -456,8 +472,7 @@ section[id] {
 			//justify-content: center;
 		}
 
-		@include bp(lt-s) {
-		}
+		@include bp(lt-s) {}
 
 		* {
 			text-align: center;
@@ -512,7 +527,7 @@ section[id] {
 				color: white !important;
 				background: none !important;
 				padding: 0;
-	
+
 				@include bp(m) {
 					left: 0;
 					transform: translateX(50%);
@@ -521,7 +536,7 @@ section[id] {
 			}
 		}
 
-		
+
 	}
 
 	&#about {
@@ -535,7 +550,7 @@ section[id] {
 			content: '';
 			position: absolute;
 			width: 50%;
-			min-height: 10px;
+			min-height: 4px;
 			left: -20px;
 			bottom: 100px;
 			background: $primary;
@@ -549,7 +564,7 @@ section[id] {
 		.inner {
 			@include gridTemplate;
 
-			> div {
+			>div {
 				padding: $gap-small;
 			}
 
@@ -558,8 +573,7 @@ section[id] {
 				z-index: 1;
 				padding: 0;
 
-				@include bp(m) {
-				}
+				@include bp(m) {}
 
 				.section_title {
 					width: auto;
@@ -578,36 +592,37 @@ section[id] {
 				z-index: 2;
 				@include radiusResponsiveLarge;
 				margin-top: -10px;
-				
+
 
 				p {
 					color: $color-text;
 
-					@include bp(m) {
-					}
+					@include bp(m) {}
 				}
 
 				@include bp(lt-m) {
 					padding-left: 0;
 					padding-right: 0;
 				}
-				
+
 
 				@include bp(s) {
 					grid-area: 3/1/20/15;
 				}
 
-				@include bp(m) {/* gridarea: startTop/startLeft/endBottom/endRight*/
+				@include bp(m) {
+					/* gridarea: startTop/startLeft/endBottom/endRight*/
 					//grid-area: 12/1/20/27
 					grid-area: 3/1/17/15;
 					@include shadow;
 					background-color: $white;
 				}
+
 				@include bp(l) {
 					grid-area: 3/1/12/15;
 				}
 
-			
+
 			}
 
 			.image {
@@ -629,7 +644,7 @@ section[id] {
 					min-height: 400px;
 					min-width: 300px;
 				}
-				
+
 				@include bp(m) {
 					grid-area: 2/13/19/27;
 					min-height: 400px;
@@ -664,7 +679,7 @@ section[id] {
 
 		.inner {
 			max-width: $max-contentWidth;
-		
+
 
 			.cardsContainer {
 				display: flex;
@@ -677,10 +692,9 @@ section[id] {
 					flex-direction: row;
 				}
 
-				@include bp(l) {
-				}
+				@include bp(l) {}
 
-				.card{
+				.card {
 					height: 100%;
 					@include radiusResponsiveLarge;
 
@@ -708,7 +722,7 @@ section[id] {
 							background-image: url('https://images.pexels.com/photos/4458554/pexels-photo-4458554.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 						}
 
-						
+
 					}
 
 					&#facetoface {
@@ -817,15 +831,15 @@ section[id] {
 
 			.accordion-item {
 				@include radiusResponsiveLarge;
-				
+
 				& .collapsed {
 					@include radiusResponsiveLarge;
 				}
-				
+
 				.accordion-header {
 					margin-top: $gap-small;
 				}
-				
+
 				.accordion-button {
 					@include radiusResponsiveLarge;
 					font-size: 18px;
@@ -838,7 +852,7 @@ section[id] {
 
 					&:not(.collapsed) {
 						background-color: $primary;
-	
+
 						border-bottom-left-radius: 0 !important;
 						border-bottom-right-radius: 0 !important;
 						border-bottom: 0;
@@ -949,18 +963,15 @@ section[id] {
 				grid-area: 3/1/27/27;
 				max-width: $max-contentWidth;
 				width: 100%;
-				padding: $gap-small;
-				border: 6px solid $accent;
+				padding: 15px;
+				border: 4px solid $accent;
 				margin: unset;
 				height: fit-content;
 				@include radiusResponsiveLarge;
 
-				* {
-					font-size: 1rem;
 
-					@include bp(s) {
-						font-size: 1.5rem;
-					}
+				@include bp(s) {
+					padding: $gap-small;
 				}
 
 				@include bp(xl) {
@@ -986,20 +997,29 @@ section[id] {
 						list-style: none;
 						margin-left: 0;
 
-						@include bp(s){
+						@include bp(s) {
 							display: flex;
 							justify-content: space-between;
 							margin-bottom: $gap-small;
 						}
 
 						.price_item {
+							@extend %copy;
 							font-family: $font-headings;
 							font-weight: bold;
 							padding-right: 10px;
 							line-height: 1;
-							
-							small {
-								font-family: $font-copy !important;
+							max-width: 50ch;
+							margin-bottom: 5px;
+
+							span {
+								color: $accent;
+								line-height: 1.2;
+
+							}
+
+							@include bp(s) {
+								padding-right: $gap-large;
 							}
 						}
 
@@ -1010,7 +1030,6 @@ section[id] {
 				}
 
 				.disclaimer {
-					margin-top: $gap-large;
 					line-height: .8;
 
 					@include bp(m) {
@@ -1018,19 +1037,20 @@ section[id] {
 					}
 				}
 			}
-			
+
 		}
 	}
 
 	&#contact {
-	
+
 		@include autoHeight;
 		min-height: 400px;
+
 		@include bp(m) {
 			min-height: 50vh;
 			@include overflowDir(right, $accent, url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1'));
 		}
-	
+
 		.inner {
 			display: flex;
 			justify-content: space-evenly;
@@ -1040,17 +1060,17 @@ section[id] {
 			height: 100%;
 			padding-top: 30px !important;
 			padding-bottom: 30px !important;
-			
+
 			@include bp(lt-m) {
 				background-image: url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
 				background-size: contain;
 
-				*{
+				* {
 					color: $white;
 				}
 			}
 
-			& > div {
+			&>div {
 				width: 100%;
 
 				@include bp(m) {
@@ -1069,9 +1089,10 @@ section[id] {
 					display: grid;
 					place-content: center;
 
-					div.section_top{
+					div.section_top {
 						margin-bottom: 0 !important;
 					}
+
 					p {
 						max-width: 50ch;
 						text-align: center;
@@ -1097,9 +1118,7 @@ section[id] {
 				p {
 					text-align: center;
 
-					a {
-
-					}
+					a {}
 				}
 			}
 		}
@@ -1134,12 +1153,17 @@ footer {
 		p,
 		span {
 			color: $white;
+
+			@include bp(m) {
+				margin-bottom: 0;
+			}
 		}
 
 		.socials {
 			display: flex;
 			padding: 0;
 			mix-blend-mode: difference;
+			margin-bottom: 0 !important;
 
 
 			i {
@@ -1149,10 +1173,11 @@ footer {
 			li {
 				list-style: none;
 				text-decoration: none;
+				margin: auto 10px;
 
-				&:not(:first-of-type) {
-					margin-left: $gap-small;
-				}
+				//&:not(:first-of-type) {
+				//	//margin-left: $gap-small;
+				//}
 
 				a {
 					color: $color-text !important;
