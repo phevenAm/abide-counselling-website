@@ -270,11 +270,11 @@ $(function () {
 				console.log(current);
 
 			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-				//document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
-				console.log('test add active class')
+				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
+				//console.log('test add active class')
 			} else {
-				//document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
-				console.log('remove add active class')
+				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
+				//console.log('remove add active class')
 
 			}
 		});
