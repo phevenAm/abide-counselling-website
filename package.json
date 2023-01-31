@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/phevenAm/wifes-counselling-website/issues"
   },
-  "homepage": "https://github.com/phevenAm/wifes-counselling-website#readme",
-  "dependencies": {
-    "firebase": "^9.16.0"
-  }
+  "homepage": "https://github.com/phevenAm/wifes-counselling-website#readme"
 }
