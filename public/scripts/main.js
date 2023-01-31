@@ -203,7 +203,7 @@ $(function () {
 					//if (this.status == 404) { outputLocation.innerHTML = '<h1>Oops, something went wrong!</h1>'; } //need to decide how best to style this. hide until then
 				}
 			}
-			xhttp.open('GET', `pages/${path}/${filename}.html`, true);
+			xhttp.open('GET', `../pages/${path}/${filename}.html`, true);
 			xhttp.send();
 			return;
 		}

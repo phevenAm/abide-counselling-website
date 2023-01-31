@@ -94,6 +94,29 @@ header {
 			}
 		}
 
+		.profile-container {
+			position: absolute;
+			right: 100px;
+			
+			@include bp(m) {
+				right: 280px;
+			}
+
+			i {
+				color: white;
+				font-size: 1.25rem;
+				padding: 10px;
+				border-radius: 200px;
+				transition: all $animationStyle;
+
+				&:hover {
+					background-color: $white;
+					color: $black;
+					@include shadow;
+				}
+			}
+		}
+
 		& #isolate {
 			font-family: $font-headings;
 			
@@ -230,6 +253,7 @@ header {
 						width: 90vw;
 						margin-left: auto;
 						margin-right: auto;
+						margin-top: 10vh;
 
 						li {
 							list-style: none;
@@ -360,7 +384,21 @@ header {
 		a:visited,
 		a:link,
 		.logo a span {
-			color: $color-text !important;
+			color: $carbon !important;
+		}
+
+		.profile-container {
+			i {
+				background-color: $white;
+				color: $carbon;
+
+				&.signed {
+					color: $white;
+					background-color: $carbon;
+				}
+			}
+
+			
 		}
 
 		.burgermenu {
@@ -368,7 +406,7 @@ header {
 			div,
 			&::before,
 			&::after {
-				background-color: $color-text !important;
+				background-color: $carbon !important;
 			}
 		}
 	}
@@ -1076,7 +1114,7 @@ section[id] {
 		min-height: 400px;
 
 		@include bp(m) {
-			min-height: 50vh;
+			min-height: 70vh;
 			@include overflowDir(right, $accent, url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1'));
 		}
 
@@ -1089,6 +1127,7 @@ section[id] {
 			height: 100%;
 			padding-top: 30px !important;
 			padding-bottom: 30px !important;
+			overflow: hidden;
 
 			@include bp(lt-m) {
 				background-image: url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
