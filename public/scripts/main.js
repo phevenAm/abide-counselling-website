@@ -266,15 +266,19 @@ $(function () {
 		sections.forEach((current) => {
 			const sectionHeight = current.offsetHeight,
 				sectionTop = current.offsetTop - 58,
-				sectionId = current.getAttribute("id");
-				console.log(current);
+				sectionId = current.getAttribute("data-contentId");
+				//console.log(current);
 
 			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
-				//console.log('test add active class')
+				if(document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]")){ //!making sure its not null
+					document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
+				}	
+				//$(`nav#navBar ul#nav a[href*=" + ${sectionId} + "]`).addClass('active')
 			} else {
-				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
-				//console.log('remove add active class')
+				if(document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]")){
+					document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
+				}	
+				//$(`nav#navBar ul#nav a[href*=" + ${sectionId} + "]`).removeClass('active')
 
 			}
 		});
@@ -352,15 +356,15 @@ $(function () {
 
 
 	//!********************************//!ServiceWorker PWA START*************************************//
-	if ("serviceWorker" in navigator) {
-		navigator.serviceWorker.register('../service-worker.js').then(registration => { //always put service worker.js in put along with index.html in the root
-			//console.log('SW registered successfully')
-			//console.log(registration)
-		}).catch(err => {
-			console.error('sorry, your device does not support this application');
-			console.error(err);
-		})
-	}
+	//if ("serviceWorker" in navigator) {
+	//	navigator.serviceWorker.register('../service-worker.js').then(registration => { //always put service worker.js in put along with index.html in the root
+	//		//console.log('SW registered successfully')
+	//		//console.log(registration)
+	//	}).catch(err => {
+	//		console.error('sorry, your device does not support this application');
+	//		console.error(err);
+	//	})
+	//}
 	//!********************************//!ServiceWorker PWA END*************************************//
 
 
