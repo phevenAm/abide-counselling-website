@@ -3,23 +3,24 @@
 	"name": "Myra",
 	"short_name": "Myra",
 	"description": "A simple Downloadable application",
-	"scope": "/public",
+	"scope": "/",
+	"start_url": "/",
 	"theme_color": "#cd5c5c",
 	"background_color": "#f5f5f5",
 	"orientation": "portrait",
 	"icons": [
 	  {
-		"src": "./media/brand/fav/android-chrome-192x192.png",
+		"src": "./public/media/brand/fav/android-chrome-192x192.png",
 		"sizes": "192x192",
 		"type": "image/png"
 	  },
 	  {
-		"src": "./media/brand/fav/android-chrome-512x512.png",
+		"src": "./public/media/brand/fav/android-chrome-512x512.png",
 		"sizes": "512x512",
 		"type": "image/png"
 	  },
 	  {
-		"src": "./media/brand/logo-clear.png",
+		"src": "./public/media/brand/logo-clear.png",
 		"sizes": "512x512",
 		"type": "image/png",
 		"purpose": "maskable any",

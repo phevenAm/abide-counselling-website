@@ -356,15 +356,15 @@ $(function () {
 
 
 	//!********************************//!ServiceWorker PWA START*************************************//
-	//if ("serviceWorker" in navigator) {
-	//	navigator.serviceWorker.register('../service-worker.js').then(registration => { //always put service worker.js in put along with index.html in the root
-	//		//console.log('SW registered successfully')
-	//		//console.log(registration)
-	//	}).catch(err => {
-	//		console.error('sorry, your device does not support this application');
-	//		console.error(err);
-	//	})
-	//}
+	if ("serviceWorker" in navigator) {
+		navigator.serviceWorker.register('../../service-worker.js').then(registration => { //always put service worker.js in put along with index.html in the root
+			//console.log('SW registered successfully')
+			//console.log(registration)
+		}).catch(err => {
+			console.error('sorry, your device does not support this application');
+			console.error(err);
+		})
+	}
 	//!********************************//!ServiceWorker PWA END*************************************//
 
 
