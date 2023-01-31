@@ -7,7 +7,6 @@
 @import 'buttons';
 @import 'patterns';
 
-
 *,
 *:before,
 *:after {
@@ -88,10 +87,7 @@ header {
 			text-decoration: none;
 			font-size: 2rem;
 			font-family: $font-headings;
-
-			@include bp(s) {
-				color: $white;
-			}
+			color: $white;
 
 			@include bp(m) {
 				font-size: 2.5rem;
