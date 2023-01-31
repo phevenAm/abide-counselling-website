@@ -199,8 +199,9 @@ header {
 					//@include frostBG($white);
 					@include shadow;
 
-					a {
-
+					a,
+					a:visited,
+					a:link {
 						font-size: 1.5rem;
 
 						&:hover,
