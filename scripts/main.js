@@ -8,8 +8,26 @@ $(function () {
 	const navLinks = document.querySelectorAll('#navbar ul li a');
 
 	const isMobileDisplay = function () {
-		return window.innerWidth < '992' ? true : false;
+		return window.innerWidth < '992' ? true : false; //$screen-md css variale = 992
 	};
+
+	//!********************************//!Get Mobile OS START*************************************//
+
+
+	const getMobileOS = () => {
+		const ua = navigator.userAgent
+		if (/android/i.test(ua)) {
+			return "Android"
+		}
+		else if ((/iPad|iPhone|iPod/.test(ua))
+			|| (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+			return "iOS"
+		}
+		return "Other"
+	}
+
+	const os = getMobileOS();
+	//!********************************//!Get Mobile OS End*************************************//
 
 	//!animting logo
 
@@ -268,7 +286,7 @@ $(function () {
 	//const contactLink = document.querySelectorAll(" a.nav-link");
 	//console.log(contactLink)
 
-	
+
 	//!********************************//!Isolate nav contact END*************************************//
 
 
@@ -276,10 +294,10 @@ $(function () {
 	let oldScroll = 0;
 	let mouseInteraction = false;
 
-	$('header').mouseenter(function() { //detect if mouse is on the header
+	$('header').mouseenter(function () { //detect if mouse is on the header
 		mouseInteraction = true;
 	})
-	$('header').mouseleave(function() {
+	$('header').mouseleave(function () {
 		mouseInteraction = false;
 	})
 
@@ -288,7 +306,7 @@ $(function () {
 		//console.log('new:  ' + newScroll, "old:  " + oldScroll)
 
 		if (oldScroll >= window.innerHeight && oldScroll - newScroll < 0) {
-			if(mouseInteraction === false)  {
+			if (mouseInteraction === false) {
 				setTimeout(function () {
 					header.classList.contains('shrink') ? header.classList.add('pullUp') : '';
 				}, 1000);
@@ -302,8 +320,8 @@ $(function () {
 		oldScroll = newScroll;
 	});
 
-	window.addEventListener('mousemove', function(e) {
-		if(e.clientY <= window.innerHeight / 12) { //activates header when mouse moves to top 12th of path
+	window.addEventListener('mousemove', function (e) {
+		if (e.clientY <= window.innerHeight / 12) { //activates header when mouse moves to top 12th of path
 			setTimeout(function () {
 				header.classList.contains('shrink') ? header.classList.remove('pullUp') : '';
 			}, 0);
@@ -313,11 +331,12 @@ $(function () {
 	//!********************************//!Hide Nav on scroll END*************************************//
 
 
+	//!********************************//!Isolate contact button START*************************************//
 	const isolatedContactBtn = document.querySelector('.nav-link[href="#contact"]#isolate');
 	//console.log(isolatedContactBtn)
-	
+
 	function repositionCTA() {
-		if(isMobileDisplay()) {
+		if (isMobileDisplay()) {
 			document.querySelector('ul.nav#nav li:last-child').appendChild(isolatedContactBtn);
 		} else if (isMobileDisplay() === false) {
 			document.querySelector('.header_inner').appendChild(isolatedContactBtn);
@@ -325,6 +344,29 @@ $(function () {
 	}
 	window.addEventListener('load', repositionCTA);
 	window.addEventListener('resize', repositionCTA);
+	//!********************************//!Isolate contact button END*************************************//
+
+
+	//!********************************//!ServiceWorker PWA START*************************************//
+	if ("serviceWorker" in navigator) {
+		navigator.serviceWorker.register('../service-worker.js').then(registration => { //always put service worker.js in put along with index.html in the root
+			//console.log('SW registered successfully')
+			//console.log(registration)
+		}).catch(err => {
+			console.error('sorry, your device does not support this application');
+			console.error(err);
+		})
+	}
+	//!********************************//!ServiceWorker PWA END*************************************//
+
+
+	//!********************************//!Turn off parralax on mobile START*************************************//
+	if (os === 'iOS' && isMobileDisplay) {
+		document.querySelector('#parralax').style.backgroundAttachment = 'initial';
+		console.log('small, Ios device detected')
+	}
+	//!********************************//!Turn off parralax on mobile END*************************************//
+
 
 
 

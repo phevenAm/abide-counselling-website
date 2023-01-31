@@ -17,8 +17,15 @@
     <!--//TODO:-->
     <meta property="og:description" content="**ADD ABOUT SECTION HERE**">
     <meta property="og:url" content="**#websiteURLHERE**">
-    <meta property="og:site_name" content="Circle & Square">
-    <link rel="icon" type="image/gif" href="./media/images/logo gif.gif" />
+    <meta property="og:site_name" content="Myra">
+    <meta name="theme-color" content="#7aa39a" />
+    <link rel="icon" type="image/gif" href="./media/brand/fav/favicon-32x32.png" />
+
+    <!--Progressive Web App-->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="./media/brand/fav/apple-touch-icon.png">
+    <meta name="theme-color" content="#8054df" />
+    <!--Progressive Web App-->
 
     <!--------------- META END-------------->
 
@@ -116,10 +123,12 @@
               introduction</h3>
           </div>
           <p data-aos-once="true" data-aos="fade-in" data-aos-delay="300" data-aos-duration="950">Therapy provides an
-            opportunity to explore personal difﬁculties in a <strong>conﬁdential</strong> and <strong>supportive</strong> environment. This
+            opportunity to explore personal difﬁculties in a <strong>conﬁdential</strong> and
+            <strong>supportive</strong> environment. This
             may include painful feelings, negative thoughts, mental health issues, or distress from a difficult event.
             Talking therapies can help you to explore these feelings, identify why you feel the way you do, and give you
-            the tools and support you need to move towards <strong>self-awareness</strong> and <strong>personal growth</strong>.
+            the tools and support you need to move towards <strong>self-awareness</strong> and <strong>personal
+              growth</strong>.
           </p>
         </div>
       </section>
@@ -153,7 +162,7 @@
 
           </div>
 
-         
+
         </div>
       </section>
       <!--About me End-->
@@ -190,7 +199,8 @@
         <div class="inner">
           <div class="section_top">
             <h2 class="section_title" data-aos-once="true" data-aos="fade-in" data-aos-delay="100">Services</h2>
-            <h3 class="section_subtitle" data-aos-once="true" data-aos="fade-in" data-aos-delay="200">Working together</p>
+            <h3 class="section_subtitle" data-aos-once="true" data-aos="fade-in" data-aos-delay="200">Working together
+              </p>
           </div>
           <div class="cardsContainer">
             <div class="card" id="remote" data-aos-once="true" data-aos="fade-up" data-aos-delay="400"
@@ -271,11 +281,12 @@
                     consultation we can begin to discuss why you are looking for therapy and how I may be able to
                     help.</span> </p>
 
-                    <p class="price_value">Free</p>
+                <p class="price_value">Free</p>
               </li>
               <li class="price">
                 <p class="price_item">Initial introductory session <br />
-                  <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, architecto!</span> </p>
+                  <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, architecto!</span>
+                </p>
                 <p class="price_value">£40</p>
               </li>
               <li class="price">
@@ -517,7 +528,9 @@
             <div class="section_top">
               <h2 class="section_title" data-aos-once="true" data-aos="fade-in" data-aos-delay="100">Contact</h2>
               <h3 class="section_subtitle" data-aos-once="true" data-aos="fade-in" data-aos-delay="200">Get in touch</p>
-                <p>Contact me to book your free 10-minute phone consultation or feel free to ask any questions. This will help us to establish if I am the best suited therapist for you based on my training and experience. If I am not, I will try my best to recommend an alternative therapist.</p>
+                <p>Contact me to book your free 10-minute phone consultation or feel free to ask any questions. This
+                  will help us to establish if I am the best suited therapist for you based on my training and
+                  experience. If I am not, I will try my best to recommend an alternative therapist.</p>
             </div>
           </div>
 
@@ -566,6 +579,11 @@
       AOS.init();
     </script>
 
+<script>
+  if ('serviceWorder' in navigator) {
+    navigator.serviceWorder.register('./service-worker.js')
+  }
+</script>
 
   </body>
 

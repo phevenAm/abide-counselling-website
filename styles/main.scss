@@ -99,13 +99,19 @@ header {
 		}
 
 		& #isolate {
-			background-color: $white !important;
 			font-family: $font-headings;
-			padding: 15px 25px;
-			@include radiusResponsiveLarge;
+			
+			@include bp(m) {
+				padding: 15px 45px;
+				border-radius: 200px;
+				background-color: $white !important;
+				color: $black;
+				transition: all $animationStyle;
 
-			&:hover {
-				@include shadow;
+				&:hover {
+					@include shadow;
+					color: $accent !important;
+				}
 			}
 		}
 
