@@ -4,13 +4,13 @@ import { getFirestore, collection } from "https://www.gstatic.com/firebasejs/9.1
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDwTLDSdBgValD8APWqd2sv37Yat3dia0c",
-    authDomain: "rosie-s-counselling.firebaseapp.com",
-    projectId: "rosie-s-counselling",
-    storageBucket: "rosie-s-counselling.appspot.com",
-    messagingSenderId: "556608009766",
-    appId: "1:556608009766:web:263198fdc072e83307d8e7",
-    measurementId: "G-F8SCCQRP84"
+  apiKey: "AIzaSyDwTLDSdBgValD8APWqd2sv37Yat3dia0c",
+  authDomain: "rosie-s-counselling.firebaseapp.com",
+  projectId: "rosie-s-counselling",
+  storageBucket: "rosie-s-counselling.appspot.com",
+  messagingSenderId: "556608009766",
+  appId: "1:556608009766:web:d6d8c8407f28a1b207d8e7",
+  measurementId: "G-30BN8JMP5H"
   };
 
   // Initialize Firebase
