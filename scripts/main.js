@@ -267,11 +267,15 @@ $(function () {
 			const sectionHeight = current.offsetHeight,
 				sectionTop = current.offsetTop - 58,
 				sectionId = current.getAttribute("id");
+				console.log(current);
 
 			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
+				//document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
+				console.log('test add active class')
 			} else {
-				document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
+				//document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
+				console.log('remove add active class')
+
 			}
 		});
 	}
