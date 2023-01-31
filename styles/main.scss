@@ -80,8 +80,8 @@ header {
 		align-items: center;
 		height: $header-height-mobile;
 		@extend %container-padding;
-		padding-top: 10px !important;
-		padding-bottom: 10px !important;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
 
 
 		a.logo {
@@ -102,7 +102,7 @@ header {
 			font-family: $font-headings;
 			
 			@include bp(m) {
-				padding: 15px 45px;
+				padding: 10px 45px;
 				border-radius: 200px;
 				background-color: $white !important;
 				color: $black;
@@ -191,7 +191,8 @@ header {
 					display: flex;
 					align-items: flex-start;
 					justify-content: flex-start;
-					padding-top: $header-height-mobile;
+					//padding-top: $header-height-mobile;
+					padding-top: 5px;
 					transform: translateX(0);
 					padding-left: 0;
 					transition: all 250ms ease-in-out;
@@ -263,6 +264,10 @@ header {
 				top: 0;
 				right: 0;
 				transform: translate(-50%, -50%);
+
+				@include bp(lt-s) {
+					transform: translate(-50%, -50%) scale(.8);
+				}
 
 
 				//::before is top line. relative to .burgermenu. This is initial setup
@@ -340,10 +345,18 @@ header {
 
 
 	&.shrink {
-		height: 90px;
+		height: 60px;
 		@include shadow;
 		//background-color: $secondary;
 		@include frostBG($white);
+
+		@include bp(m) {
+			height: 90px;
+		}
+
+		@include bp(lt-m) {
+			padding-top: 5px;
+		}
 
 
 		a,
