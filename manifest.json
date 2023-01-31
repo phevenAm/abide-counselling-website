@@ -23,7 +23,8 @@
 		"src": "./media/brand/logo-clear.png",
 		"sizes": "512x512",
 		"type": "image/png",
-		"purpose": "maskable any"
+		"purpose": "maskable any",
+		"color": "#d1bda1"
 	  }
 	],
 	"display": "standalone",
