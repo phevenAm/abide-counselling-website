@@ -1,0 +1,12 @@
+@import '../scss/fonts';
+@import '../scss/mixins';
+@import '../scss/variables';
+@import '../scss/typography';
+
+@import '../scss/animations';
+@import '../scss/buttons';
+@import '../scss/patterns';
+
+html {
+    background-color: $secondary;
+}

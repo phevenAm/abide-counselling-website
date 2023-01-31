@@ -30,17 +30,24 @@ $links: $accent;
 
 
 // fonts
-$icon-font: fontAwesome, 'Font Awesome 5 Regular', 'font Awesome', 'Font Awesome 5';
+$icon-font: fontAwesome,
+'Font Awesome 5 Regular',
+'font Awesome',
+'Font Awesome 5';
 $icon-weight: 900;
-@mixin thin-icon {-webkit-text-stroke: 2px $accent;}
+
+@mixin thin-icon {
+	-webkit-text-stroke: 2px $accent;
+}
+
 // fontAwesome Icons
 $arrow-right: '\f054';
 $arrow-down: '\f078';
-$plus:  '+';
-$minus:  '+';
+$plus: '+';
+$minus: '+';
 
 $header-height: 100px;
-$header-height-mobile: 50px;//80px;
+$header-height-mobile: 50px; //80px;
 
 
 %container-padding {
@@ -61,7 +68,7 @@ $max-contentWidth: 1700px; //1170px;
 
 $animation-duration: 450ms;
 $animation-delay: 200ms;
-$animation-ease: cubic-bezier(.51,.92,.24,1.15);
+$animation-ease: cubic-bezier(.51, .92, .24, 1.15);
 $animationStyle: $animation-duration $animation-ease $animation-delay !important;
 //$animation-speed: $animation-duration cubic-bezier(.51,.92,.24,1.15) $animation-delay !important;
 
@@ -81,9 +88,11 @@ $radius-large: 60px;
 	@include bp(s) {
 		border-radius: .4rem;
 	}
+
 	@include bp(m) {
 		border-radius: .6rem;
 	}
+
 	@include bp(l) {
 		border-radius: .8rem;
 	}
@@ -95,12 +104,15 @@ $radius-large: 60px;
 	@include bp(s) {
 		border-radius: .2rem;
 	}
+
 	@include bp(m) {
 		border-radius: .3rem;
 	}
+
 	@include bp(l) {
 		border-radius: .4rem;
 	}
+
 	//border-radius: 0;
 }
 
@@ -114,7 +126,7 @@ CSS GRID
 $site-gutter: 3vw;
 $site-max-width: $max-contentWidth;
 $grid-gutter: calc((#{$site-gutter}, 4vw) - 11.0px);
-$cell-max-width: calc(((#{$site-max-width}, 1500px) - (11.0px * (24 - 1)) ) / 24 );
+$cell-max-width: calc(((#{$site-max-width}, 1500px) - (11.0px * (24 - 1))) / 24);
 $inset-padding: 0vw;
 $row-height-scaling-factor: 0.0215;
 $container-width: min((#{$site-max-width}, 1500px), calc(100vw - (#{$site-gutter}, 4vw) * 2 - (#{$inset-padding})));

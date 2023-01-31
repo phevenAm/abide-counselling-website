@@ -88,7 +88,7 @@ header {
 			font-size: 2rem;
 			font-family: $font-headings;
 			color: $white;
- 
+
 			@include bp(m) {
 				font-size: 2.5rem;
 			}
@@ -97,29 +97,38 @@ header {
 		.profile-container {
 			position: absolute;
 			right: 100px;
-			
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+
 			@include bp(m) {
 				right: 280px;
 			}
 
 			i {
-				color: white;
+				color: $white;
 				font-size: 1.25rem;
 				padding: 10px;
 				border-radius: 200px;
-				transition: all $animationStyle;
 
-				&:hover {
-					background-color: $white;
+				* {
+					transition: all $animationStyle;
+				}
+			}
+
+			&:hover {
+				background-color: $white;
+				@include shadow;
+
+				i {
 					color: $black;
-					@include shadow;
 				}
 			}
 		}
 
 		& #isolate {
 			font-family: $font-headings;
-			
+
 			@include bp(m) {
 				padding: 10px 45px;
 				border-radius: 200px;
@@ -398,7 +407,7 @@ header {
 				}
 			}
 
-			
+
 		}
 
 		.burgermenu {
@@ -636,6 +645,7 @@ section[id] {
 
 				.section_subtitle {
 					margin-bottom: 0 !important;
+
 					@include bp(lt-xs) {
 						white-space: pre-line;
 					}
