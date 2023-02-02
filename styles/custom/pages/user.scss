@@ -11,22 +11,30 @@ html,body {
     background-color: $primary-dark;
 }
 
+body {
+
+	#container {
+		@extend %container-padding;
+	}
+}
+
 header#header {
     background-color: $primary;
+	padding-top: 0 !important;
+	@include shadow;
 
     .profile-container {
         right: 0 !important;
-        transform: translateX(-100%) !important;
+        transform: translateX(-50%) scale(.75) !important;
     }
 }
 
 main {
     min-height: 100vh;
-    @extend %container-padding;
-    max-width: $max-contentWidth;
     margin: auto;
-
+	
     .inner {
+		max-width: $max-contentWidth;
 		margin: auto;
 		width: 100%;
         height: 100%;
@@ -51,7 +59,7 @@ section[id] {
     @include autoHeight;
     @include shadow;
     min-height: 500px;
-
+	@extend %container-padding; //additional padding because of inset box design
 
     * {
         transition: all 230ms ease-in-out;
@@ -66,25 +74,46 @@ section[id] {
 		background-color: $secondary;
 	}
 
+	.inner {
+		//@extend %container-padding;
+		
+		.section_top {
+			padding-top: 0;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+	}
+
 	&.no-padding-section {
 		padding: 0 !important;
 	}
 
 	&#dashboard {
-        margin-top: calc(#{$header-height-mobile} + 150px);
+        margin-top: $gap-large;
         background-color: $secondary-dark;
         margin-left: auto;
         margin-right: auto;
         @include radiusResponsiveLarge;
-        max-width: $max-contentWidth;
-        @extend %container-padding;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		margin-bottom: $gap-large;
 
         .inner {
-            @include radiusResponsiveSmall;
-            @extend %container-padding;
-            background-color: $secondary;
-
+			min-height: 400px;
             height: 100%;
+			padding: 0;
+
+			.section_top {
+				h2 {
+					margin-top: 0;
+				}
+			}
+
+			.content {
+				background-color: $secondary;
+				@extend %container-padding;
+				@include radiusResponsiveSmall;
+			}
         }
 
 		//.inner {
