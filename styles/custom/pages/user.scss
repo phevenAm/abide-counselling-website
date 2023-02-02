@@ -216,6 +216,10 @@ section[id] {
 		//	}
 		//}
 	}
+
+	&#calendar {
+		padding: 0;
+	}
 }
 
 footer {
@@ -281,3 +285,8 @@ footer {
 	}
 }
 
+
+
+div#root {
+	background-color: red !important;
+}
