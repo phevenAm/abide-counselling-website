@@ -2,11 +2,253 @@
 @import '../scss/mixins';
 @import '../scss/variables';
 @import '../scss/typography';
-
+@import '../scss/coreStyles';
 @import '../scss/animations';
 @import '../scss/buttons';
 @import '../scss/patterns';
 
-html {
-    background-color: $secondary;
+html,body {
+    background-color: $primary-dark;
 }
+
+header#header {
+    background-color: $primary;
+
+    .profile-container {
+        right: 0 !important;
+        transform: translateX(-100%) !important;
+    }
+}
+
+main {
+    min-height: 100vh;
+    @extend %container-padding;
+    max-width: $max-contentWidth;
+    margin: auto;
+
+    .inner {
+		margin: auto;
+		width: 100%;
+        height: 100%;
+        @extend %container-padding;
+        background-color: $secondary-dark;
+        @include radiusResponsiveLarge;
+        display: flex;
+        flex-direction: column;
+        gap: $gap-large;
+
+    }
+
+   
+}
+
+
+section[id] {
+    min-height: 100vh;
+    overflow-x: hidden !important; //for Aos
+    background-color: $secondary;
+    @include radiusResponsiveSmall;
+    @include autoHeight;
+    @include shadow;
+    min-height: 500px;
+
+
+    * {
+        transition: all 230ms ease-in-out;
+    }
+
+	&.coloured-section {
+		*:not(.section_subtitle) {
+			color: $color-text;
+		}
+
+		background: $secondary;
+		background-color: $secondary;
+	}
+
+	&.no-padding-section {
+		padding: 0 !important;
+	}
+
+	&#dashboard {
+        margin-top: calc(#{$header-height-mobile} + 150px);
+        background-color: $secondary-dark;
+        margin-left: auto;
+        margin-right: auto;
+        @include radiusResponsiveLarge;
+        max-width: $max-contentWidth;
+        @extend %container-padding;
+
+        .inner {
+            @include radiusResponsiveSmall;
+            @extend %container-padding;
+            background-color: $secondary;
+
+            height: 100%;
+        }
+
+		//.inner {
+		//	@include gridTemplate;
+
+		//	>div {
+		//		padding: $gap-small;
+		//	}
+
+		//	.section_top {
+		//		grid-area: 1/1/3/27;
+		//		z-index: 1;
+		//		padding: 0;
+		//		margin-bottom: 0 !important;
+
+		//		@include bp(m) {}
+
+		//		.section_title {
+		//			width: auto;
+		//		}
+
+		//		.section_subtitle {
+		//			margin-bottom: 0 !important;
+
+		//			@include bp(lt-xs) {
+		//				white-space: pre-line;
+		//			}
+		//		}
+		//	}
+
+		//	.textBox {
+		//		background-color: transparent;
+		//		grid-area: 24/1/20/27;
+		//		z-index: 2;
+		//		@include radiusResponsiveLarge;
+		//		margin-top: -10px;
+
+
+		//		p {
+		//			color: $color-text;
+
+		//			@include bp(m) {}
+		//		}
+
+		//		@include bp(lt-m) {
+		//			padding-left: 0;
+		//			padding-right: 0;
+		//		}
+
+
+		//		@include bp(s) {
+		//			grid-area: 3/1/20/15;
+		//		}
+
+		//		@include bp(m) {
+		//			/* gridarea: startTop/startLeft/endBottom/endRight*/
+		//			//grid-area: 12/1/20/27
+		//			grid-area: 3/1/17/15;
+		//			@include shadow;
+		//			background-color: $white;
+		//		}
+
+		//		@include bp(l) {
+		//			grid-area: 3/1/12/15;
+		//		}
+
+
+		//	}
+
+		//	.image {
+		//		background-color: $secondary;
+		//		@include radiusResponsiveLarge;
+		//		//background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		//		background-image: url('../media/images/profile/IMG_1906-opt.JPG');
+		//		background-repeat: no-repeat;
+		//		background-position: center;
+		//		background-size: cover;
+		//		grid-area: 4/1/20/27;
+		//		min-height: 400px;
+		//		min-width: 250px;
+
+
+
+		//		@include bp(s) {
+		//			grid-area: 4/16/20/27;
+		//			min-height: 400px;
+		//			min-width: 300px;
+		//		}
+
+		//		@include bp(m) {
+		//			grid-area: 2/13/19/27;
+		//			min-height: 400px;
+		//			min-width: 300px;
+		//		}
+
+		//		@include bp(l) {
+		//			min-height: 400px;
+		//			min-width: 600px;
+		//		}
+		//	}
+		//}
+	}
+}
+
+footer {
+	background-color: $black !important;
+	width: 100%;
+	display: grid;
+
+	* {
+		color: $white;
+	}
+
+	.inner {
+		max-width: $max-contentWidth;
+		margin: auto;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@extend %container-padding;
+
+		@include bp(m) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+
+		p,
+		span {
+			color: $white;
+
+			@include bp(m) {
+				margin-bottom: 0;
+			}
+		}
+
+		.socials {
+			display: flex;
+			padding: 0;
+			mix-blend-mode: difference;
+			margin-bottom: 0 !important;
+
+
+			i {
+				font-size: 1.5rem;
+			}
+
+			li {
+				list-style: none;
+				text-decoration: none;
+				margin: auto 10px;
+
+				//&:not(:first-of-type) {
+				//	//margin-left: $gap-small;
+				//}
+
+				a {
+					color: $color-text !important;
+				}
+			}
+
+		}
+	}
+}
+
