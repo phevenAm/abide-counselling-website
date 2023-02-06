@@ -12,9 +12,9 @@
 
  %copy {
  	color: $black;
- 	font-size: 1.0rem;
+ 	font-size: 1.2rem;
  	font-family: $font-copy;
- 	line-height: 1.2;
+ 	line-height: 1.4;
  	font-weight: 400;
 
  	@include bp(s) {

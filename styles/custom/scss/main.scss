@@ -174,19 +174,19 @@ section[id] {
 
 
 				@include bp(s) {
-					grid-area: 3/1/20/15;
+					grid-area: 5/1/20/15;
 				}
 
 				@include bp(m) {
 					/* gridarea: startTop/startLeft/endBottom/endRight*/
 					//grid-area: 12/1/20/27
-					grid-area: 3/1/17/15;
+					grid-area: 4/1/17/15;
 					@include shadow;
 					background-color: $white;
 				}
 
 				@include bp(l) {
-					grid-area: 3/1/12/15;
+					grid-area: 5/1/12/15;
 				}
 
 
