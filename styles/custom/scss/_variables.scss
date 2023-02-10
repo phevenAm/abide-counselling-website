@@ -124,8 +124,10 @@ CSS GRID
 */
 
 
+$gridRepeatRowCount: 19; //default 19
+$gridRepeatColumnCount: 24; //default 24
 $site-gutter: 3vw;
-$site-max-width: $max-contentWidth;
+$site-max-width: $maxContentWidth;
 $grid-gutter: calc((#{$site-gutter}, 4vw) - 11.0px);
 $cell-max-width: calc(((#{$site-max-width}, 1500px) - (11.0px * (24 - 1))) / 24);
 $inset-padding: 0vw;
