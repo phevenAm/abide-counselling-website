@@ -12,18 +12,19 @@
 
  %copy {
  	color: $black;
- 	font-size: 1.2rem;
+ 	font-size: 1.0rem;
  	font-family: $font-copy;
- 	line-height: 1.4;
+ 	line-height: 1.6;
  	font-weight: 400;
 
  	@include bp(s) {
- 		line-height: 1.5;
- 		font-size: 20px;
+ 		line-height: 1.1;
+ 		font-size: 1.1rem;
  	}
 
  	@include bp(m) {
- 		font-size: 24px;
+ 		font-size: 1.3rem;
+ 		line-height: 1.6;
  	}
  }
 
@@ -134,22 +135,22 @@
 
  ul {
  	padding: 0;
-	margin-bottom: $gap-small;
+ 	margin-bottom: $gap-small;
  }
 
  ul li {
-	list-style-type: initial;
-	margin-left: 30px;
-	margin-bottom: 10px;
-}
+ 	list-style-type: initial;
+ 	margin-left: 30px;
+ 	margin-bottom: 10px;
+ }
 
  small {
  	color: $accent !important;
-	font-size: .8rem !important;
+ 	font-size: .8rem !important;
 
-	@include bp(m) {
-		font-size: 1rem !important;
-	}
+ 	@include bp(m) {
+ 		font-size: 1rem !important;
+ 	}
  }
 
  h1 {

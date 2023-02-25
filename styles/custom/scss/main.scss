@@ -10,6 +10,10 @@
 
 section[id] {
 
+	.section_subtitle {
+		font-weight: 400 !important;
+	}
+
 	&#landing {
 		background-color: $primary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -27,7 +31,7 @@ section[id] {
 		padding-top: $header-height-mobile;
 		position: relative;
 		overflow: hidden;
-		height: 100vh;
+		// height: 100vh;
 
 
 		@include bp(m) {
@@ -65,6 +69,8 @@ section[id] {
 		}
 
 		.subheading {
+			font-weight: 400 !important;
+
 			p {
 				color: $white;
 				font-size: 1.2rem;
@@ -246,7 +252,6 @@ section[id] {
 
 		.inner {
 			max-width: $max-contentWidth;
-
 
 			.cardsContainer {
 				display: flex;
