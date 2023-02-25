@@ -1,0 +1,63 @@
+
+	//!intersection Observer
+
+	//let options = {
+	//	root: null, //which element as viewport (wholepage as default)
+	//	rootMargin: `0px 0px -99% 0px`, // adjusts the above root top,right, bottom, left
+	//	threshold: .01 //percentage overlap (0 - 1)
+	//}
+
+	////!callback function that's called when my target touches a space (enters / leaves),
+	//let observer = new IntersectionObserver(isTouching, options)
+	//document.querySelectorAll('section').forEach((singleSection) => {
+	//	observer.observe(singleSection)
+	//	//!list of all the things it plans to watch
+	//	//console.log('watching:' + singleSection.innerHTML) 
+	//})
+
+	//function isTouching(entries, observer) { //array of the things its watching, the obverser
+	//	entries.forEach((entry) => {
+	//		if (entry.isIntersecting) {
+	//			entry.target.classList.add('active');
+
+	//			navItems.find((navItem) => {
+	//				if (navItem.className === entry.target.id) {
+	//					navItem.classList.add('active');
+	//				} else {
+	//					navItem.classList.remove('active');
+	//				}
+	//				return;
+	//			})
+
+	//			//observer.unobserve(entry.target);
+	//		} else {
+	//			entry.target.classList.remove('active');
+	//		}
+	//	})
+	//}
+
+
+
+
+
+	////!? USER JS TO ADD dynamically add animate on scroll to all headings and sub headings. Make a function with that takes the animation type, delay and duration as arguments. then user querly selector all and iterate over
+
+	//function addAos(target, fadeDirection="left", order=1){
+	//	const delayMultiplier = order * 100;
+	//	//target.classList.add("aos-init");
+	//	//target.classList.add("aos-animate"); need interction or something so when scrolled into view it animates the aos... this is all very overkill!!!
+	//	target.setAttribute("data-aos", `fade-${fadeDirection}`);
+	//	target.setAttribute("data-aos-delay", `${delayMultiplier}`);
+	//	console.log('test', target)
+	//}
+
+	
+	//(function aosHeadings () {
+	//	const allHeadings = document.querySelectorAll(".section_title");
+	//console.log(allHeadings)
+
+	//allHeadings.forEach((heading) => {
+	//	addAos(heading, "left", 3)
+	//	console.log(heading)
+	//})
+	//})();

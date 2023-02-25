@@ -1,0 +1,173 @@
+ input,
+ label,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+ 	font-family: $font-headings;
+ 	color: $color-text;
+ }
+
+ %copy {
+ 	color: $black;
+ 	font-size: 1.2rem;
+ 	font-family: $font-copy;
+ 	line-height: 1.4;
+ 	font-weight: 400;
+
+ 	@include bp(s) {
+ 		line-height: 1.5;
+ 		font-size: 20px;
+ 	}
+
+ 	@include bp(m) {
+ 		font-size: 24px;
+ 	}
+ }
+
+ %h1 {
+ 	line-height: 1.2;
+ 	font-size: 3.5rem;
+
+ 	@include bp(m) {
+ 		font-size: 5rem;
+ 	}
+ }
+
+ %h2 {
+ 	font-size: 2.5rem;
+ 	margin-top: 2.5rem;
+ 	line-height: 1.2;
+
+ 	@include bp(m) {
+ 		font-size: 3.5rem;
+ 		margin-top: 3rem;
+ 	}
+
+ 	@include bp(l) {
+ 		//font-size: 4rem;
+ 		margin-top: 3rem;
+ 	}
+ }
+
+ %h3 {
+ 	font-size: 1.3rem;
+ 	margin-bottom: .85rem;
+ 	font-weight: normal;
+ 	font-family: $font-headings !important;
+
+
+ 	@include bp(m) {
+ 		font-size: 2rem;
+ 		margin-top: 0;
+ 		margin-bottom: 1.5rem;
+ 	}
+
+ 	@include bp(l) {
+ 		font-size: 2.0rem;
+ 		margin-top: 0;
+ 		margin-bottom: 1.75rem;
+ 	}
+ }
+
+ %h4 {
+ 	font-size: 1.3rem;
+ 	font-weight: bold;
+ 	font-family: $font-subheadings !important;
+
+
+ 	@include bp(m) {
+ 		font-size: 27px;
+ 		font-weight: bold;
+ 	}
+
+ 	@include bp(l) {
+ 		font-size: 31px;
+ 	}
+ }
+
+ %h5 {
+ 	font-size: 1.3rem;
+ 	font-family: $font-copy !important;
+ 	color: $secondary;
+
+
+ 	@include bp(m) {
+ 		font-size: 27px;
+ 		font-weight: bold;
+ 	}
+
+ 	@include bp(l) {
+ 		font-size: 31px;
+ 	}
+ }
+
+
+
+ p,
+ a:link,
+ a,
+ a:visited ul li,
+ li,
+ input,
+ label,
+ p span,
+ span,
+ ::placeholder,
+ select {
+ 	@extend %copy;
+ }
+
+ a:link,
+ a,
+ a:visited {
+ 	color: $links;
+
+ 	&:hover {
+ 		color: $accent;
+ 	}
+ }
+
+
+
+ ul {
+ 	padding: 0;
+	margin-bottom: $gap-small;
+ }
+
+ ul li {
+	list-style-type: initial;
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+
+ small {
+ 	color: $accent !important;
+	font-size: .8rem !important;
+
+	@include bp(m) {
+		font-size: 1rem !important;
+	}
+ }
+
+ h1 {
+ 	@extend %h1;
+ }
+
+ h2 {
+ 	@extend %h2;
+ }
+
+ h3 {
+ 	@extend %h3;
+ }
+
+ h4 {
+ 	@extend %h4;
+ }
+
+ h5 {
+ 	@extend %h5;
+ }

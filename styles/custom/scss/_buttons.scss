@@ -1,0 +1,73 @@
+%btn {
+
+	@extend %copy;
+	width: 100%;
+	background: $white;
+	border: none;
+	text-decoration: none;
+	max-width: 250px;
+	padding: 10px 20px;
+	transition: all $animationStyle;
+	text-align: center;
+	border-radius: 0;
+	color: $color-text ;
+
+	@include radiusResponsiveLarge;
+
+
+	@include webkitRemove;
+
+	a,
+	a:visited {
+		color: $color-text;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color-text;
+		background: $secondary;
+	}
+
+	@include bp(m) {
+		width: auto;
+	}
+}
+
+
+
+.btn {
+	@extend %btn;
+}
+
+
+%close-btn {
+	transition: all $animationStyle;
+	background: $accent !important;
+	height: 50px;
+	cursor: pointer;
+	width: 50px;
+	border-radius:200px;
+	font-size: 1.2rem;
+	@include shadow;
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		//transform: scale(1.05);
+	}
+	
+	&:active {
+		//transform: scale(.95); //breaking position for video btn
+		border-bottom: 0;
+	}
+
+	* {
+		transition: all $animationStyle;
+		color: $white;
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+}
