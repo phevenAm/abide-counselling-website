@@ -515,12 +515,13 @@
     }
 }
 
+
 @mixin gridTemplate {
     //variables on variables partial
     //27 cols/row max
     display: grid;
-    grid-template-rows: repeat(27, minmax(calc(#{$container-width} * #{$row-height-scaling-factor}), auto));
-    grid-template-columns: minmax(#{$grid-gutter}, 1fr) repeat(27, minmax(0, #{$cell-max-width})) minmax(#{$grid-gutter}, 1fr);
+    grid-template-rows: repeat(19, minmax(calc(#{$container-width} * #{$row-height-scaling-factor}), auto));
+    grid-template-columns: minmax(#{$grid-gutter}, 1fr) repeat(24, minmax(0, #{$cell-max-width})) minmax(#{$grid-gutter}, 1fr);
     row-gap: 11px;
     column-gap: 11px;
     grid-auto-flow: dense;
