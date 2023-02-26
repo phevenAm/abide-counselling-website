@@ -52,9 +52,9 @@ $header-height-mobile: 50px; //80px;
 
 
 %container-padding {
-	padding: 60px 10px; // 120px 30px;
+	padding: 60px 15px; // 120px 30px;
 
-	@include bp(m) {
+	@include bp(s) {
 		padding: 90px 60px; //120px 60px;
 	}
 

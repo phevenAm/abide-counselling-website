@@ -135,18 +135,16 @@ header {
 			@include bp(m) {
 				padding: 10px 45px;
 				border-radius: 200px;
-				background-color: $white;
-				color: $primary;
+				background-color: $primary;
+				color: $white !important;
 				transition: all $animationStyle;
 				right: 0px;
 
 				.shrink & {
-					background-color: $accent !important;
 				}
 
 				&:hover {
 					@include shadow;
-					color: $accent !important;
 				}
 			}
 		}
@@ -310,7 +308,7 @@ header {
 				transform: translate(-50%, -50%);
 
 				@include bp(lt-s) {
-					transform: translate(-50%, -50%) scale(.75);
+					transform: translate(-50%, -50%) scale(.65);
 				}
 
 
@@ -407,6 +405,10 @@ header {
 					a.nav-link {
 						&::after {
 							background: $primary !important;
+						}
+
+						#isolate {
+							background: white !important;
 						}
 					}
 				}

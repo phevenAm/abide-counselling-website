@@ -468,9 +468,10 @@ section[id] {
 					font-size: 18px;
 					color: $color-text;
 					font-family: $font-copy;
+					font-weight: 100 !important;
 
 					@include bp(m) {
-						font-size: 24px;
+						font-size: 20px;
 					}
 
 					&:not(.collapsed) {
@@ -483,10 +484,11 @@ section[id] {
 
 						&::after {
 							content: '-';
-							font-weight: 500;
+							font-weight: lighter;
 							font-family: sans-serif;
-						}
+							transform-origin: center;
 
+						}
 					}
 
 					&::after {
@@ -494,7 +496,7 @@ section[id] {
 						background: none;
 						display: grid;
 						place-content: center;
-						font-weight: 500;
+						font-weight: lighter;
 						font-family: sans-serif;
 					}
 
@@ -638,6 +640,7 @@ section[id] {
 							margin-bottom: 15px;
 							color: $carbon;
 							font-size: 1.2rem !important;
+							font-weight: 200;
 							//line-height: 1.1;
 
 							span {
@@ -654,7 +657,7 @@ section[id] {
 						}
 
 						.price_value {
-							font-weight: bold;
+							//font-weight: bold;
 							//font-family: $font-headings;
 						}
 					}
@@ -744,7 +747,9 @@ section[id] {
 				p {
 					text-align: center;
 
-					a {}
+					a {
+						font-size: 1.05rem !important;
+					}
 				}
 			}
 		}
