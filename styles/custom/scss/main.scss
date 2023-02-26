@@ -673,9 +673,7 @@ section[id] {
 	}
 
 	&#contact {
-
-		@include autoHeight;
-		min-height: 400px;
+		min-height: 40vh;
 
 		@include bp(m) {
 			min-height: 70vh;
