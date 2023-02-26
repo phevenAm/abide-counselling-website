@@ -11,99 +11,135 @@
 section[id] {
 
 	.section_subtitle {
-		font-weight: 400 !important;
+		font-weight: 200 !important;
 	}
 
 	&#landing {
-		background-color: $primary; //svg animate leaves growing
+		background-color: $secondary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
-		background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/3028961/pexels-photo-3028961.jpeg?auto=compress&cs=tinysrgb&w=3798&h=2532&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/5309507/pexels-photo-5309507.jpeg?auto=compress&cs=tinysrgb&w=3280&h=4101&dpr=1');
-		background-position: center;
-		background-size: cover;
+		//background-image: url('https://images.pexels.com/photos/13918604/pexels-photo-13918604.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load');
+		background-image: url('../../../public/media/svg/leaf.svg'); //lottie animate leaf opening up on load. On mouse over it gets flowers where ever the mouse goes. so the flowers will have animated already but hidden with my JS. each folow will have a unique class to toggle show on mouse over
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-size: 500px;
+		background-position: bottom center;
+		//background-size: cover;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
+		justify-content: center;
 		gap: 10px;
 		align-items: center;
 		padding-top: $header-height-mobile;
 		position: relative;
 		overflow: hidden;
-		// height: 100vh;
-
-
+		background-position-y: 115% !important;
+		
 		@include bp(m) {
-			//background-image: url('https://images.pexels.com/photos/5256140/pexels-photo-5256140.jpeg?auto=compress&cs=tinysrgb&w=6000&h=4000&dpr=1');
+			background-position-y: 150% !important;
+			background-size: 800px;
 			padding-top: $header-height;
 			//justify-content: center;
 		}
 
 		@include bp(lt-s) {}
 
-		* {
-			text-align: center;
+		.inner {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
 
-			@include bp(m) {
-				text-align: left;
+			*:not(.btn) {
+				color: $primary;
+				text-align: center;
+	
+				@include bp(xs) {
+					text-align: left;
+				}
 			}
-		}
+	
+			h1 {
+				font-size: 4.0rem;
 
-		h1 {
-			font-size: 4.0rem;
-			color: $secondary;
-
-			@include bp(xs) {
-				font-size: 5rem;
-			}
-
-			@include bp(m) {
-				margin-bottom: 20px;
-				font-size: 7rem;
-			}
-
-			@include bp(xl) {
-				//font-size: 10rem;
-			}
-		}
-
-		.subheading {
-			font-weight: 400 !important;
-
-			p {
-				color: $white;
-				font-size: 1.2rem;
-				line-height: 1;
-				max-width: 40ch;
-				margin-bottom: $gap-small;
-				margin-left: auto;
-				margin-right: auto;
-
+				span {
+				
+				}
+	
+				@include bp(xs) {
+					font-size: 5rem;
+				}
+	
 				@include bp(m) {
-					font-size: 1.5rem;
-					max-width: 50ch;
-					margin-left: 0;
-					margin-right: 0;
+					margin-bottom: 20px;
+					font-size: 7rem;
+				}
+	
+				@include bp(xl) {
+					//font-size: 10rem;
+				}
+
+				@include bp(lt-xs) {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+				}
+			}
+	
+			.subheading {
+				font-weight: 400 !important;
+	
+				p {
+					color: $black;
+					font-size: 1.2rem;
+					max-width: 40ch;
+					margin-bottom: $gap-small;
+	
+					@include bp(m) {
+						font-size: 1.5rem;
+						max-width: 50ch;
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
+	
+			}
+
+			a.btn.landing-btn {
+				
+				@include bp(lt-xs) {
+					margin: auto;
+					//margin: unset;
 				}
 			}
 
-			a.btn {
-				transition: all $animationStyle;
-				position: absolute;
-				z-index: 2;
-				left: 50%;
-				transform: translateX(-50%);
-				color: white !important;
-				background: none !important;
-				padding: 0;
+			//a.btn.landing-btn {
+			//	transition: all $animationStyle;
+			//	position: absolute;
+			//	z-index: 2;
+			//	left: 50%;
+			//	transform: translateX(-50%);
+			//	color: white;
+			//	background: none;
+			//	border: 1px solid $white;
+			//	padding: 15px 25px;
+			//	@include radiusResponsiveLarge;
+			//	min-width: 200px;
+			//	margin-top: $gap-small;
+			//	text-align: center;
 
-				@include bp(m) {
-					left: 0;
-					transform: translateX(50%);
-				}
+			//	@include bp(m) {
+			//		left: 0;
+			//		transform: translateX(50%);
+			//	}
 
-			}
+			//	&:hover {
+			//		background-color: $white;
+			//		color: $color-text;
+			//	}
+			//}
 		}
 
 
@@ -120,7 +156,7 @@ section[id] {
 			content: '';
 			position: absolute;
 			width: 50%;
-			min-height: 4px;
+			min-height: 1px;
 			left: -20px;
 			bottom: 100px;
 			background: $primary;
@@ -142,14 +178,16 @@ section[id] {
 				grid-area: 1/1/3/27;
 				z-index: 1;
 				padding: 0;
-
+				margin-bottom: 0;
+				
 				@include bp(m) {}
-
+				
 				.section_title {
 					width: auto;
 				}
-
+				
 				.section_subtitle {
+					margin-bottom: 0;
 					@include bp(lt-xs) {
 						white-space: pre-line;
 					}
@@ -161,8 +199,7 @@ section[id] {
 				grid-area: 24/1/20/27;
 				z-index: 2;
 				@include radiusResponsiveLarge;
-				margin-top: -10px;
-
+				margin-top: $gap-small;
 
 				p {
 					color: $color-text;
@@ -177,7 +214,12 @@ section[id] {
 
 
 				@include bp(s) {
-					grid-area: 3/1/20/15;
+					grid-area: 3/1/10/15;
+					padding: 20px;
+					@include shadow;
+					background-color: $white;
+					display: grid;
+					place-content: center;
 				}
 
 				@include bp(m) {
@@ -203,22 +245,23 @@ section[id] {
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: cover;
-				grid-area: 4/1/20/27;
+				grid-area: 3/1/20/27;
 				min-height: 400px;
 				min-width: 250px;
 
 
 
 				@include bp(s) {
-					grid-area: 4/16/20/27;
+					//grid-area: 4/16/20/27;
+					grid-area: 1/13/20/27;
 					min-height: 400px;
 					min-width: 300px;
 				}
 
 				@include bp(m) {
 					grid-area: 2/13/19/27;
-					min-height: 400px;
-					min-width: 300px;
+					//min-height: 400px;
+					//min-width: 300px;
 				}
 
 				@include bp(l) {
@@ -254,7 +297,7 @@ section[id] {
 				display: flex;
 				justify-content: stretch;
 				justify-items: stretch;
-				gap: $gap-large;
+				gap: $gap-small;
 				flex-direction: column;
 
 				@include bp(m) {
@@ -314,7 +357,7 @@ section[id] {
 	}
 
 	&#quote {
-		background-color: $accent;
+		background-color: $primary;
 		background-position: center;
 		background-size: cover;
 		backdrop-filter: blur(5px);
@@ -371,8 +414,8 @@ section[id] {
 	}
 
 	&#parralax {
-		background-image: url('https://images.pexels.com/photos/1209118/pexels-photo-1209118.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/808510/pexels-photo-808510.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/1209118/pexels-photo-1209118.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
+		background-image: url('https://images.pexels.com/photos/808510/pexels-photo-808510.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
 		background-attachment: fixed;
 		background-position: center;
 		background-size: cover;
@@ -543,7 +586,7 @@ section[id] {
 				max-width: $max-contentWidth;
 				width: 100%;
 				padding: 15px;
-				border: 4px solid $accent;
+				border: 1px solid $accent;
 				margin: unset;
 				height: fit-content;
 				@include radiusResponsiveLarge;
@@ -575,6 +618,7 @@ section[id] {
 					li.price {
 						list-style: none;
 						margin-left: 0;
+						border-bottom: 1px dashed $black;
 
 						@include bp(s) {
 							display: flex;
@@ -583,17 +627,20 @@ section[id] {
 						}
 
 						.price_item {
-							@extend %copy;
-							font-family: $font-headings;
+							//@extend %copy;
+							font-family: $font-headings !important;
 							font-weight: bold;
 							padding-right: 10px;
 							line-height: 1;
 							max-width: 50ch;
-							margin-bottom: 5px;
+							margin-bottom: 15px;
+							color: $carbon;
+							font-size: 1.6rem !important;
+							//line-height: 1.1;
 
 							span {
 								color: $accent;
-								line-height: 1.2;
+								//line-height: 1.2;
 
 							}
 
@@ -628,7 +675,8 @@ section[id] {
 
 		@include bp(m) {
 			min-height: 70vh;
-			@include overflowDir(right, $accent, url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1'));
+			//@include overflowDir(right, $primary, url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1'));
+			@include overflowDir(right, $primary, $white);
 		}
 
 		.inner {
@@ -646,9 +694,9 @@ section[id] {
 				background-image: url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
 				background-size: contain;
 
-				* {
-					color: $white;
-				}
+				//* {
+				//	color: $white;
+				//}
 			}
 
 			&>div {
@@ -707,7 +755,7 @@ section[id] {
 }
 
 footer {
-	background-color: $black !important;
+	background-color: $carbon !important;
 	width: 100%;
 	display: grid;
 

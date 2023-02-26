@@ -20,7 +20,7 @@ $dark-grey: #2B2E2F;
 
 $primary: #7aa39a;
 $primary-dark : #6f948c;
-$secondary: #f0ece5;
+$secondary: #ecebe8;//#f0ece5;
 $secondary-dark : #e2ddd4;
 $tertiary: red;
 $accent: #873737;
@@ -63,7 +63,7 @@ $header-height-mobile: 50px; //80px;
 	}
 }
 
-$max-contentWidth: 1700px; //1170px;
+$max-contentWidth: 1500px;
 $maxContentWidth: $max-contentWidth;
 
 $animation-duration: 450ms;
@@ -120,15 +120,15 @@ $radius-large: 60px;
 // /*
 // CSS GRID START
 // */
-// $gridRepeatRowCount: 24; //default 19
-// $gridRepeatColumnCount: 24; //default 24
-// $site-gutter: 3vw;
-// $site-max-width: $maxContentWidth;
-// $grid-gutter: calc((#{$site-gutter}, 4vw) - 11.0px);
-// $cell-max-width: calc(((#{$site-max-width}, 1500px) - (11.0px * (24 - 1))) / 24);
-// $inset-padding: 0vw;
-// $row-height-scaling-factor: 0.0215;
-// $container-width: min((#{$site-max-width}, 1500px), calc(100vw - (#{$site-gutter}, 4vw) * 2 - (#{$inset-padding})));
+ $gridRepeatRowCount: 24; //default 19
+ $gridRepeatColumnCount: 24; //default 24
+ $site-gutter: 3vw;
+ $site-max-width: $maxContentWidth;
+ $grid-gutter: calc((#{$site-gutter}, 4vw) - 11.0px);
+ $cell-max-width: calc(((#{$site-max-width}, 1500px) - (11.0px * (24 - 1))) / 24);
+ $inset-padding: 0vw;
+ $row-height-scaling-factor: 0.0215;
+ $container-width: min((#{$site-max-width}, 1500px), calc(100vw - (#{$site-gutter}, 4vw) * 2 - (#{$inset-padding})));
 
 /*
 CSS GRID End

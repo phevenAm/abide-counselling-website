@@ -332,9 +332,9 @@
     flex-direction: column;
     background: $backgroundCol;
 
-    * {
-        color: $white;
-    }
+    //* {
+    //    color: $white;
+    //}
 
     &::after {
         content: '';
@@ -516,7 +516,7 @@
 }
 
 
-@mixin gridTemplate {
+@mixin gridTemplate { //!give this dymanic parameters
     //variables on variables partial
     //27 cols/row max
     display: grid;
