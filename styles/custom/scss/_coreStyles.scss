@@ -178,11 +178,16 @@ header {
 						list-style-type: none !important;
 
 						@include bp(m) {
-							margin: 0 40px;
+							margin: 0 30px;
 							flex-direction: row;
 							text-align: left;
 							width: auto;
 							justify-content: center;
+						}
+
+						@include bp(l) {
+							margin: 0 40px;
+
 						}
 
 						a {
@@ -317,7 +322,7 @@ header {
 					width: 30px;
 					position: absolute;
 					transition: all $animationStyle;
-					background-color: $white;
+					background-color: $carbon;
 					border-radius: 100px;
 				}
 
@@ -350,7 +355,7 @@ header {
 					//div is middle line
 					div {
 						width: 40px;
-						background-color: $white;
+						background-color: $carbon;
 						height: 1px;
 						position: absolute;
 
@@ -468,7 +473,7 @@ header {
 }
 
 section[id] {
-	min-height: 100vh;
+	//min-height: 100vh;
 	overflow-x: hidden !important; //for Aos
 
 	* {

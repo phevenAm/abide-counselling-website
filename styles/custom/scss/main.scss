@@ -15,6 +15,7 @@ section[id] {
 	}
 
 	&#landing {
+		min-height: 100vh;
 		background-color: $secondary; //svg animate leaves growing
 		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
@@ -413,15 +414,15 @@ section[id] {
 		}
 	}
 
-	&#parralax {
-		//background-image: url('https://images.pexels.com/photos/1209118/pexels-photo-1209118.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
-		background-image: url('https://images.pexels.com/photos/808510/pexels-photo-808510.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1');
-		background-attachment: fixed;
-		background-position: center;
-		background-size: cover;
-		@include autoHeight;
-		min-height: 40vh;
-	}
+	//&#parralax {
+	//	background-attachment: fixed;
+	//	background-position: center;
+	//	background-color: $accent;
+	//	background-size: cover;
+	//	@include autoHeight;
+	//	min-height: 40vh;
+
+	//}
 
 	&#faqs {
 		//@include autoHeight;
@@ -624,6 +625,7 @@ section[id] {
 							display: flex;
 							justify-content: space-between;
 							margin-bottom: $gap-small;
+							margin-top: $gap-small;
 						}
 
 						.price_item {
@@ -635,7 +637,7 @@ section[id] {
 							max-width: 50ch;
 							margin-bottom: 15px;
 							color: $carbon;
-							font-size: 1.6rem !important;
+							font-size: 1.2rem !important;
 							//line-height: 1.1;
 
 							span {
@@ -646,6 +648,8 @@ section[id] {
 
 							@include bp(s) {
 								padding-right: $gap-large;
+								font-size: 1.6rem !important;
+
 							}
 						}
 
@@ -691,12 +695,7 @@ section[id] {
 			overflow: hidden;
 
 			@include bp(lt-m) {
-				background-image: url('https://images.pexels.com/photos/2409038/pexels-photo-2409038.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
-				background-size: contain;
 
-				//* {
-				//	color: $white;
-				//}
 			}
 
 			&>div {
