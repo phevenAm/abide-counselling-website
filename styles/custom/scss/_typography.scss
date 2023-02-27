@@ -14,11 +14,10 @@ h6 {
   color: $black;
   font-size: 1rem;
   font-family: $font-copy;
-  line-height: 1.6;
+  line-height: 1.65;
   font-weight: 200;
 
   @include bp(s) {
-    line-height: 1.1;
     font-size: 1.1rem;
   }
 
@@ -150,7 +149,7 @@ small {
 
 strong {
   font-weight: 400 !important;
-  color: $accent !important;
+  color: $carbon !important;
 }
 
 h1 {

@@ -139,8 +139,14 @@ header {
 				color: $white !important;
 				transition: all $animationStyle;
 				right: 0px;
+				
+				@include bp(m) {
+					font-size: 1rem;
+				}
+
 
 				.shrink & {
+					background-color: red !important;
 				}
 
 				&:hover {
@@ -188,11 +194,15 @@ header {
 
 						}
 
-						a {
+						a.nav-link {
 							text-decoration: none;
 							color: $carbon;
 							padding: 10px 0;
 							font-family: $font-headings;
+
+							@include bp(m) {
+								font-size: 1rem;
+							}
 
 							&::after {
 								content: '';
@@ -495,8 +505,8 @@ section[id] {
 		margin-bottom: $gap-small;
 		font-size: 1.2rem !important;
 		font-family: $font-copy !important;
-		font-weight: 700;
 		color: $accent;
+		font-weight: 200;
 
 		@include bp(m) {
 			font-size: 1.4rem !important;
@@ -529,6 +539,10 @@ section[id] {
 
 		background: $secondary;
 		background-color: $secondary;
+	}
+
+	.lead-section {
+		
 	}
 
 	&.no-padding-section {

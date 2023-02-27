@@ -9,11 +9,6 @@
 
 
 section[id] {
-
-	.section_subtitle {
-		font-weight: 200 !important;
-	}
-
 	&#landing {
 		min-height: 100vh;
 		background-color: $secondary; //svg animate leaves growing
@@ -113,6 +108,10 @@ section[id] {
 				@include bp(lt-xs) {
 					margin: auto;
 					//margin: unset;
+				}
+
+				&:hover {
+					@include shadow;
 				}
 			}
 
@@ -277,12 +276,51 @@ section[id] {
 		@include radiusResponsiveLarge;
 		background-color: $white;
 		min-height: fit-content;
-		grid-area: 25/1/24/27;
+		//grid-area: 25/1/24/27;
+		.inner {
+			.additionalText {
+				display: flex;
+				flex-direction: column;
+				gap: $gap-small;
 
-		img {
-			margin: auto;
-			max-width: 200px;
-			margin-top: 20px;
+				@include bp(m) {
+					flex-direction: row;
+					gap: $gap-large;
+				}
+				border-bottom: 1px solid $white;
+			}
+
+			.logos {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: $gap-small;
+				
+				img {
+					margin-bottom: $gap-small;
+					max-width: 100px;
+				}
+				
+				@include bp(xs) {
+					margin-top: $gap-large;
+					justify-content: flex-start;
+					flex-direction: row;
+
+					img {
+						margin: 0;
+						margin-right: $gap-small;
+						max-width: 100px;
+					}
+				}
+
+				@include bp(l) {
+					img {
+						max-width: 150px;
+					}
+				}
+
+				
+			}
 		}
 	}
 
@@ -373,17 +411,18 @@ section[id] {
 			margin-bottom: -60px !important;
 			font-size: 1.5rem;
 			line-height: 1.4;
-			font-family: $font-headings;
+			font-family: $font-copy;//$font-headings;
+			font-weight: 100;
 
 			@include bp(m) {
-				font-size: 2.0rem;
+				font-size: 1.8rem;
 			}
 		}
 
 		.author {
 			font-size: 1.4rem;
 			color: $white !important;
-			font-family: sans-serif;
+			font-family: $font-headings;
 
 
 			small {
@@ -728,6 +767,7 @@ section[id] {
 
 						@include bp(m) {
 							text-align: left;
+							color: $white;
 						}
 					}
 				}
@@ -746,9 +786,21 @@ section[id] {
 
 				p {
 					text-align: center;
+					font-size: 1.2rem;
 
 					a {
-						font-size: 1.05rem !important;
+						font-size: 1rem;
+					}
+				}
+
+				@include bp(m) {
+					p {
+						text-align: center;
+						font-size: 1.6rem;
+	
+						a {
+							font-size: 1.2rem;
+						}
 					}
 				}
 			}
@@ -793,8 +845,8 @@ footer {
 		.socials {
 			display: flex;
 			padding: 0;
-			mix-blend-mode: difference;
-			margin-bottom: 0 !important;
+			//mix-blend-mode: difference;
+			margin-bottom: 0;
 
 
 			i {
@@ -805,14 +857,6 @@ footer {
 				list-style: none;
 				text-decoration: none;
 				margin: auto 10px;
-
-				//&:not(:first-of-type) {
-				//	//margin-left: $gap-small;
-				//}
-
-				a {
-					color: $color-text !important;
-				}
 			}
 
 		}
