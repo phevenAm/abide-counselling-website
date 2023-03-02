@@ -8,7 +8,7 @@ $(function () {
 	const navLinks = document.querySelectorAll('#navbar ul li a');
 
 	const isMobileDisplay = function () {
-		return window.innerWidth <= '992' ? true : false; //$screen-md css variale = 992
+		return window.innerWidth <= '991' ? true : false; //$screen-md css variale = 992
 	};
 
 	//!********************************//!Get Mobile OS START*************************************//
@@ -74,32 +74,8 @@ $(function () {
 	//!mouse shape animation
 	//!? CREATING A SCRIPT TO ADD aria-hidden="true" role="img" ETC TO IMAGES, ICONS AND TEXT AND BUTTONS
 
-	//function hotfixScrollSpy() {
-	//    var dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
-	//    let curScroll = getCurrentScroll();
-	//    dataSpyList.forEach(function (dataSpyEl) {
-	//        let offsets = bootstrap.ScrollSpy.getInstance(dataSpyEl)['_offsets'];
-	//        for(let i = 0; i < offsets.length; i++){
-	//            offsets[i] += curScroll;
-	//        }
-	//    })
-	//}
-
-	//function getCurrentScroll() {
-	//    return window.pageYOffset || document.documentElement.scrollTop;
-	//}
-
-	//window.onload = function () {
-	//	new bootstrap.ScrollSpy(document.body, {
-	//	  target: nav
-	//	});  hotfixScrollSpy();
-	//	window.scrollBy(0,1);
-	//  }
 
 	//!add scroll spy to sectons
-	// $('body').scrollspy({ target: $('nav#navBar') });
-
-
 
 	//! mouse anitation
 	//cursor-class="link", cursor-class="subtle", cursor-class="arrow"
@@ -224,35 +200,6 @@ $(function () {
 	});
 
 	//!********************************//!INJECTING MODAL CONTENT END*************************************//
-
-
-
-
-	//!********************************//!EXPANDING MODAL CARDS START*************************************//
-
-	// $('div.modal').each(function () {
-	// 	$(this).on('click', () => {
-	// 		$(function () {
-	// 			$('.modal .gallery img').each(function () {
-	// 				$('.modal .gallery img').each(() => {
-	// 					$(this).removeClass('active');
-	// 				});
-	// 				// console.log('helloo', this);
-	// 				$(this).on('click', () => {
-	// 					$(this).toggleClass('active');
-	// 				})
-	// 			})
-	// 		});
-	// 	})
-	// })
-
-	// //? to close image on blur but not working ATM
-	// $($("div.modal").click(function () {
-	// 	$(".modal .gallery img").blur();
-	// }));
-	//!********************************//!EXPANDING MODAL CARDS END*************************************//
-
-
 
 	//!********************************//!MANUAL NAV SCROLLSPY Take 2 Start*************************************//
 
