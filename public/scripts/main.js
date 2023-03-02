@@ -8,7 +8,7 @@ $(function () {
 	const navLinks = document.querySelectorAll('#navbar ul li a');
 
 	const isMobileDisplay = function () {
-		return window.innerWidth < '992' ? true : false; //$screen-md css variale = 992
+		return window.innerWidth <= '992' ? true : false; //$screen-md css variale = 992
 	};
 
 	//!********************************//!Get Mobile OS START*************************************//
@@ -18,9 +18,8 @@ $(function () {
 		const ua = navigator.userAgent
 		if (/android/i.test(ua)) {
 			return "Android"
-		}
-		else if ((/iPad|iPhone|iPod/.test(ua))
-			|| (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+		} else if ((/iPad|iPhone|iPod/.test(ua)) ||
+			(navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
 			return "iOS"
 		}
 		return "Other"
@@ -267,17 +266,17 @@ $(function () {
 			const sectionHeight = current.offsetHeight,
 				sectionTop = current.offsetTop - 58,
 				sectionId = current.getAttribute("data-contentId");
-				//console.log(current);
+			//console.log(current);
 
 			if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-				if(document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]")){ //!making sure its not null
+				if (document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]")) { //!making sure its not null
 					document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.add("active");
-				}	
+				}
 				//$(`nav#navBar ul#nav a[href*=" + ${sectionId} + "]`).addClass('active')
 			} else {
-				if(document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]")){
+				if (document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]")) {
 					document.querySelector("nav#navBar ul#nav a[href*=" + sectionId + "]").classList.remove("active");
-				}	
+				}
 				//$(`nav#navBar ul#nav a[href*=" + ${sectionId} + "]`).removeClass('active')
 
 			}
