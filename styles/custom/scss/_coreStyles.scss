@@ -244,22 +244,6 @@ header {
 						z-index: -1;
 						min-width: unset;
 						margin: auto;
-						//background-color: rgba(64, 115, 64, 0.323);
-						//min-height: $header-height-mobile; //50vh;
-						//position: absolute;
-						//left: 0;
-						//top: 0;
-						//display: flex;
-						//align-items: flex-start;
-						//justify-content: flex-start;
-						////margin-right: 10px;
-						////margin-top: calc(#{$header-height-mobile} / 5); // or just do 10px
-						//margin: 0;
-						//padding-top: 5px;
-						//transform: translateX(0%);
-						//padding-left: 0;
-						//transition: all 250ms ease-in-out;
-						//display: block;
 	
 						ul {
 							display: flex;
@@ -317,7 +301,7 @@ header {
 									&:focus-within,
 									&.active {
 										&::after {
-											width: 100%;
+											width: 100% !important;
 										}
 									}
 								}
@@ -340,11 +324,6 @@ header {
 					right: 0;
 					transform: translate(-50%, -50%) scale(.75);
 	
-					//@include bp(lt-s) {
-					//	transform: translate(-50%, -50%) scale(.65);
-					//}
-	
-	
 					//::before is top line. relative to .burgermenu. This is initial setup
 					&::before,
 					&::after {
@@ -363,7 +342,7 @@ header {
 					}
 	
 					//!TODO: this should really use .open class and have no class by default
-					&:not(.closed) {
+					&.open {
 						div {
 							width: 0px;
 						}
@@ -380,9 +359,7 @@ header {
 							transform: translateY(50%) rotate(315deg);
 						}
 					}
-	
-					&.closed {
-	
+					&:not(.open) {
 						//div is middle line
 						div {
 							width: 40px;
@@ -407,6 +384,7 @@ header {
 							transform: translateY(-50%);
 						}
 					}
+					
 	
 					//hide buger @ desktop
 					@include bp(m) {
@@ -483,28 +461,6 @@ header {
 
 	&.pullUp {
 		transform: translateY(-100%);
-	}
-}
-
-.cursor {
-	pointer-events: none;
-	position: fixed;
-	padding: 0.3rem;
-	background-color: #fff;
-	border-radius: 50%;
-	mix-blend-mode: difference;
-	transition: transform 0.3s ease;
-}
-
-.hover-this {
-	@include bp(lt-m) {
-		width: 100%;
-		padding: 20px 0;
-		display: inline-block;
-	}
-
-	&:hover~.cursor {
-		transform: translate(-50%, -50%) scale(8);
 	}
 }
 
