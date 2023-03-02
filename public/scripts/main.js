@@ -32,14 +32,15 @@ $(function () {
 
 	//! Navbar toggle
 
+
 	function closeNav() {
-		nav.classList.add('closed');
-		burgermenu.classList.add('closed');
+		nav.classList.remove('open');
+		burgermenu.classList.remove('open');
 	}
 
 	burgermenu.addEventListener('click', () => {
-		nav.classList.toggle('closed');
-		burgermenu.classList.toggle('closed');
+		nav.classList.toggle('open');
+		burgermenu.classList.toggle('open');
 	});
 
 	navItems.forEach((item) => {
@@ -47,6 +48,12 @@ $(function () {
 			closeNav();
 		})
 	})
+
+	window.addEventListener('resize', (() => {
+		if(!isMobileDisplay()){
+			closeNav();
+		}
+	}))
 
 	//! Header shrink
 	window.addEventListener('scroll', () => {
