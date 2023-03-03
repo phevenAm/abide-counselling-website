@@ -22,7 +22,8 @@ section[id] {
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-size: 800px;
-		background-position: bottom center;
+		background-position: right;
+		background-attachment:fixed ;
 		//background-size: cover;
 		display: flex;
 		flex-direction: column;
@@ -33,10 +34,13 @@ section[id] {
 		position: relative;
 		overflow: hidden;
 		background-position-y: 150% !important;
+		background-position-x: 95% !important;
 		
 		@include bp(m) {
-			background-position-y: 250% !important;
-			background-size: 1100px;
+			background-position-y: 180% !important;
+			background-position-x: 185% !important;
+			//background-position-y: 250% !important;
+			background-size: 1000px;
 			padding-top: $header-height;
 			//justify-content: center;
 		}
