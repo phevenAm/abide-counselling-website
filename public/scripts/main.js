@@ -42,7 +42,13 @@ $(function () {
 		nav.classList.toggle('open');
 		burgermenu.classList.toggle('open');
 
-		$(nav).hasClass('open') && $('header').removeClass('pullup'); //stops mobile nav creating gap at bottom when open
+		if($(nav).hasClass('open')) {
+			//stops mobile nav creating gap at bottom when open
+			$('header').removeClass('pullup').removeClass('shrink');
+			//$('body').addClass('noScroll');
+		} else {
+			//$('body').removeClass('noScroll');
+		}
 	});
 
 	navItems.forEach((item) => {
@@ -67,15 +73,6 @@ $(function () {
 	})
 
 
-	//! pull header up on down scroll
-
-	//window.addEventListener('scroll', (e) => {
-	//	console.log(e)
-	//	console.log(scrollY)
-	//})
-
-	//!services cards
-
 	//!inject year
 	const year = document.getElementById('dynamicYear');
 	year.innerHTML = new Date().getFullYear();
@@ -84,7 +81,6 @@ $(function () {
 	//!? CREATING A SCRIPT TO ADD aria-hidden="true" role="img" ETC TO IMAGES, ICONS AND TEXT AND BUTTONS
 
 
-	//!add scroll spy to sectons
 
 	//! mouse anitation
 	//cursor-class="link", cursor-class="subtle", cursor-class="arrow"
