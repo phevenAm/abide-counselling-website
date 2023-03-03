@@ -41,6 +41,8 @@ $(function () {
 	burgermenu.addEventListener('click', () => {
 		nav.classList.toggle('open');
 		burgermenu.classList.toggle('open');
+
+		$(nav).hasClass('open') && $('header').removeClass('pullup'); //stops mobile nav creating gap at bottom when open
 	});
 
 	navItems.forEach((item) => {
@@ -266,6 +268,8 @@ $(function () {
 		newScroll = window.pageYOffset;
 		//console.log('new:  ' + newScroll, "old:  " + oldScroll)
 
+		if(navBar)
+
 		if (oldScroll >= window.innerHeight && oldScroll - newScroll < 0) {
 			if (mouseInteraction === false) {
 				setTimeout(function () {
@@ -322,10 +326,10 @@ $(function () {
 
 
 	//!********************************//!Turn off parralax on mobile START*************************************//
-	if (os === 'iOS' && isMobileDisplay) {
-		document.querySelector('#parralax').style.backgroundAttachment = 'initial';
-		console.log('small, Ios device detected')
-	}
+	//if (os === 'iOS' && isMobileDisplay) {
+	//	document.querySelector('#parralax').style.backgroundAttachment = 'initial';
+	//	console.log('small, Ios device detected')
+	//}
 	//!********************************//!Turn off parralax on mobile END*************************************//
 
 
