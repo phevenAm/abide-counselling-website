@@ -214,7 +214,8 @@ section[id] {
 
 
 				@include bp(s) {
-					grid-area: 3/1/10/15;
+					//grid-area: 3/1/10/15;
+					grid-area: 3/1/10/18;
 					padding: 20px;
 					@include shadow;
 					background-color: $white;
@@ -252,8 +253,8 @@ section[id] {
 
 
 				@include bp(s) {
-					//grid-area: 4/16/20/27;
-					grid-area: 1/13/8/27;
+					//grid-area: 1/13/8/27;
+					grid-area: 1/16/4/27;
 					min-height: 400px;
 					min-width: 300px;
 				}
@@ -639,7 +640,8 @@ section[id] {
 				}
 
 				@include bp(xl) {
-					padding: $gap-large;
+					padding: $gap-small $gap-large;
+					
 				}
 
 				p.subtitle {
