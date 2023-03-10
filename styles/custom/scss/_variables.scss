@@ -174,7 +174,7 @@ CSS GRID End
 		height: 64px; //128px;
 		//background-color: $accent;
 		//border-color: $accent;
-		background-color: transparentize($accent, .5);
+		background-color: transparentize($primary, .80);
 	}
 
 
@@ -185,8 +185,30 @@ CSS GRID End
 	#cursor.link .cursor__circle {
 		width: 48px;
 		height: 48px;
-		background-color: transparentize($accent, .5);
+		background-color: transparentize($primary, .80);
 		border-color: transparent;
 		opacity: 1;
 	}
 }
+
+//.cursor {
+//	pointer-events: none;
+//	position: fixed;
+//	padding: 0.3rem;
+//	background-color: #fff;
+//	border-radius: 50%;
+//	mix-blend-mode: difference;
+//	transition: transform 0.3s ease;
+//}
+
+//.hover-this {
+//	@include bp(lt-m) {
+//		width: 100%;
+//		padding: 20px 0;
+//		display: inline-block;
+//	}
+
+//	&:hover~.cursor {
+//		transform: translate(-50%, -50%) scale(8);
+//	}
+//}

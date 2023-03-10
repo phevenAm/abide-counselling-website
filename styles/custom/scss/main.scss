@@ -18,11 +18,12 @@ section[id] {
 		//background-image: url('https://images.pexels.com/photos/3028961/pexels-photo-3028961.jpeg?auto=compress&cs=tinysrgb&w=3798&h=2532&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/5309507/pexels-photo-5309507.jpeg?auto=compress&cs=tinysrgb&w=3280&h=4101&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/13918604/pexels-photo-13918604.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load');
-		background-image: url('../../../public/media/svg/leaf.svg'); //lottie animate leaf opening up on load. On mouse over it gets flowers where ever the mouse goes. so the flowers will have animated already but hidden with my JS. each folow will have a unique class to toggle show on mouse over
+		background-image: url('../../../public/media/images/backgrounds/thin-leaves.png'); //lottie animate leaf opening up on load. On mouse over it gets flowers where ever the mouse goes. so the flowers will have animated already but hidden with my JS. each folow will have a unique class to toggle show on mouse over
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-size: 500px;
-		background-position: bottom center;
+		background-size: 800px;
+		background-position: right;
+		background-attachment:fixed ;
 		//background-size: cover;
 		display: flex;
 		flex-direction: column;
@@ -32,11 +33,14 @@ section[id] {
 		padding-top: $header-height-mobile;
 		position: relative;
 		overflow: hidden;
-		background-position-y: 115% !important;
+		background-position-y: 150% !important;
+		background-position-x: 95% !important;
 		
 		@include bp(m) {
-			background-position-y: 150% !important;
-			background-size: 800px;
+			background-position-y: 180% !important;
+			background-position-x: 185% !important;
+			//background-position-y: 250% !important;
+			background-size: 1000px;
 			padding-top: $header-height;
 			//justify-content: center;
 		}
@@ -214,7 +218,8 @@ section[id] {
 
 
 				@include bp(s) {
-					grid-area: 3/1/10/15;
+					//grid-area: 3/1/10/15;
+					grid-area: 3/1/10/18;
 					padding: 20px;
 					@include shadow;
 					background-color: $white;
@@ -252,8 +257,8 @@ section[id] {
 
 
 				@include bp(s) {
-					//grid-area: 4/16/20/27;
-					grid-area: 1/13/8/27;
+					//grid-area: 1/13/8/27;
+					grid-area: 1/16/4/27;
 					min-height: 400px;
 					min-width: 300px;
 				}
@@ -639,7 +644,8 @@ section[id] {
 				}
 
 				@include bp(xl) {
-					padding: $gap-large;
+					padding: $gap-small $gap-large;
+					
 				}
 
 				p.subtitle {
