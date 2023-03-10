@@ -17,7 +17,10 @@ const firebaseConfig = {
   const firebaseApp = initializeApp(firebaseConfig); //must initialize app before calling the getting functions below
   const analytics = getAnalytics(firebaseApp);
   const auth = getAuth(firebaseApp);
-  const databse = getFirestore(firebaseApp);
+  const database = getFirestore(firebaseApp);
+
+  console.log(database)
+
 
 
   //Detect auth state
