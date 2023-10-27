@@ -314,7 +314,7 @@ header {
 									&::after {
 										content: '';
 										position: absolute;
-										height: 1px;
+										height: 2px;
 										background-color: $primary;
 										left: 0;
 										bottom: 5px;
@@ -462,7 +462,7 @@ header {
 		a:visited,
 		a:link,
 		.logo a span {
-			color: $carbon !important;
+			color: $primary-dark !important;
 		}
 
 		.profile-container {
@@ -545,7 +545,7 @@ section[id] {
 
 	&.coloured-section {
 		*:not(.section_subtitle) {
-			color: $color-text;
+			//color: $color-text;
 		}
 
 		background: $secondary;
