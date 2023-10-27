@@ -486,7 +486,6 @@ section[id] {
 				@include bp(m) {
 					width: 48%;
 				}
-
 			}
 		}
 
@@ -552,6 +551,23 @@ section[id] {
 					@include radiusResponsiveLarge;
 					border-top-left-radius: 0 !important;
 					border-top-right-radius: 0 !important;
+				}
+
+				.collapse {
+					.flex-list {
+						display: flex;
+						flex-direction: column;
+
+
+						span {
+							flex: 1;
+							flex-grow: 1;
+						}
+
+						@include bp(m){
+							flex-direction: row;
+						}
+					}
 				}
 			}
 
