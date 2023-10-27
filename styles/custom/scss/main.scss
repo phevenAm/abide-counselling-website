@@ -199,11 +199,12 @@ section[id] {
 			}
 
 			.textBox {
-				background-color: transparent;
+				background-color: $white;
 				grid-area: 24/1/20/27;
 				z-index: 2;
 				@include radiusResponsiveLarge;
 				margin-top: $gap-small;
+				padding: 20px !important;
 
 				p {
 					color: $color-text;
@@ -220,9 +221,7 @@ section[id] {
 				@include bp(s) {
 					//grid-area: 3/1/10/15;
 					grid-area: 3/1/10/18;
-					padding: 20px;
 					@include shadow;
-					background-color: $white;
 					display: grid;
 					place-content: center;
 				}
@@ -246,7 +245,7 @@ section[id] {
 				background-color: $secondary;
 				@include radiusResponsiveLarge;
 				//background-image: url('https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-				background-image: url('../media/images/profile/IMG_1906-opt.JPG');
+				background-image: url('../media/images/profile/rosie-opt.jpg');
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: cover;
