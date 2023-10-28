@@ -359,7 +359,7 @@ header {
 					&::before,
 					&::after {
 						content: '';
-						height: 1px;
+						height: 3px;
 						width: 30px;
 						position: absolute;
 						transition: all $animationStyle;
@@ -432,7 +432,7 @@ header {
 	&.shrink {
 		height: 60px;
 		@include shadow;
-		@include frostBG($white);
+		@include frostBG($secondary);
 
 		@include bp(m) {
 			height: 90px;

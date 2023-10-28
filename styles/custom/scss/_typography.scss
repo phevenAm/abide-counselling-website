@@ -22,8 +22,8 @@ h6 {
   }
 
   @include bp(m) {
-    font-size: 1.3rem;
-    line-height: 1.8;
+    font-size: 1.25rem;
+    line-height: 1.65;
   }
 }
 
@@ -111,6 +111,16 @@ h6 {
   }
 }
 
+%small {
+  color: $accent !important;
+  font-size: 0.9rem !important;
+  font-weight: normal !important;
+
+  @include bp(m) {
+    font-size: 1.2rem !important;
+  }
+}
+
 p,
 a:link,
 a,
@@ -147,12 +157,7 @@ ul li {
 }
 
 small {
-  color: $accent !important;
-  font-size: 0.8rem !important;
-
-  @include bp(m) {
-    font-size: 1.2rem !important;
-  }
+  @extend %small;
 }
 
 strong {
