@@ -26,6 +26,8 @@ $(function () {
 	}
 
 	const os = getMobileOS();
+
+	os !== 'iOS' && document.querySelector('section#landing').classList.add('fixed')
 	//!********************************//!Get Mobile OS End*************************************//
 
 	//!animting logo
@@ -322,14 +324,10 @@ $(function () {
 
 
 	//!********************************//!Turn off parralax on mobile START*************************************//
-	//if (os === 'iOS' && isMobileDisplay) {
-	//	document.querySelector('#parralax').style.backgroundAttachment = 'initial';
-	//	console.log('small, Ios device detected')
-	//}
+	if (os === 'iOS' && isMobileDisplay) {
+		document.querySelector('#parralax').style.backgroundAttachment = 'initial';
+		console.log('small, Ios device detected')
+	}
 	//!********************************//!Turn off parralax on mobile END*************************************//
-
-
-
-
 
 });

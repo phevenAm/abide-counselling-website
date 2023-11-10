@@ -35,6 +35,10 @@ section[id] {
 		//background-position-y: 150% !important;
 		//background-position-x: 95% !important;
 
+		&.fixed {
+			background-attachment: fixed !important;
+		}
+
 		&:hover, &:focus, &:active {
 			backdrop-filter: blur(0px) !important;
 		}
@@ -61,7 +65,21 @@ section[id] {
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
+			position: relative;
 
+			&::before{
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 90%;
+				background-color:rgba(255, 255, 255, 0.019);
+				backdrop-filter: blur(2px);
+				z-index: -1;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				top: 50%;
+
+			}
 			*:not(.btn) {
 				color: $primary;
 				text-align: center;
@@ -773,6 +791,12 @@ section[id] {
 			@include bp(lt-m) {
 				*{
 					text-align: left !important;
+				}
+			}
+
+			.section_subtitle {
+				@include bp(m){
+					color: $white !important;
 				}
 			}
 
