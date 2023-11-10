@@ -13,7 +13,7 @@ section[id] {
 		min-height: 100vh;
 		background-color: $secondary; //svg animate leaves growing
 		background-image: url('https://images.pexels.com/photos/15639111/pexels-photo-15639111/free-photo-of-beautiful-everywhere.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+		background-image: url('https://images.pexels.com/photos/2146110/pexels-photo-2146110.jpeg?auto=compress&cs=tinysrgb&w=3648&h=5089&dpr=2');
 		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
 		//background-image: url('https://images.pexels.com/photos/3028961/pexels-photo-3028961.jpeg?auto=compress&cs=tinysrgb&w=3798&h=2532&dpr=1');
@@ -22,7 +22,7 @@ section[id] {
 		//background-image: url('../../../public/media/images/backgrounds/thin-leaves.png'); //lottie animate leaf opening up on load. On mouse over it gets flowers where ever the mouse goes. so the flowers will have animated already but hidden with my JS. each folow will have a unique class to toggle show on mouse over
 		background-size: cover;
 		background-repeat: no-repeat;
-		background-position: left;		//background-size: cover;
+		background-position: right center;		//background-size: cover;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -31,8 +31,13 @@ section[id] {
 		padding-top: $header-height-mobile;
 		position: relative;
 		overflow: hidden;
+		backdrop-filter: blur(10px);
 		//background-position-y: 150% !important;
 		//background-position-x: 95% !important;
+
+		&:hover, &:focus, &:active {
+			backdrop-filter: blur(0px) !important;
+		}
 		
 		@include bp(m) {
 
@@ -97,7 +102,7 @@ section[id] {
 	
 			.subheading {
 				//font-weight: 400 !important;
-				color: $white;
+				color: $black;
 				font-size: 1.2rem;
 				max-width: 40ch;
 				margin-bottom: $gap-small;
@@ -703,7 +708,7 @@ section[id] {
 							line-height: 1;
 							max-width: 50ch;
 							margin-bottom: 15px;
-							font-size: 1.2rem !important;
+							font-size: 1.0rem !important;
 							font-weight: 200;
 							//line-height: 1.1;
 
@@ -729,6 +734,10 @@ section[id] {
 
 				.disclaimer {
 					line-height: .8;
+
+					& > small {
+						font-weight: 200 !important;
+					}
 
 					@include bp(m) {
 						text-align: center;
@@ -885,8 +894,9 @@ footer {
 		
 		p,
 		span, small {
-			//color: $white !important;
+			color: $white !important;
 			//width: 100%;
+			font-size: 1rem !important;
 
 			@include bp(m) {
 				margin-bottom: 0;
@@ -894,6 +904,8 @@ footer {
 
 			&#dynamicYear{
 				@extend %small;
+				color: $white !important;
+
 			}
 		}
 
@@ -906,6 +918,7 @@ footer {
 			@include bp(lt-m){
 				text-align: center;
 				justify-content: center;
+				margin-top: $gap-small;
 			}
 
 			i {
