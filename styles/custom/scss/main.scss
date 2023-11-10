@@ -22,9 +22,7 @@ section[id] {
 		//background-image: url('../../../public/media/images/backgrounds/thin-leaves.png'); //lottie animate leaf opening up on load. On mouse over it gets flowers where ever the mouse goes. so the flowers will have animated already but hidden with my JS. each folow will have a unique class to toggle show on mouse over
 		background-size: cover;
 		background-repeat: no-repeat;
-		background-position: right;
-		background-attachment:fixed ;
-		//background-size: cover;
+		background-position: left;		//background-size: cover;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -47,7 +45,9 @@ section[id] {
 		}
 
 		@include bp(l){
-			background-size: 1000px;
+			//background-size: 40vw;
+			height: 100%;
+			//max-width: 40vw;
 		}
 
 		@include bp(lt-s) {}
@@ -70,16 +70,17 @@ section[id] {
 				font-size: 4.0rem;
 
 				span {
-				
+					font-weight: bold;
+					font-size: 2rem;
 				}
 	
 				@include bp(xs) {
-					font-size: 5rem;
+					font-size: 4.5rem;
 				}
 	
 				@include bp(m) {
 					margin-bottom: 10px;
-					font-size: 7rem;
+					font-size: 5.5rem;
 				}
 	
 				@include bp(lt-l) {
@@ -95,22 +96,18 @@ section[id] {
 			}
 	
 			.subheading {
-				font-weight: 400 !important;
+				//font-weight: 400 !important;
+				color: $white;
+				font-size: 1.2rem;
+				max-width: 40ch;
+				margin-bottom: $gap-small;
 	
-				p {
-					color: $black;
-					font-size: 1.2rem;
-					max-width: 40ch;
-					margin-bottom: $gap-small;
-	
-					@include bp(m) {
-						font-size: 1.5rem;
-						max-width: 50ch;
-						margin-left: 0;
-						margin-right: 0;
-					}
+				@include bp(m) {
+					font-size: 1.5rem;
+					max-width: 50ch;
+					margin-left: 0;
+					margin-right: 0;
 				}
-	
 			}
 
 			a.btn.landing-btn {
@@ -445,21 +442,21 @@ section[id] {
 		&::before {
 			content: '“';
 			position: absolute;
-			font-size: 40rem;
+			font-size: 30rem;
 			font-family: serif;
 			left: 0;
 			//color: inherit;
 			color: darken($accent, 20%);
 			top: 50%;
 			line-height: .4;
-			opacity: .3;
+			opacity: .5;
 			//transform: translateY(-3%);
 			font-family: $font-headings;
 			top: 20%;
 
 			@include bp(m) {
 				top: 40%;
-				font-size: 60rem;
+				font-size: 30rem;
 			}
 		}
 	}

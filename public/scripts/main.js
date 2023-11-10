@@ -293,18 +293,18 @@ $(function () {
 
 
 	//!********************************//!Isolate contact button START*************************************//
-	const isolatedContactBtn = document.querySelector('.nav-link[href="#contact"]#isolate');
-	//console.log(isolatedContactBtn)
+	//const isolatedContactBtn = document.querySelector('.nav-link[href="#contact"]#isolate');
+	////console.log(isolatedContactBtn)
 
-	function repositionCTA() {
-		if (isMobileDisplay()) {
-			document.querySelector('ul.nav#nav li:last-child').appendChild(isolatedContactBtn);
-		} else if (isMobileDisplay() === false) {
-			document.querySelector('.header_inner').appendChild(isolatedContactBtn);
-		}
-	}
-	window.addEventListener('load', repositionCTA);
-	window.addEventListener('resize', repositionCTA);
+	//function repositionCTA() {
+	//	if (isMobileDisplay()) {
+	//		document.querySelector('ul.nav#nav li:last-child').appendChild(isolatedContactBtn);
+	//	} else if (isMobileDisplay() === false) {
+	//		document.querySelector('.header_inner').appendChild(isolatedContactBtn);
+	//	}
+	//}
+	//window.addEventListener('load', repositionCTA);
+	//window.addEventListener('resize', repositionCTA);
 	//!********************************//!Isolate contact button END*************************************//
 
 
