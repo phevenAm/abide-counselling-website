@@ -31,7 +31,7 @@ section[id] {
 		padding-top: $header-height-mobile;
 		position: relative;
 		overflow: hidden;
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px) !important;
 		//background-position-y: 150% !important;
 		//background-position-x: 95% !important;
 
@@ -73,6 +73,8 @@ section[id] {
 	
 			h1 {
 				font-size: 4.0rem;
+				color: $primary !important;
+
 
 				span {
 					font-weight: bold;
@@ -89,7 +91,7 @@ section[id] {
 				}
 	
 				@include bp(lt-l) {
-					color: $white !important;
+					//color: $white !important;
 					//font-size: 10rem;
 				}
 
