@@ -517,7 +517,7 @@ section[id] {
 		font-size: 1.2rem !important;
 		font-family: $font-copy !important;
 		color: $accent;
-		font-weight: 200;
+		font-weight: 200 !important;
 
 		@include bp(m) {
 			font-size: 1.4rem !important;
