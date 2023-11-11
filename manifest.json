@@ -1,12 +1,12 @@
 
 {
-	"name": "Myra",
-	"short_name": "Myra",
-	"description": "A simple Downloadable application",
+	"name": "Abide Counselling",
+	"short_name": "Abide",
+	"description": "A Reading-based counsellor for young people",
 	"scope": "/",
 	"start_url": "/",
-	"theme_color": "#23475d",
-	"background_color": "#f5f5f5",
+	"theme_color": "#ffffff",
+	"background_color": "#363915",
 	"orientation": "portrait",
 	"icons": [
 	  {
