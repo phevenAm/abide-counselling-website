@@ -64,7 +64,6 @@ section[id] {
 			}
 	
 			h1 {
-				font-size: 3.5rem;
 				color: $primary !important;
 				word-break: break-word;
 				width: auto;
@@ -80,7 +79,7 @@ section[id] {
 	
 				@include bp(m) {
 					margin-bottom: 10px;
-					font-size: 5.5rem;
+					font-size: 4.7rem;
 				}
 	
 				@include bp(lt-l) {
