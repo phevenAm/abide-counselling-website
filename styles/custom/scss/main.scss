@@ -67,6 +67,10 @@ section[id] {
 			justify-content: flex-start;
 			position: relative;
 
+			*:not(.btn){
+				text-align: left !important;
+			}
+
 			&::before{
 				content: '';
 				position: absolute;
@@ -90,9 +94,10 @@ section[id] {
 			}
 	
 			h1 {
-				font-size: 4.0rem;
+				font-size: 3.5rem;
 				color: $primary !important;
-
+				word-break: break-word;
+				width: auto;
 
 				span {
 					font-weight: bold;
@@ -124,8 +129,11 @@ section[id] {
 				//font-weight: 400 !important;
 				color: $black;
 				font-size: 1.2rem;
+				margin: 0;
 				max-width: 40ch;
 				margin-bottom: $gap-small;
+				//width: auto;
+
 	
 				@include bp(m) {
 					font-size: 1.5rem;
@@ -136,6 +144,8 @@ section[id] {
 			}
 
 			a.btn.landing-btn {
+				background-color: $primary;
+				color: $white;
 				
 				@include bp(lt-xs) {
 					margin: auto;
@@ -172,6 +182,13 @@ section[id] {
 			//		color: $color-text;
 			//	}
 			//}
+
+			.box {
+				@include frostBG($white);
+				padding: $gap-small;
+				@include radiusResponsiveLarge;
+				width: fit-content
+			}
 		}
 
 
@@ -183,17 +200,6 @@ section[id] {
 		padding-bottom: 70px;
 		position: relative;
 		overflow: hidden;
-
-		&::before {
-			content: '';
-			position: absolute;
-			width: 50%;
-			min-height: 2px;
-			left: -20px;
-			bottom: 100px;
-			background: $primary;
-			border-radius: $gap-small;
-		}
 	}
 
 

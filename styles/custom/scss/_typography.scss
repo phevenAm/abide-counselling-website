@@ -112,12 +112,14 @@ h6 {
 }
 
 %small {
-  color: $accent !important;
-  font-size: 0.9rem !important;
-  font-weight: normal !important;
+  * {
+    color: $accent !important;
+    font-size: 0.9rem !important;
+    font-weight: normal !important;
 
-  @include bp(m) {
-    font-size: 1.2rem !important;
+    @include bp(m) {
+      font-size: 1.2rem !important;
+    }
   }
 }
 
