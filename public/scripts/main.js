@@ -46,7 +46,7 @@ $(function () {
 
 		if($(nav).hasClass('open')) {
 			//stops mobile nav creating gap at bottom when open
-			$('header').removeClass('pullup').removeClass('shrink');
+			$('header').removeClass('pullup')
 			//$('body').addClass('noScroll');
 		} else {
 			//$('body').removeClass('noScroll');
