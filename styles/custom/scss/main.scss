@@ -12,17 +12,12 @@ section[id] {
 	&#landing {
 		min-height: 100vh;
 		background-color: $secondary; //svg animate leaves growing
-		background-image: url('https://images.pexels.com/photos/15639111/pexels-photo-15639111/free-photo-of-beautiful-everywhere.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
+		//background-image: url('https://images.pexels.com/photos/15639111/pexels-photo-15639111/free-photo-of-beautiful-everywhere.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
 		background-image: url('https://images.pexels.com/photos/2146110/pexels-photo-2146110.jpeg?auto=compress&cs=tinysrgb&w=3648&h=5089&dpr=2');
-		//background-image: url('https://images.pexels.com/photos/4153278/pexels-photo-4153278.jpeg?auto=compress&cs=tinysrgb&w=3333&h=5000&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/1583582/pexels-photo-1583582.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1281&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/3028961/pexels-photo-3028961.jpeg?auto=compress&cs=tinysrgb&w=3798&h=2532&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/5309507/pexels-photo-5309507.jpeg?auto=compress&cs=tinysrgb&w=3280&h=4101&dpr=1');
-		//background-image: url('https://images.pexels.com/photos/13918604/pexels-photo-13918604.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load');
 		//background-image: url('../../../public/media/images/backgrounds/thin-leaves.png'); //lottie animate leaf opening up on load. On mouse over it gets flowers where ever the mouse goes. so the flowers will have animated already but hidden with my JS. each folow will have a unique class to toggle show on mouse over
 		background-size: cover;
 		background-repeat: no-repeat;
-		background-position: right center;		//background-size: cover;
+		background-position: center;		//background-size: cover;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -31,24 +26,12 @@ section[id] {
 		padding-top: $header-height-mobile;
 		position: relative;
 		overflow: hidden;
-		backdrop-filter: blur(10px) !important;
-		//background-position-y: 150% !important;
-		//background-position-x: 95% !important;
 
 		&.fixed {
 			background-attachment: fixed !important;
 		}
-
-		&:hover, &:focus, &:active {
-			backdrop-filter: blur(0px) !important;
-		}
 		
 		@include bp(m) {
-
-			//background-position-y: 180% !important;
-			//background-position-x: 185% !important;
-			//background-position-x: 185% !important;
-			//background-position-y: 250% !important;
 			padding-top: $header-height;
 			//justify-content: center;
 		}
@@ -71,19 +54,6 @@ section[id] {
 				text-align: left !important;
 			}
 
-			&::before{
-				content: '';
-				position: absolute;
-				height: 100%;
-				width: 90%;
-				background-color:rgba(255, 255, 255, 0.019);
-				backdrop-filter: blur(2px);
-				z-index: -1;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				top: 50%;
-
-			}
 			*:not(.btn) {
 				color: $primary;
 				text-align: center;
@@ -924,8 +894,7 @@ footer {
 		}
 		
 		
-		p,
-		span, small {
+		p.copy {
 			color: $white !important;
 			//width: 100%;
 			font-size: 1rem !important;
@@ -934,9 +903,10 @@ footer {
 				margin-bottom: 0;
 			}
 
-			&#dynamicYear{
-				@extend %small;
+			&> span#dynamicYear{
 				color: $white !important;
+				font-size: .9rem !important;
+				@extend %copy;
 
 			}
 		}
