@@ -114,8 +114,8 @@ section[id] {
 			}
 
 			a.btn.landing-btn {
-				background-color: $primary;
-				color: $white;
+			
+				@extend %btn-secondary;
 				
 				@include bp(lt-xs) {
 					margin: auto;
@@ -123,7 +123,6 @@ section[id] {
 				}
 
 				&:hover {
-					@include shadow;
 				}
 			}
 

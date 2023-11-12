@@ -27,6 +27,7 @@
 	&:focus {
 		color: $color-text;
 		background: $secondary;
+		@include shadow;
 	}
 
 	@include bp(m) {
@@ -40,6 +41,17 @@
 	@extend %btn;
 }
 
+
+%btn-secondary {
+	@extend %btn;
+	background: $primary-light;
+	color: $primary;
+
+	&:hover, &:active, &:focus {
+		background: $primary;
+		color: $white !important;;
+	}
+}
 
 %close-btn {
 	transition: all $animationStyle;
