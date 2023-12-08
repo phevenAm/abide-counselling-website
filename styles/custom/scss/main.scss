@@ -874,11 +874,13 @@ footer {
 		margin: auto;
 		width: 100%;
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		flex-direction: row;
+		justify-content: left;
+		align-items: left;
 		@extend %container-padding;
 		justify-content: flex-start;
+		padding-top: 30px;
+		padding-bottom: 30px;
 
 		@include bp(m) {
 			flex-direction: row;
@@ -896,9 +898,9 @@ footer {
 			color: $white !important;
 			//width: 100%;
 			font-size: 1rem !important;
+			margin-bottom: 0;
 
 			@include bp(m) {
-				margin-bottom: 0;
 			}
 
 			&> span#dynamicYear{
@@ -937,6 +939,25 @@ footer {
 				}
 			}
 		}
+	}
+
+	& #poweredBy {
+		background-color:$accent;
+		background-image: url('');
+	.inner {
+		display: flex;
+		justify-content: flex-end;
+		@extend %container-padding;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+		p, a {
+			color: $white !important;
+			font-size: .8rem !important;
+			padding: 0;
+			margin: 0;
+			text-align: right !important;
+		}
+	}
 	}
 }
 
