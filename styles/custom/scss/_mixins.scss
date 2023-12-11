@@ -9,25 +9,25 @@
 
     // "less than XS" mobile only (saves having to zero out properties on larger breakpoints)
     @if $point==lt-xs {
-        @media only screen and (max-width: $screen-xs - 1px) {
+        @media only screen and (max-width: ($screen-xs - 1px)) {
             @content;
         }
     }
 
     @else if $point==lt-s {
-        @media only screen and (max-width: $screen-sm - 1px) {
+        @media only screen and (max-width: ($screen-sm - 1px)) {
             @content;
         }
     }
 
     @else if $point==lt-m {
-        @media only screen and (max-width: $screen-md - 1px) {
+        @media only screen and (max-width: ($screen-md - 1px)) {
             @content;
         }
     }
 
     @else if $point==lt-l {
-        @media only screen and (max-width: $screen-lg - 1px) {
+        @media only screen and (max-width: ($screen-lg - 1px)) {
             @content;
         }
     }
@@ -194,23 +194,23 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=1);
 }
 
-@mixin animation($animation) {
-    @-webkit-keyframes $animation {
-        @content;
-    }
+//@mixin animation($animation) {
+//    @-webkit-keyframes $animation {
+//        @content;
+//    }
 
-    @-moz-keyframes $animation {
-        @content;
-    }
+//    @-moz-keyframes $animation {
+//        @content;
+//    }
 
-    @-o-keyframes $animation {
-        @content;
-    }
+//    @-o-keyframes $animation {
+//        @content;
+//    }
 
-    @keyframes $animation {
-        @content;
-    }
-}
+//    @keyframes $animation {
+//        @content;
+//    }
+//}
 
 @mixin clear() {
 

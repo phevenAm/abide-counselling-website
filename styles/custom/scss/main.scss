@@ -1,6 +1,6 @@
 @import 'fonts';
-@import 'mixins';
 @import 'variables';
+@import 'mixins';
 @import 'typography';
 @import 'coreStyles';
 @import 'animations';
@@ -11,10 +11,8 @@
 section[id] {
 	&#landing {
 		min-height: 100vh;
-		background-color: $secondary; //svg animate leaves growing
-		//background-image: url('https://images.pexels.com/photos/15639111/pexels-photo-15639111/free-photo-of-beautiful-everywhere.jpeg?auto=compress&cs=tinysrgb&w=1920&h=2880&dpr=1');
+		background-color: $secondary;
 		background-image: url('https://images.pexels.com/photos/2146110/pexels-photo-2146110.jpeg?auto=compress&cs=tinysrgb&w=3648&h=5089&dpr=2');
-		//background-image: url('../../../public/media/images/backgrounds/thin-leaves.png'); //lottie animate leaf opening up on load. On mouse over it gets flowers where ever the mouse goes. so the flowers will have animated already but hidden with my JS. each folow will have a unique class to toggle show on mouse over
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;		//background-size: cover;
@@ -33,13 +31,10 @@ section[id] {
 		
 		@include bp(m) {
 			padding-top: $header-height;
-			//justify-content: center;
 		}
 
 		@include bp(l){
-			//background-size: 40vw;
 			height: 100%;
-			//max-width: 40vw;
 		}
 
 		@include bp(lt-s) {}
@@ -124,32 +119,6 @@ section[id] {
 				&:hover {
 				}
 			}
-
-			//a.btn.landing-btn {
-			//	transition: all $animationStyle;
-			//	position: absolute;
-			//	z-index: 2;
-			//	left: 50%;
-			//	transform: translateX(-50%);
-			//	color: white;
-			//	background: none;
-			//	border: 1px solid $white;
-			//	padding: 15px 25px;
-			//	@include radiusResponsiveLarge;
-			//	min-width: 200px;
-			//	margin-top: $gap-small;
-			//	text-align: center;
-
-			//	@include bp(m) {
-			//		left: 0;
-			//		transform: translateX(50%);
-			//	}
-
-			//	&:hover {
-			//		background-color: $white;
-			//		color: $color-text;
-			//	}
-			//}
 
 			.box {
 				@include frostBG($white);
