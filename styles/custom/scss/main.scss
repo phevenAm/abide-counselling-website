@@ -912,11 +912,12 @@ footer {
 
 	& #poweredBy {
 		background-color:$accent;
-		background-image: url('');
 	.inner {
+
+
 		display: flex;
 		justify-content: flex-end;
-		@extend %container-padding;
+		//@extend %container-padding;
 		padding-top: 25px !important;
 		padding-bottom: 25px !important;
 		p, a {
