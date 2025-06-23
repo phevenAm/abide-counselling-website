@@ -52,18 +52,6 @@ $header-height: 100px;
 $header-height-mobile: 50px; //80px;
 
 
-%container-padding {
-	padding: 60px 15px; // 120px 30px;
-
-	@include bp(s) {
-		padding: 90px 60px; //120px 60px;
-	}
-
-	@include bp(m) {
-		padding: 120px 60px; //120px 60px;
-	}
-}
-
 $max-contentWidth: 1500px;
 $maxContentWidth: $max-contentWidth;
 
@@ -125,11 +113,11 @@ $radius-large: 60px;
  $gridRepeatColumnCount: 24; //default 24
  $site-gutter: 3vw;
  $site-max-width: $maxContentWidth;
- $grid-gutter: calc((#{$site-gutter}, 4vw) - 11.0px);
- $cell-max-width: calc(((#{$site-max-width}, 1500px) - (11.0px * (24 - 1))) / 24);
+ $grid-gutter: calc(#{$site-gutter} - 11.0px);
+ $cell-max-width: calc((#{$site-max-width} - (11.0px * (24 - 1))) / 24);
  $inset-padding: 0vw;
  $row-height-scaling-factor: 0.0215;
- $container-width: min((#{$site-max-width}, 1500px), calc(100vw - (#{$site-gutter}, 4vw) * 2 - (#{$inset-padding})));
+ $container-width: min(#{$site-max-width}, 1500px, calc(100vw - #{$site-gutter} * 2 - #{$inset-padding}));
 
 /*
 CSS GRID End
@@ -137,7 +125,6 @@ CSS GRID End
 
 %hoverStyle {
 	color: $tertiary;
-	@include shadow;
 }
 
 

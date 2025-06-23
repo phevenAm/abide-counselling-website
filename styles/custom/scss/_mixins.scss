@@ -554,3 +554,15 @@
         background-color: pink;
     }
 }
+
+%container-padding {
+	padding: 60px 15px; // 120px 30px;
+
+	@include bp(s) {
+		padding: 90px 60px; //120px 60px;
+	}
+
+	@include bp(m) {
+		padding: 120px 60px; //120px 60px;
+	}
+}
