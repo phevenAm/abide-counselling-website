@@ -4,6 +4,7 @@
   "description": "Relax, it's a work in progress",
   "main": "service-worker.js",
   "scripts": {
+    "build-css": "sass styles/custom/scss/main.scss public/css/main.min.css --style compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/phevenAm/wifes-counselling-website#readme",
   "dependencies": {
     "firebase-tools": "^11.21.0"
+  },
+  "devDependencies": {
+    "sass": "^1.99.0"
   }
 }
