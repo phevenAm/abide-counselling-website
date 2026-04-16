@@ -5,6 +5,7 @@
   "main": "service-worker.js",
   "scripts": {
     "build-css": "sass styles/custom/scss/main.scss public/css/main.min.css --style compressed",
+    "watch-css": "sass --watch styles/custom/scss/main.scss public/css/main.min.css --style compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

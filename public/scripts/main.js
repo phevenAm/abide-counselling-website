@@ -293,6 +293,116 @@ $(function () {
 
 	//!********************************//!Hide Nav on scroll END*************************************//
 
+	//!********************************//!Contact form blacklist START*************************************//
+	const bannedPhrases = [
+		'buy a site',
+		'work done',
+		'design',
+		'build',
+		'website',
+		'freelance',
+		'website work',
+		'web design',
+		'build a website',
+		'quote',
+		'developer',
+		'app',
+		'software',
+		'program',
+	];
+
+	function escapeRegExp(string) {
+		return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	}
+
+	function containsBannedPhrase(value) {
+		const lowerValue = value.toLowerCase();
+		return bannedPhrases.some(phrase => {
+			const escaped = escapeRegExp(phrase.trim().toLowerCase());
+			const regex = new RegExp(`\\b${escaped}\\b`, 'u');
+			return regex.test(lowerValue);
+		});
+	}
+
+	const allowedEmailDomains = [
+		'gmail.com',
+		'outlook.com',
+		'hotmail.com',
+		'hotmail.co.uk',
+		'yahoo.com',
+		'live.com',
+		'msn.com',
+		'icloud.com',
+		'aol.com',
+		'proton.me',
+		'protonmail.com',
+		'mail.com'
+	];
+
+	function getEmailDomain(email) {
+		const match = String(email || '').trim().toLowerCase().match(/^[^@]+@([^@]+\.[^@]+)$/);
+		return match ? match[1] : '';
+	}
+
+	function isAllowedEmail(email) {
+		const domain = getEmailDomain(email);
+		return allowedEmailDomains.includes(domain);
+	}
+
+	function getContactFormErrorNode(form) {
+		let errorNode = form.querySelector('.contact-form-error');
+		if (!errorNode) {
+			errorNode = document.createElement('div');
+			errorNode.className = 'contact-form-error';
+			form.appendChild(errorNode);
+		}
+		return errorNode;
+	}
+
+	function setContactFormError(form, message) {
+		const errorNode = getContactFormErrorNode(form);
+		errorNode.textContent = message;
+		errorNode.style.display = message ? 'block' : 'none';
+	}
+
+	const contactForm = document.querySelector('form.contact-form');
+
+	if (contactForm) {
+		const emailField = contactForm.querySelector('input[name="email"]');
+		const messageField = contactForm.querySelector('textarea[name="message"]');
+
+		if (emailField) {
+			emailField.addEventListener('input', () => setContactFormError(contactForm, ''));
+		}
+
+		if (messageField) {
+			messageField.addEventListener('input', () => setContactFormError(contactForm, ''));
+		}
+
+		contactForm.addEventListener('submit', function (event) {
+			let error = '';
+			const message = messageField ? (messageField.value || '') : '';
+			const email = emailField ? (emailField.value || '') : '';
+
+			if (containsBannedPhrase(message)) {
+				error = 'Your message looks like a freelance request and cannot be sent here.';
+			} else if (!isAllowedEmail(email)) {
+				error = 'Not open to business enquiries from custom domains, thanks.';
+			}
+
+			if (error) {
+				event.preventDefault();
+				event.stopPropagation();
+				setContactFormError(contactForm, error);
+				if (error.includes('email') && emailField) {
+					emailField.focus();
+				} else if (messageField) {
+					messageField.focus();
+				}
+			}
+		});
+	}
+	//!********************************//!Contact form blacklist END*************************************//
 
 	//!********************************//!Isolate contact button START*************************************//
 	//const isolatedContactBtn = document.querySelector('.nav-link[href="#contact"]#isolate');
