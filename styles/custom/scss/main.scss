@@ -267,6 +267,10 @@ section[id] {
         align-items: center;
         margin-top: $gap-small;
 
+        a {
+          font-family: $font-headings !important;
+        }
+
         img {
           margin-bottom: $gap-small;
           max-width: 100px;

@@ -304,7 +304,6 @@ $(function () {
 		'website work',
 		'web design',
 		'build a website',
-		'quote',
 		'developer',
 		'app',
 		'software',
