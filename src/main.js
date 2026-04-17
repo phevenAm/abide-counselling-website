@@ -384,7 +384,7 @@ $(function () {
 			const email = emailField ? (emailField.value || '') : '';
 
 			if (containsBannedPhrase(message)) {
-				error = 'Your message looks like a freelance request and cannot be sent here.';
+				error = 'Your message looks like a freelance request and cannot be sent here, sorry.';
 			} else if (!isAllowedEmail(email)) {
 				error = 'Not open to business enquiries from custom domains, thanks.';
 			}
