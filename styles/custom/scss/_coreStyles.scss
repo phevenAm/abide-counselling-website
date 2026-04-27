@@ -99,47 +99,49 @@ header {
 			}
 		}
 
-		//.profile-container {
-		//	position: absolute;
-		//	border-radius: 300px;
-		//	right: 100px;
-		//	width: 50px;
-		//	height: 50px;
-		//	cursor: pointer;
-		//	display: grid;
-		//	place-content: center;
-		//	border: 3px solid $white;
-		//	transform: scale(.7);
+		.profile-container {
+			position: absolute;
+			border-radius: 300px;
+			right: 100px;
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
+			display: grid;
+			place-content: center;
+			border: 3px solid $white;
+			background-color: $primary;
+			transform: scale(.7);
+			top: 0;
 
-		//	@include bp(m) {
-		//		right: 230px;
-		//		transform: translateX(-50%) scale(1);
-		//	}
+			@include bp(m) {
+				right: 0;
+				transform: translateX(-50%) scale(.6);
+			}
 
 
-		//	a {
-		//		line-height: 0;
+			a {
+				line-height: 0;
 
-		//		i {
-		//			color: $white;
-		//			font-size: 1.25rem;
+				i {
+					color: $white;
+					font-size: 1.25rem;
 
-		//			* {
-		//				transition: all $animationStyle 300ms;
-		//			}
-		//		}
+					* {
+						transition: all $animationStyle 300ms;
+					}
+				}
 
-		//	}
+			}
 
-		//	&:hover {
-		//		background-color: $white;
-		//		@include shadow;
+			&:hover {
+				background-color: $white;
+				@include shadow;
 
-		//		i {
-		//			color: $black;
-		//		}
-		//	}
-		//}
+				i {
+					color: $black;
+				}
+			}
+		}
 
 		& #isolate {
 			font-family: $font-headings;
