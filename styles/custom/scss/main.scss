@@ -921,7 +921,8 @@ section[id] {
       display: flex;
       flex-direction: column;
       gap: $gap-small;
-      margin-top: 40px;
+      margin: 40px auto 0;
+      max-width: 640px;
 
       @include bp(s) {
         flex-direction: row;
