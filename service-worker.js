@@ -11,6 +11,8 @@ self.addEventListener("install", e => {
 				'./public/media/brand/fav/android-chrome-192x192.png',
 				'./public/media/brand/fav/apple-touch-icon.png',
 				'./public/media/brand/fav/favicon-32x32.png',
+				'./public/media/images/portal/screenshot-progress.png',
+				'./public/media/images/portal/screenshot-resources.png',
 			]);
 		})
 	);

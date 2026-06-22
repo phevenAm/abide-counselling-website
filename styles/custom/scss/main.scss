@@ -273,11 +273,12 @@ section[id] {
         }
 
         img {
-          margin-bottom: $gap-small;
+          display: block;
+          margin: 0 auto $gap-small;
           max-width: 100px;
         }
 
-        @include bp(xs) {
+        @include bp(s) {
           margin-top: $gap-large;
           justify-content: flex-start;
           flex-direction: row;
@@ -373,18 +374,23 @@ section[id] {
     position: relative;
     overflow: hidden;
 
-    .quote {
+
+    blockquote, .quote {
       margin: 0 !important;
       color: $white !important;
       position: relative;
       margin-bottom: -60px !important;
-      font-size: 1.5rem;
-      line-height: 1.4;
-      font-family: $font-copy; //$font-headings;
+      font-size: 1.2rem !important;
+      line-height: 1.5;
+      font-family: $font-copy;
       font-weight: 100;
 
       @include bp(m) {
-        font-size: 1.8rem;
+        font-size: 2.2rem !important;
+      }
+
+      @include bp(l) {
+        font-size: 2.6rem !important;
       }
     }
 
@@ -392,6 +398,7 @@ section[id] {
       font-size: 1.4rem;
       color: $white !important;
       font-family: $font-headings;
+      padding-top: 30px;
 
       small {
         color: $white;
@@ -871,6 +878,106 @@ section[id] {
 
   &#location {
     background-color: $secondary;
+  }
+
+  &#portal {
+    background-color: $white;
+
+    .portal-features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $gap-small;
+
+      @include bp(s) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+
+        .feature-icon {
+          font-size: 1.4rem;
+          color: $primary;
+          flex-shrink: 0;
+          margin-top: 3px;
+        }
+
+        h4 {
+          margin-bottom: 4px;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        p {
+          margin: 0;
+          color: $color-text;
+        }
+      }
+    }
+
+    .portal-screenshots {
+      display: flex;
+      flex-direction: column;
+      gap: $gap-small;
+      margin-top: 40px;
+
+      @include bp(s) {
+        flex-direction: row;
+      }
+
+      .screenshot-frame {
+        flex: 1;
+        min-width: 0;
+        @include radiusResponsiveLarge;
+        @include shadow;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.08);
+        background: $secondary;
+
+        .screenshot-bar {
+          background: $secondary-dark;
+          padding: 8px 12px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+            font-size: 0 !important;
+          }
+        }
+
+        img {
+          width: 100%;
+          max-width: 100%;
+          display: block;
+          border-top: 1px solid rgba(0,0,0,0.06);
+        }
+      }
+    }
+
+    .portal-cta {
+      margin-top: $gap-small;
+      text-align: center;
+
+      .portal-label {
+        font-size: 0.9rem;
+        color: $color-text;
+        opacity: 0.7;
+        margin-bottom: 15px;
+      }
+
+      a {
+        @extend %btn-secondary;
+        display: inline-block;
+      }
+    }
   }
 }
 
