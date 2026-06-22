@@ -139,6 +139,10 @@ header {
 			transform: scale(.7);
 			top: 0;
 
+			@include bp(s) {
+				right: 95px;
+			}
+
 			@include bp(m) {
 				right: 0;
 				transform: translateX(-50%) scale(.6);

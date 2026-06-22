@@ -1,6 +1,8 @@
+const CACHE = "static-v2";
+
 self.addEventListener("install", e => {
 	e.waitUntil(
-		caches.open("static").then(cache => {
+		caches.open(CACHE).then(cache => {
 			return cache.addAll([
 				'./',
 				'./manifest.json',
@@ -15,6 +17,14 @@ self.addEventListener("install", e => {
 				'./public/media/images/portal/screenshot-resources.png',
 			]);
 		})
+	);
+});
+
+self.addEventListener("activate", e => {
+	e.waitUntil(
+		caches.keys().then(keys =>
+			Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+		)
 	);
 });
 
