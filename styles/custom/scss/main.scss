@@ -922,7 +922,7 @@ section[id] {
       flex-direction: column;
       gap: $gap-small;
       margin: 40px auto 0;
-      max-width: 640px;
+      max-width: 950px;
 
       @include bp(s) {
         flex-direction: row;
