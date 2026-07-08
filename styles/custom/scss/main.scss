@@ -1082,13 +1082,3 @@ footer {
   }
 }
 
-@keyframes rotateIn {
-  0% {
-    opacity: 0;
-    transform: rotate(0deg) scaleX(0.95);
-  }
-
-  100% {
-    transform: scaleY(-10deg) scaleX(1);
-  }
-}

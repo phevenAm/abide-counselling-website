@@ -194,23 +194,6 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}', GradientType=1);
 }
 
-//@mixin animation($animation) {
-//    @-webkit-keyframes $animation {
-//        @content;
-//    }
-
-//    @-moz-keyframes $animation {
-//        @content;
-//    }
-
-//    @-o-keyframes $animation {
-//        @content;
-//    }
-
-//    @keyframes $animation {
-//        @content;
-//    }
-//}
 
 @mixin clear() {
 
@@ -530,30 +513,6 @@
 
 
 
-@mixin breakpointColours {
-    //help me style for breakpoints
-    background-color: aqua;
-
-    @include bp(xs) {
-        background-color: red
-    }
-
-    @include bp(s) {
-        background-color: green
-    }
-
-    @include bp(m) {
-        background-color: blue;
-    }
-
-    @include bp(l) {
-        background-color: yellow;
-    }
-
-    @include bp(xl) {
-        background-color: pink;
-    }
-}
 
 %container-padding {
 	padding: 60px 15px; // 120px 30px;
