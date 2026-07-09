@@ -200,6 +200,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		'build a website',
 		'developer',
 		'app',
+		'new app',
+		'are you interested',
+		'will you be',
 		'software',
 		'program',
 	];
