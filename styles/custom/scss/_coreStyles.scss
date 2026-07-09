@@ -122,6 +122,7 @@ header {
 
 			.material-symbols-outlined {
 			transform: scale(1.3);
+			color: $white;
 		}
 		}
 
@@ -481,6 +482,32 @@ header {
 
 
 
+	&:not(.shrink) {
+		a.logo {
+			color: $white;
+		}
+
+		@include bp(m) {
+			#navBar ul li.nav-item a.nav-link {
+				color: $white !important;
+
+				&::after {
+					background-color: $white;
+				}
+			}
+		}
+
+		@include bp(lt-m) {
+			.burgermenu:not(.open) {
+				div,
+				&::before,
+				&::after {
+					background-color: $white !important;
+				}
+			}
+		}
+	}
+
 	&.shrink {
 		height: 60px;
 		@include shadow;
@@ -513,7 +540,8 @@ header {
 		a,
 		a:visited,
 		a:link,
-		.logo a span {
+		.logo a span,
+		.material-symbols-outlined {
 			color: $primary-dark !important;
 		}
 
