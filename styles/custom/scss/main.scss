@@ -1086,3 +1086,61 @@ section.section_subtitle {
   font-weight: 400 !important;
 
 }
+
+.cookie-consent {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $white;
+  border-top: 1px solid $secondary-dark;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 9999;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: $carbon;
+    max-width: 600px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+
+    button {
+      padding: 10px 24px;
+      border: none;
+      @include radiusResponsiveLarge;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all $animationStyle;
+    }
+  }
+
+  #cookie-accept {
+    background: $primary;
+    color: $white;
+
+    &:hover, &:focus {
+      background: $primary-dark;
+    }
+  }
+
+  #cookie-decline {
+    background: transparent;
+    border: 1px solid $primary;
+    color: $primary;
+
+    &:hover, &:focus {
+      background: $secondary;
+    }
+  }
+}
