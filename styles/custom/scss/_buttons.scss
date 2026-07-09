@@ -2,6 +2,7 @@
 
 	@extend %copy;
 	width: 100%;
+	font-weight: 400;
 	background: $white;
 	border: none;
 	text-decoration: none;
@@ -45,11 +46,15 @@
 %btn-secondary {
 	@extend %btn;
 	background: $primary-light;
-	color: $primary;
+	color: black;
 
-	&:hover, &:active, &:focus {
+
+	&:hover,
+	&:active,
+	&:focus {
 		background: $primary;
-		color: $white !important;;
+		color: $white !important;
+		;
 	}
 }
 
@@ -59,7 +64,7 @@
 	height: 50px;
 	cursor: pointer;
 	width: 50px;
-	border-radius:200px;
+	border-radius: 200px;
 	font-size: 1.2rem;
 	@include shadow;
 
@@ -68,7 +73,7 @@
 	&:focus-within {
 		//transform: scale(1.05);
 	}
-	
+
 	&:active {
 		//transform: scale(.95); //breaking position for video btn
 		border-bottom: 0;
