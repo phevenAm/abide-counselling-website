@@ -315,6 +315,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
+	const scrollTopBtn = document.getElementById('scroll-top');
+	window.addEventListener('scroll', () => {
+		const scrolled = window.scrollY + window.innerHeight;
+		const total = document.documentElement.scrollHeight;
+		scrollTopBtn.classList.toggle('visible', scrolled / total > 0.7);
+	});
+	scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
 	function loadClarity() {
 		const script = document.createElement('script');
 		script.src = 'https://www.clarity.ms/tag/xjo3kbr0ms';
