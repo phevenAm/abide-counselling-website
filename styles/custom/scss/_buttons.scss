@@ -13,7 +13,7 @@
 	border-radius: 0;
 	color: $color-text ;
 
-	@include radiusResponsiveLarge;
+	@include radiusResponsiveSmall;
 
 
 	@include webkitRemove;
@@ -45,16 +45,14 @@
 
 %btn-secondary {
 	@extend %btn;
-	background: $primary-light;
-	color: black;
-
+	background: $primary;
+	color: $white;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background: $primary;
+		background: $primary-dark;
 		color: $white !important;
-		;
 	}
 }
 
