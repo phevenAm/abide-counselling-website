@@ -135,7 +135,6 @@ header {
 			cursor: pointer;
 			display: grid;
 			place-content: center;
-			border: 3px solid $white;
 			background-color: $primary;
 			transform: scale(.7);
 			top: 0;
@@ -547,6 +546,7 @@ header {
 
 		.profile-container {
 			background-color: $white;
+			border: 1px solid $primary;
 
 			i {
 				color: $black !important;
